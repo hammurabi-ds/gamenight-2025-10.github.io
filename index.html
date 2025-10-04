@@ -207,6 +207,8 @@
             <button onclick="closeSettings()" class="absolute top-3 right-3 control-btn z-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
             <h2 class="text-3xl font-bold text-center mb-6 accent-text">Settings</h2>
             <div class="space-y-6 overflow-y-auto flex-grow pr-2">
+                <!-- User Profile -->
+                <div class="border-b-2 border-main pb-6"><h3 class="text-xl font-bold mb-4 text-main-secondary">User Profile</h3><div><label for="user-name-input" class="block text-sm font-semibold text-main-secondary mb-1">Your Name</label><input type="text" id="user-name-input" class="setup-input" placeholder="Enter your name..."></div></div>
                 <!-- Theme Selector -->
                 <div class="border-b-2 border-main pb-6"><label class="block text-lg font-semibold text-main-secondary mb-3 text-center">Party Theme</label><div id="theme-selector" class="flex justify-center gap-4 flex-wrap">
                     <button id="theme-retro-wave" onclick="selectTheme('theme-retro-wave', this)" class="theme-btn"></button>
@@ -293,6 +295,7 @@
         let db, auth, userId, userName = 'Guest';
 
         const seedQuestions = [
+            // 33 Easy
             { difficulty: 'easy', question: { da: "Hvilket dyr siger 'muh'?", ar: "أي حيوان يقول 'مو'؟", sq: "Cila kafshë bën 'mu'?" }, options: [{ da: "Hund", ar: "كلب", sq: "Qeni" }, { da: "Ko", ar: "بقرة", sq: "Lopa" }, { da: "Kat", ar: "قطة", sq: "Macja" }, { da: "Fugl", ar: "طائر", sq: "Zogu" }], correctAnswerIndex: 1 },
             { difficulty: 'easy', question: { da: "Hvad er farven på himlen på en klar dag?", ar: "ما هو لون السماء في يوم صافٍ؟", sq: "Çfarë ngjyre ka qielli në një ditë të kthjellët?" }, options: [{ da: "Grøn", ar: "أخضر", sq: "E gjelbër" }, { da: "Rød", ar: "أحمر", sq: "E kuqe" }, { da: "Blå", ar: "أزرق", sq: "Blu" }, { da: "Gul", ar: "أصفر", sq: "E verdhë" }], correctAnswerIndex: 2 },
             { difficulty: 'easy', question: { da: "Hvor mange dage er der i en uge?", ar: "كم عدد أيام الأسبوع؟", sq: "Sa ditë ka një javë?" }, options: [{ da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }, { da: "7", ar: "٧", sq: "7" }, { da: "8", ar: "٨", sq: "8" }], correctAnswerIndex: 2 },
@@ -386,9 +389,10 @@
             { difficulty: 'hard', question: { da: "Hvad er mitokondriers primære funktion i en eukaryot celle?", ar: "ما هي الوظيفة الأساسية للميتوكوندريا في خلية حقيقية النواة؟", sq: "Cili është funksioni primar i mitokondrive në një qelizë eukariote?" }, options: [{ da: "Proteinsyntese", ar: "تخليق البروتين", sq: "Sinteza e proteinave" }, { da: "Cellulær respiration og ATP-produktion", ar: "التنفس الخلوي وإنتاج ATP", sq: "Frymëmarrja qelizore dhe prodhimi i ATP-së" }, { da: "Lagring af genetisk materiale", ar: "تخزين المادة الوراثية", sq: "Ruajtja e materialit gjenetik" }, { da: "Affaldsbehandling", ar: "معالجة النفايات", sq: "Përpunimi i mbetjeve" }], correctAnswerIndex: 1 },
         ];
 
+
         // --- CORE FUNCTIONS ---
         window.createLangLine = (text, flag, isRtl = false) => `<div class="lang-line ${isRtl ? 'rtl' : ''}"><span class="text-xl">${flag}</span><span class="flex-1 ${isRtl ? 'arabic-text' : ''}">${text}</span></div>`;
-        window.showScreen = (screenId) => { allScreens.forEach(s => s.classList.add('hidden')); document.getElementById(screenId).classList.remove('hidden'); document.getElementById(screenId).classList.add('fade-in'); window.scrollTo(0, 0); };
+        window.showScreen = (screenId) => { allScreens.forEach(s => s.classList.add('hidden')); document.getElementById(screenId).classList.remove('hidden'); document.getElementById(screenId).classList.add('fade-in'); window.scrollTo(0, 0); if(screenId === 'setup-screen' && fullQuestionLibrary.length === 0) fetchQuestions(); };
         window.setRandomQuote = () => { const quote = quotes[Math.floor(Math.random() * quotes.length)]; document.getElementById('quote-text').textContent = `"${quote.text}"`; document.getElementById('quote-author').textContent = `– ${quote.author}`;};
         window.selectTheme = (theme, button) => { selectedTheme = theme; document.body.className = theme; document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected');};
         window.openSettings = () => { document.querySelectorAll('#theme-selector .theme-btn').forEach(btn => btn.classList.toggle('selected', btn.id === selectedTheme)); settingsModalEl.classList.remove('hidden'); };
@@ -400,7 +404,7 @@
         
         window.selectNumberOfTeams = (count, button) => {
             selectedTeamCount = count;
-            document.querySelectorAll('#setup-content .flex.justify-center button').forEach(btn => btn.classList.remove('selected'));
+            document.querySelectorAll('#setup-content .flex.justify-center button.setup-option-btn').forEach(btn => btn.classList.remove('selected'));
             button.classList.add('selected');
             renderTeamNameInputs();
         }
@@ -437,7 +441,7 @@
             gameQuestions = availableQuestions.sort(() => 0.5 - Math.random()).slice(0, maxQuestions);
 
             if (gameQuestions.length === 0) {
-                alert(`No questions found for '${selectedDifficulty}' difficulty. Please choose another difficulty.`);
+                 document.getElementById('no-questions-error').textContent = `No questions found for '${selectedDifficulty}' difficulty. Try 'Mixed' or add default questions in Settings.`;
                 return;
             }
             
@@ -562,10 +566,257 @@
         };
         window.goToHome = () => { clearInterval(timerInterval); setRandomQuote(); showScreen('home-screen'); };
 
+        // --- FIREBASE & DATA HANDLING ---
+
+        async function initializeFirebase() {
+            const appErrorEl = document.getElementById('app-error');
+            const appErrorMessageEl = document.getElementById('app-error-message');
+            
+            // --- PASTE YOUR FIREBASE CONFIGURATION OBJECT HERE ---
+            const firebaseConfig = {
+                apiKey: "AIzaSyDysqHlgFoMWslLGyAfJyplOcDhVqUuZ74",
+                authDomain: "game-cfd78.firebaseapp.com",
+                projectId: "game-cfd78",
+                storageBucket: "game-cfd78.firebasestorage.app",
+                messagingSenderId: "271965985725",
+                appId: "1:271965985725:web:409563adac51b281ed10d4"
+            };
+            // ----------------------------------------------------
+
+            if (!firebaseConfig.apiKey || firebaseConfig.apiKey.startsWith("YOUR_")) {
+                appErrorMessageEl.textContent = 'Firebase configuration is missing. Please follow the instructions to add your Firebase project details to the index.html file.';
+                appErrorEl.classList.remove('hidden');
+                allScreens.forEach(s => s.classList.add('hidden'));
+                return;
+            }
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                auth.onAuthStateChanged(async (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        await fetchUserProfile();
+                        listenToLeaderboard();
+                    } else {
+                        try {
+                            await signInAnonymously(auth);
+                        } catch(authError) {
+                            console.error("Anonymous authentication failed:", authError);
+                            appErrorMessageEl.textContent = 'User authentication failed. The app may not work correctly.';
+                            appErrorEl.classList.remove('hidden');
+                        }
+                    }
+                });
+            } catch (e) {
+                console.error("Firebase initialization failed:", e);
+                appErrorMessageEl.textContent = 'Failed to initialize Firebase. Please check the console for details.';
+                appErrorEl.classList.remove('hidden');
+                allScreens.forEach(s => s.classList.add('hidden'));
+            }
+        }
+        
+        async function fetchUserProfile() {
+            if (!userId) return;
+            const userDocRef = doc(db, "users", userId);
+            try {
+                const userDoc = await getDoc(userDocRef);
+                if (userDoc.exists() && userDoc.data().name) {
+                    userName = userDoc.data().name;
+                    document.getElementById('user-name-input').value = userName;
+                    document.getElementById('user-display').textContent = `Welcome, ${userName}!`;
+                    document.getElementById('gamemaster-name-input').value = userName;
+                } else {
+                    document.getElementById('user-display').textContent = 'Welcome, Guest!';
+                }
+            } catch (e) { console.error("Error fetching user profile:", e); }
+        }
+        
+        window.saveUserName = async () => {
+            const nameInput = document.getElementById('user-name-input');
+            const newName = nameInput.value.trim();
+            const saveBtn = document.getElementById('user-save-btn');
+            if (newName && userId) {
+                saveBtn.textContent = 'Saving...';
+                saveBtn.disabled = true;
+                const userDocRef = doc(db, "users", userId);
+                try {
+                    await setDoc(userDocRef, { name: newName });
+                    userName = newName;
+                    document.getElementById('user-display').textContent = `Welcome, ${newName}!`;
+                    document.getElementById('gamemaster-name-input').value = newName;
+                    saveBtn.textContent = 'Saved!';
+                    saveBtn.classList.remove('accent-bg');
+                    saveBtn.classList.add('bg-green-600');
+                } catch(e) { 
+                    console.error("Error saving name: ", e); 
+                    saveBtn.textContent = 'Error!';
+                    saveBtn.classList.remove('accent-bg');
+                    saveBtn.classList.add('bg-red-600');
+                } finally {
+                    setTimeout(() => {
+                        saveBtn.textContent = 'Save Profile';
+                        saveBtn.disabled = false;
+                        saveBtn.classList.remove('bg-green-600', 'bg-red-600');
+                        saveBtn.classList.add('accent-bg');
+                    }, 2000);
+                }
+            }
+        }
+
+        async function fetchQuestions() {
+            const setupLoader = document.getElementById('setup-loader');
+            const setupContent = document.getElementById('setup-content');
+            setupLoader.classList.remove('hidden');
+            setupContent.classList.add('hidden');
+            try {
+                const qCollection = collection(db, "questions");
+                const qSnapshot = await getDocs(qCollection);
+                fullQuestionLibrary = qSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+                if (fullQuestionLibrary.length === 0) console.log("No questions found in the database. Try adding the default questions in Settings!");
+            } catch (e) { console.error("Error fetching questions: ", e); } 
+            finally { setupLoader.classList.add('hidden'); setupContent.classList.remove('hidden'); }
+        }
+
+        async function updateLeaderboard(teamName, score) {
+            if (!userId) return;
+            try {
+                const lbCollection = collection(db, "leaderboard");
+                await addDoc(lbCollection, { teamName, score, gameMasterName: userName, gameMasterId: userId, timestamp: new Date() });
+            } catch(e) { console.error("Error updating leaderboard: ", e); }
+        }
+
+        function listenToLeaderboard() {
+            const lbCollection = collection(db, "leaderboard");
+            const q = query(lbCollection, orderBy("score", "desc"), limit(10));
+            const loader = document.getElementById('leaderboard-loader');
+            const content = document.getElementById('leaderboard-content');
+            onSnapshot(q, (querySnapshot) => {
+                loader.classList.add('hidden'); content.innerHTML = '';
+                if(querySnapshot.empty) { content.innerHTML = '<p class="text-main-secondary">No scores yet. Go play a game!</p>'; return; }
+                const medalColors = ['text-yellow-400', 'text-gray-400', 'text-orange-400']; const medals = ['🥇', '🥈', '🥉']; let rank = 1;
+                querySnapshot.forEach((doc) => {
+                    const entry = doc.data();
+                    const medal = rank <= 3 ? `<span class="text-2xl">${medals[rank-1]}</span>` : `<span class="font-bold text-main-secondary">${rank}.</span>`;
+                    content.innerHTML += `<div class="flex items-center justify-between p-3 bg-main-tertiary rounded-lg"><div class="flex items-center gap-4">${medal}<div><p class="font-bold text-lg ${rank <= 3 ? medalColors[rank-1] : 'text-main-primary'}">${entry.teamName}</p><p class="text-xs text-main-secondary">Hosted by: ${entry.gameMasterName}</p></div></div><p class="font-bold text-2xl accent-text">${entry.score}</p></div>`;
+                    rank++;
+                });
+            }, (error) => { console.error("Error listening to leaderboard:", error); loader.classList.add('hidden'); content.innerHTML = '<p class="text-red-400">Error loading leaderboard.</p>'; });
+        }
+        
+        window.seedDatabase = async () => {
+            const msgEl = document.getElementById('seed-db-msg');
+            const btn = document.getElementById('seed-db-btn');
+            const progressContainer = document.getElementById('seed-progress-container');
+            const progressBar = document.getElementById('seed-progress-bar');
+            
+            btn.disabled = true;
+            progressContainer.classList.remove('hidden');
+            progressBar.style.width = '0%';
+            msgEl.textContent = 'Checking existing questions...';
+
+            try {
+                const qCollection = collection(db, "questions");
+                const batch = writeBatch(db);
+                let questionsAdded = 0;
+                let questionsProcessed = 0;
+                const totalQuestions = seedQuestions.length;
+
+                for (const question of seedQuestions) {
+                    const q = query(qCollection, where("question.da", "==", question.question.da), limit(1));
+                    const querySnapshot = await getDocs(q);
+                    if (querySnapshot.empty) {
+                        const newDocRef = doc(qCollection);
+                        batch.set(newDocRef, question);
+                        questionsAdded++;
+                    }
+                    questionsProcessed++;
+                    const progress = (questionsProcessed / totalQuestions) * 100;
+                    progressBar.style.width = `${progress}%`;
+                    progressBar.textContent = `${Math.round(progress)}%`;
+                    msgEl.textContent = `Processing ${questionsProcessed}/${totalQuestions}...`;
+                }
+                
+                if (questionsAdded > 0) {
+                    await batch.commit();
+                    msgEl.textContent = `Done! Added ${questionsAdded} new questions.`;
+                    await fetchQuestions();
+                } else {
+                    msgEl.textContent = 'Done! Database already up to date.';
+                }
+            } catch (e) {
+                console.error("Error seeding database:", e);
+                msgEl.textContent = 'Error seeding database.';
+            } finally {
+                setTimeout(() => {
+                    progressContainer.classList.add('hidden');
+                    btn.disabled = false;
+                    msgEl.textContent = '';
+                }, 4000);
+            }
+        }
+        
+        function setupEventListeners() {
+             document.getElementById('json-upload').addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                const msgEl = document.getElementById('upload-msg');
+                reader.onload = async (e) => {
+                    try {
+                        const questions = JSON.parse(e.target.result);
+                        if (!Array.isArray(questions)) throw new Error("JSON must be an array.");
+                        
+                        msgEl.textContent = `Checking ${questions.length} questions...`;
+                        const batch = writeBatch(db);
+                        const qCollection = collection(db, "questions");
+                        let addedCount = 0;
+                        
+                        for (const q of questions) {
+                             if (q.question && q.question.da && q.options && q.difficulty && q.correctAnswerIndex != null) {
+                                // Prevent duplicates
+                                const checkQuery = query(qCollection, where("question.da", "==", q.question.da), limit(1));
+                                const snapshot = await getDocs(checkQuery);
+                                if (snapshot.empty) {
+                                     const newDocRef = doc(qCollection);
+                                     batch.set(newDocRef, q);
+                                     addedCount++;
+                                }
+                             }
+                        }
+
+                        if(addedCount > 0) {
+                            await batch.commit();
+                            msgEl.textContent = `Successfully added ${addedCount} new questions!`;
+                            await fetchQuestions(); // Refresh
+                        } else {
+                            msgEl.textContent = 'No new questions to add.';
+                        }
+
+                    } catch (err) {
+                        console.error("File upload error:", err);
+                        msgEl.textContent = `Error: ${err.message}`;
+                    } finally {
+                         setTimeout(() => msgEl.textContent = '', 4000);
+                         event.target.value = ''; // Reset file input
+                    }
+                };
+                reader.readAsText(file);
+            });
+        }
+
+        // --- INITIAL LOAD ---
         window.onload = () => {
+            initializeFirebase();
             selectTheme(selectedTheme, document.getElementById(selectedTheme));
-            selectNumberOfTeams(2, document.querySelector('#setup-content .flex.justify-center button'));
+            selectNumberOfTeams(2, document.querySelector('#setup-content .flex.justify-center button.setup-option-btn'));
             goToHome();
+            setupEventListeners();
+            // Create and set the download link for the JSON template
+            const template = [{ "difficulty": "easy", "question": { "da": "...", "ar": "...", "sq": "..." }, "options": [ { "da": "...", "ar": "...", "sq": "..." }, { "da": "...", "ar": "...", "sq": "..." }, { "da": "...", "ar": "...", "sq": "..." }, { "da": "...", "ar": "...", "sq": "..." } ], "correctAnswerIndex": 0 }];
+            const templateStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(template, null, 2));
+            document.getElementById('json-template-link').setAttribute("href", templateStr);
+            document.getElementById('json-template-link').setAttribute("download", "questions_template.json");
         };
     </script>
 </body>
