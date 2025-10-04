@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Quiz Night (Standalone)</title>
+    <title>Family Quiz Night Deluxe</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,30 +29,35 @@
             --text-primary: #d6f5ff; --text-secondary: #7cc9f5; --border-color: #0b4f8a;
             --accent-color: #22d3ee; --header-gradient-from: #67e8f9; --header-gradient-to: #5eead4;
         }
-        body.theme-cosmic-flare {
-            --bg-primary: #000000; --bg-secondary: #1e1b18; --bg-tertiary: #4e342e;
-            --text-primary: #fff3e0; --text-secondary: #ffcc80; --border-color: #4e342e;
-            --accent-color: #ff7043; --header-gradient-from: #ffb74d; --header-gradient-to: #ff7043;
+        body.theme-crimson-dark {
+            --bg-primary: #260202; --bg-secondary: #4f0303; --bg-tertiary: #750d0d;
+            --text-primary: #fee2e2; --text-secondary: #fca5a5; --border-color: #5f0b0b;
+            --accent-color: #ef4444; --header-gradient-from: #f87171; --header-gradient-to: #dc2626;
         }
-        body.theme-sunset-glow {
-            --bg-primary: #311b3c; --bg-secondary: #4a2a5a; --bg-tertiary: #6b437c;
-            --text-primary: #fce7f3; --text-secondary: #f9a8d4; --border-color: #6b437c;
-            --accent-color: #f472b6; --header-gradient-from: #fb923c; --header-gradient-to: #f472b6;
+        body.theme-crimson-light {
+            --bg-primary: #fffbff; --bg-secondary: #fee2e2; --bg-tertiary: #fecaca;
+            --text-primary: #450a0a; --text-secondary: #991b1b; --border-color: #fca5a5;
+            --accent-color: #dc2626; --header-gradient-from: #ef4444; --header-gradient-to: #b91c1c;
         }
-        body.theme-minty-fresh {
-            --bg-primary: #f0fdf4; --bg-secondary: #ffffff; --bg-tertiary: #dcfce7;
-            --text-primary: #14532d; --text-secondary: #16a34a; --border-color: #bbf7d0;
-            --accent-color: #22c55e; --header-gradient-from: #4ade80; --header-gradient-to: #34d399;
+        body.theme-sapphire-dark {
+            --bg-primary: #0c152f; --bg-secondary: #182952; --bg-tertiary: #253b7c;
+            --text-primary: #e0e7ff; --text-secondary: #a5b4fc; --border-color: #1e3a8a;
+            --accent-color: #60a5fa; --header-gradient-from: #93c5fd; --header-gradient-to: #3b82f6;
         }
-        body.theme-classic-light {
-            --bg-primary: #ffffff; --bg-secondary: #f1f5f9; --text-primary: #0f172a;
-            --bg-tertiary: #e2e8f0; --text-secondary: #475569; --border-color: #cbd5e1;
-            --accent-color: #1e293b; --header-gradient-from: #334155; --header-gradient-to: #0f172a;
+         body.theme-sapphire-light {
+            --bg-primary: #f0f9ff; --bg-secondary: #dbeafe; --bg-tertiary: #bfdbfe;
+            --text-primary: #1e3a8a; --text-secondary: #1d4ed8; --border-color: #93c5fd;
+            --accent-color: #2563eb; --header-gradient-from: #3b82f6; --header-gradient-to: #1d4ed8;
         }
-        body.theme-velvet-light {
-            --bg-primary: #fffbff; --bg-secondary: #f8fafc; --text-primary: #1e293b;
-            --bg-tertiary: #f1f5f9; --text-secondary: #64748b; --border-color: #e2e8f0;
-            --accent-color: #9f1239; --header-gradient-from: #be123c; --header-gradient-to: #881337;
+        body.theme-emerald-dark {
+            --bg-primary: #04120a; --bg-secondary: #062111; --bg-tertiary: #05331c;
+            --text-primary: #d1fae5; --text-secondary: #6ee7b7; --border-color: #064e3b;
+            --accent-color: #34d399; --header-gradient-from: #6ee7b7; --header-gradient-to: #10b981;
+        }
+        body.theme-emerald-light {
+            --bg-primary: #f0fdf4; --bg-secondary: #dcfce7; --bg-tertiary: #bbf7d0;
+            --text-primary: #064e3b; --text-secondary: #059669; --border-color: #86efac;
+            --accent-color: #10b981; --header-gradient-from: #34d399; --header-gradient-to: #059669;
         }
 
         body { font-family: 'Inter', sans-serif; touch-action: manipulation; background-color: var(--bg-primary); color: var(--text-primary); transition: background-color 0.3s, color 0.3s; }
@@ -78,14 +83,18 @@
         .theme-btn { width: 40px; height: 40px; border-radius: 9999px; border: 3px solid var(--bg-tertiary); transition: all 0.2s ease-in-out; cursor: pointer; }
         .theme-btn.selected { border-color: var(--accent-color); transform: scale(1.15); box-shadow: 0 0 10px var(--accent-color); }
         #theme-retro-wave { background: linear-gradient(45deg, #f6218e, #7f22e3); } #theme-jungle-vibe { background: linear-gradient(45deg, #facc15, #4d7c0f); }
-        #theme-ocean-deep { background: linear-gradient(45deg, #22d3ee, #053059); } #theme-cosmic-flare { background: linear-gradient(45deg, #ff7043, #fb8c00); }
-        #theme-sunset-glow { background: linear-gradient(45deg, #f97316, #ec4899); } #theme-minty-fresh { background: linear-gradient(45deg, #34d399, #a7f3d0); }
+        #theme-ocean-deep { background: linear-gradient(45deg, #22d3ee, #053059); } #theme-crimson-dark { background: linear-gradient(45deg, #ef4444, #7f1d1d); }
+        #theme-crimson-light { background: linear-gradient(45deg, #f87171, #fee2e2); } #theme-sapphire-dark { background: linear-gradient(45deg, #60a5fa, #1e3a8a); }
+        #theme-sapphire-light { background: linear-gradient(45deg, #93c5fd, #dbeafe); } #theme-emerald-dark { background: linear-gradient(45deg, #34d399, #064e3b); }
+        #theme-emerald-light { background: linear-gradient(45deg, #6ee7b7, #d1fae5); }
         .header-gradient { background-image: linear-gradient(to right, var(--header-gradient-from), var(--header-gradient-to)); }
-        #theme-classic-light { background: linear-gradient(45deg, #334155, #e2e8f0); }
-        #theme-velvet-light { background: linear-gradient(45deg, #be123c, #fecdd3); }
         .lang-checkbox-label { display: flex; align-items: center; cursor: pointer; padding: 0.5rem 1rem; border-radius: 0.5rem; background-color: var(--bg-tertiary); border: 2px solid var(--border-color); transition: all 0.2s; }
         .lang-checkbox-label:hover { border-color: var(--accent-color); } .lang-checkbox { display: none; }
         .lang-checkbox:checked + .lang-checkbox-label { background-color: var(--accent-color); border-color: var(--accent-color); color: white; }
+        .loader { width: 48px; height: 48px; border: 5px solid var(--text-primary); border-bottom-color: transparent; border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; }
+        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .progress-bar-container { width: 100%; background-color: var(--bg-primary); border-radius: 0.5rem; overflow: hidden; height: 1.5rem; border: 2px solid var(--border-color); }
+        .progress-bar-fill { width: 0%; height: 100%; background-color: var(--accent-color); border-radius: 0.25rem; transition: width 0.3s ease-out; text-align: center; line-height: 1.5rem; font-weight: bold; color: white; }
     </style>
 </head>
 <body class="theme-retro-wave">
@@ -99,8 +108,12 @@
                 <h1 class="text-xl font-bold text-main-primary hidden sm:block">Family Quiz Night</h1>
             </div>
             <div class="flex items-center gap-3">
+                <span id="user-display" class="text-sm text-main-secondary hidden md:block"></span>
                 <button onclick="goToHome()" class="header-icon-btn" title="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/></svg>
+                </button>
+                <button onclick="showScreen('leaderboard-screen')" class="header-icon-btn" title="Leaderboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.173v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935"/></svg>
                 </button>
                 <button onclick="openSettings()" class="header-icon-btn" title="Settings">
                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311a1.464 1.464 0 0 1-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858"/></svg>
@@ -111,6 +124,10 @@
 
     <main class="p-4">
         <!-- Home Screen -->
+        <div id="app-error" class="hidden w-full max-w-3xl mx-auto text-center p-8 bg-red-900/50 rounded-2xl">
+            <h2 class="text-2xl font-bold text-red-300">Application Configuration Error</h2>
+            <p id="app-error-message" class="text-red-200 mt-2"></p>
+        </div>
         <div id="home-screen" class="w-full max-w-3xl mx-auto text-center fade-in md:py-12">
             <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">Welcome!</h1>
             <div class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
@@ -122,7 +139,7 @@
                     Create New Game
                 </button>
             </div>
-            <div class="bg-main-secondary p-4 md:p-6 rounded-2xl shadow-2xl mt-8 text-left">
+             <div class="bg-main-secondary p-4 md:p-6 rounded-2xl shadow-2xl mt-8 text-left">
                 <h3 class="text-2xl font-bold accent-text mb-4 text-center">💡 Team Creation Ideas</h3>
                 <ul class="space-y-3 text-main-secondary list-disc list-inside">
                     <li><strong class="text-main-primary">Generations Clash:</strong> Team "Boomers" vs. Team "Zoomers".</li>
@@ -135,32 +152,52 @@
         </div>
         
         <!-- Setup Screen -->
-        <div id="setup-screen" class="hidden w-full max-w-3xl mx-auto text-center fade-in md:py-12">
+        <div id="setup-screen" class="hidden w-full max-w-4xl mx-auto text-center fade-in md:py-12">
             <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">Game Setup</h1>
+            <div id="setup-loader" class="hidden text-center p-8"><span class="loader"></span><p class="mt-4 text-main-secondary">Fetching question database...</p></div>
             <div id="setup-content" class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Left Column: Game Settings -->
                     <div class="space-y-6">
-                        <div><label for="gamemaster-name-input" class="block text-lg font-semibold accent-text mb-2">Game Master</label><input type="text" id="gamemaster-name-input" class="setup-input w-full" placeholder="Enter host's name"></div>
-                        <div><label for="team1-name-input" class="block text-lg font-semibold text-blue-400 mb-2">Team 1 Name</label><input type="text" id="team1-name-input" class="setup-input w-full" placeholder="Enter name"></div>
-                        <div><label for="team2-name-input" class="block text-lg font-semibold text-pink-400 mb-2">Team 2 Name</label><input type="text" id="team2-name-input" class="setup-input w-full" placeholder="Enter name"></div>
-                    </div>
-                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-lg font-semibold text-main-secondary mb-3">Number of Teams</label>
+                            <div class="flex justify-center gap-2 md:gap-3">
+                                <button onclick="selectNumberOfTeams(2, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg selected">2</button>
+                                <button onclick="selectNumberOfTeams(3, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">3</button>
+                                <button onclick="selectNumberOfTeams(4, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">4</button>
+                            </div>
+                        </div>
                         <div><label class="block text-lg font-semibold text-main-secondary mb-3">Difficulty</label><div id="difficulty-selector" class="grid grid-cols-2 gap-2"><button onclick="selectDifficulty('easy', this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">Easy</button><button onclick="selectDifficulty('medium', this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg selected">Medium</button><button onclick="selectDifficulty('hard', this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">Hard</button><button onclick="selectDifficulty('mixed', this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">Mixed</button></div></div>
                         <div><label class="block text-lg font-semibold text-main-secondary mb-3">Number of Questions</label><div id="quantity-selector" class="flex justify-center gap-2 md:gap-3"><button onclick="selectQuantity(15, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">15</button><button onclick="selectQuantity(30, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg selected">30</button><button onclick="selectQuantity(50, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">50</button></div></div>
                         <div><label for="time-limit-slider" class="block text-lg font-semibold text-main-secondary mb-3">Time per Question</label><div class="flex items-center justify-center gap-4 px-2"><input type="range" id="time-limit-slider" min="10" max="300" value="60" step="5" class="w-full h-2 bg-main-tertiary rounded-lg appearance-none cursor-pointer accent-bg" oninput="updateTimerSelection(this.value)"><span id="time-limit-display" class="font-bold text-lg accent-text w-20 text-center">1:00</span></div></div>
                     </div>
+                    <!-- Right Column: Player/Team Names -->
+                    <div class="space-y-4">
+                         <div><label for="gamemaster-name-input" class="block text-lg font-semibold accent-text mb-2">Game Master</label><input type="text" id="gamemaster-name-input" class="setup-input w-full" placeholder="Enter host's name"></div>
+                         <div id="team-names-container" class="space-y-4"></div>
+                    </div>
                 </div>
                 <div class="mt-8 border-t-2 border-main pt-6"><label class="block text-lg font-semibold text-main-secondary mb-3">Languages</label><div id="language-selector" class="flex justify-center gap-4 flex-wrap"><input type="checkbox" id="lang-da" value="da" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-da" class="lang-checkbox-label">🇩🇰 Danish</label><input type="checkbox" id="lang-ar" value="ar" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-ar" class="lang-checkbox-label">🇸🇦 Arabic</label><input type="checkbox" id="lang-sq" value="sq" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-sq" class="lang-checkbox-label">🇦🇱 Albanian</label></div><p id="lang-error" class="text-red-400 text-sm mt-2 hidden">Please select at least one language.</p></div>
                 <button onclick="initGame()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105 mt-8">Start Game</button>
+                 <p id="no-questions-error" class="text-red-400 text-sm mt-2 h-5"></p>
+            </div>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboard-screen" class="hidden w-full max-w-3xl mx-auto text-center fade-in md:py-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">🏆 Leaderboard 🏆</h1>
+            <div class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
+                <div id="leaderboard-content" class="space-y-3"></div>
+                <div id="leaderboard-loader" class="text-center p-8"><span class="loader"></span></div>
             </div>
         </div>
 
         <!-- Quiz Container -->
         <div id="quiz-container" class="hidden w-full max-w-6xl mx-auto">
             <header class="relative text-center mb-4 flex justify-between items-center"><div class="w-1/3"></div><div class="w-1/3"><h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text header-gradient py-2">Family Quiz Night</h1></div><div class="w-1/3 flex justify-end items-center gap-4"><div class="flex items-center gap-2"><span id="game-master-name" class="font-semibold text-main-secondary"></span><div class="w-8 h-8 rounded-full bg-main-tertiary flex items-center justify-center"><svg class="w-5 h-5 text-main-secondary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg></div></div></div></header>
-            <div class="flex justify-around mb-4 bg-main-secondary/50 p-3 rounded-xl shadow-lg"><div class="text-center"><h2 id="team1-name" class="text-lg md:text-xl font-bold text-blue-400">Team 1</h2><p id="team1-score" class="text-3xl md:text-4xl font-bold">0</p></div><div class="text-center"><h2 id="team2-name" class="text-lg md:text-xl font-bold text-pink-400">Team 2</h2><p id="team2-score" class="text-3xl md:text-4xl font-bold">0</p></div></div>
-            <div id="game-over" class="hidden text-center p-6 bg-main-secondary rounded-xl shadow-2xl"><h2 id="winner-message" class="text-3xl font-bold mb-4">Game Over!</h2><p class="text-lg mb-4">Final Scores:</p><div class="flex justify-center gap-6 text-xl"><p><span id="final-team1-name" class="font-bold text-blue-400">Team 1:</span> <span id="final-score1"></span></p><p><span id="final-team2-name" class="font-bold text-pink-400">Team 2:</span> <span id="final-score2"></span></p></div><button onclick="goToHome()" class="mt-6 accent-bg hover:brightness-110 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-transform transform hover:scale-105">Play Again</button></div>
-            <div id="quiz-area" class="bg-main-secondary p-4 md:p-6 rounded-xl shadow-2xl"><div class="flex justify-between items-center mb-4"><div class="flex items-center gap-3"><p id="question-counter" class="text-base font-semibold text-main-secondary">Q 1 / 30</p><button id="pause-resume-btn" onclick="togglePauseResume()" class="control-btn"></button><button onclick="resetCurrentQuestionState()" class="control-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg></button></div><div class="relative w-20 h-20"><svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100"><circle class="text-main-tertiary" stroke-width="8" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /><circle id="timer-progress-circle" class="timer-progress accent-text" stroke-width="8" stroke-linecap="round" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /></svg><div id="timer" class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-xl font-bold">1:00</div></div></div><div id="question-text" class="text-xl font-semibold mb-6 space-y-4 text-center"></div><div id="answer-options" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div><div id="post-answer-controls" class="hidden mt-4 text-center"><div id="correct-answer-text" class="text-base font-semibold mb-3 text-green-400 space-y-1"></div><p class="mb-3 text-main-secondary text-sm">Award point to the correct team:</p><div class="flex justify-center gap-3 mb-3"><button onclick="awardPoint(1)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-sm">Team 1</button><button onclick="awardPoint(2)" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-lg text-sm">Team 2</button></div><button id="next-question-btn" onclick="nextQuestion()" class="w-full md:w-auto bg-main-tertiary hover:brightness-110 text-main-primary font-bold py-2 px-5 rounded-lg">Next Question</button></div><button id="reveal-answer-btn" onclick="revealAnswer()" class="hidden w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-2 px-5 rounded-lg">Reveal Answer</button></div>
+            <div id="scoreboard-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 bg-main-secondary/50 p-3 rounded-xl shadow-lg"></div>
+            <div id="game-over" class="hidden text-center p-6 bg-main-secondary rounded-xl shadow-2xl"><h2 id="winner-message" class="text-3xl font-bold mb-4">Game Over!</h2><p class="text-lg mb-4">Final Scores:</p><div id="final-scores-container" class="flex justify-center gap-6 text-xl flex-wrap"></div><button onclick="goToHome()" class="mt-6 accent-bg hover:brightness-110 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-transform transform hover:scale-105">Play Again</button></div>
+            <div id="quiz-area" class="bg-main-secondary p-4 md:p-6 rounded-xl shadow-2xl"><div class="flex justify-between items-center mb-4"><div class="flex items-center gap-3"><p id="question-counter" class="text-base font-semibold text-main-secondary">Q 1 / 30</p><button id="pause-resume-btn" onclick="togglePauseResume()" class="control-btn"></button><button onclick="resetCurrentQuestionState()" class="control-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg></button></div><div class="relative w-20 h-20"><svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100"><circle class="text-main-tertiary" stroke-width="8" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /><circle id="timer-progress-circle" class="timer-progress accent-text" stroke-width="8" stroke-linecap="round" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /></svg><div id="timer" class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-xl font-bold">1:00</div></div></div><div id="question-text" class="text-xl font-semibold mb-6 space-y-4 text-center"></div><div id="answer-options" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div><div id="post-answer-controls" class="hidden mt-4 text-center"><div id="correct-answer-text" class="text-base font-semibold mb-3 text-green-400 space-y-1"></div><p class="mb-3 text-main-secondary text-sm">Award point to the correct team:</p><div id="award-points-container" class="flex justify-center gap-3 mb-3 flex-wrap"></div><button id="next-question-btn" onclick="nextQuestion()" class="w-full md:w-auto bg-main-tertiary hover:brightness-110 text-main-primary font-bold py-2 px-5 rounded-lg">Next Question</button></div><button id="reveal-answer-btn" onclick="revealAnswer()" class="hidden w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-2 px-5 rounded-lg">Reveal Answer</button></div>
         </div>
     </main>
     
@@ -171,23 +208,65 @@
             <h2 class="text-3xl font-bold text-center mb-6 accent-text">Settings</h2>
             <div class="space-y-6 overflow-y-auto flex-grow pr-2">
                 <!-- Theme Selector -->
-                <div class="border-b-2 border-main pb-6"><label class="block text-lg font-semibold text-main-secondary mb-3 text-center">Party Theme</label><div id="theme-selector" class="flex justify-center gap-4 flex-wrap"><button id="theme-retro-wave" onclick="selectTheme('theme-retro-wave', this)" class="theme-btn"></button><button id="theme-jungle-vibe" onclick="selectTheme('theme-jungle-vibe', this)" class="theme-btn"></button><button id="theme-ocean-deep" onclick="selectTheme('theme-ocean-deep', this)" class="theme-btn"></button><button id="theme-cosmic-flare" onclick="selectTheme('theme-cosmic-flare', this)" class="theme-btn"></button><button id="theme-sunset-glow" onclick="selectTheme('theme-sunset-glow', this)" class="theme-btn"></button><button id="theme-minty-fresh" onclick="selectTheme('theme-minty-fresh', this)" class="theme-btn"></button><button id="theme-classic-light" onclick="selectTheme('theme-classic-light', this)" class="theme-btn"></button><button id="theme-velvet-light" onclick="selectTheme('theme-velvet-light', this)" class="theme-btn"></button></div></div>
+                <div class="border-b-2 border-main pb-6"><label class="block text-lg font-semibold text-main-secondary mb-3 text-center">Party Theme</label><div id="theme-selector" class="flex justify-center gap-4 flex-wrap">
+                    <button id="theme-retro-wave" onclick="selectTheme('theme-retro-wave', this)" class="theme-btn"></button>
+                    <button id="theme-jungle-vibe" onclick="selectTheme('theme-jungle-vibe', this)" class="theme-btn"></button>
+                    <button id="theme-ocean-deep" onclick="selectTheme('theme-ocean-deep', this)" class="theme-btn"></button>
+                    <button id="theme-crimson-dark" onclick="selectTheme('theme-crimson-dark', this)" class="theme-btn"></button>
+                    <button id="theme-sapphire-dark" onclick="selectTheme('theme-sapphire-dark', this)" class="theme-btn"></button>
+                    <button id="theme-emerald-dark" onclick="selectTheme('theme-emerald-dark', this)" class="theme-btn"></button>
+                    <button id="theme-crimson-light" onclick="selectTheme('theme-crimson-light', this)" class="theme-btn"></button>
+                    <button id="theme-sapphire-light" onclick="selectTheme('theme-sapphire-light', this)" class="theme-btn"></button>
+                    <button id="theme-emerald-light" onclick="selectTheme('theme-emerald-light', this)" class="theme-btn"></button>
+                </div></div>
+                <!-- Question Factory -->
+                <div>
+                     <h3 class="text-xl font-bold mb-4 text-main-secondary">Question Factory 🏭</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- JSON Upload -->
+                        <div class="bg-main-tertiary p-4 rounded-lg">
+                             <h4 class="font-bold text-lg mb-2">Upload Questions</h4>
+                             <p class="text-sm text-main-secondary mb-3">Upload a `.json` file to add more questions. Duplicates will be ignored.</p>
+                             <input type="file" id="json-upload" class="text-sm text-main-secondary file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100" accept=".json">
+                             <p id="upload-msg" class="text-sm text-green-400 mt-2 h-4"></p>
+                             <a id="json-template-link" href="#" class="text-sm accent-text hover:underline mt-2 inline-block">Download Template</a>
+                        </div>
+                        <!-- DB Seeder -->
+                        <div class="bg-main-tertiary p-4 rounded-lg">
+                             <h4 class="font-bold text-lg mb-2">Prepare Questions</h4>
+                             <p class="text-sm text-main-secondary mb-3">Get started by adding 99 default questions to the database.</p>
+                             <button id="seed-db-btn" onclick="seedDatabase()" class="w-full bg-main-secondary hover:brightness-125 text-white font-bold py-2 px-4 rounded-lg">Add Default Questions</button>
+                             <div id="seed-progress-container" class="hidden mt-2">
+                                <div class="progress-bar-container">
+                                    <div id="seed-progress-bar" class="progress-bar-fill"></div>
+                                </div>
+                                <p id="seed-db-msg" class="text-sm text-center mt-1 h-4"></p>
+                             </div>
+                        </div>
+                     </div>
+                </div>
             </div>
+             <div class="mt-6 pt-4 border-t-2 border-main">
+                <button id="user-save-btn" onclick="saveUserName()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-5 rounded-lg">Save Profile</button>
+             </div>
         </div>
     </div>
 
-    <script>
-        const allScreens = document.querySelectorAll('#home-screen, #setup-screen, #quiz-container');
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, getDocs, doc, getDoc, setDoc, addDoc, query, where, limit, orderBy, onSnapshot, writeBatch } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- GLOBAL VARIABLES & DOM ELEMENTS ---
+        const allScreens = document.querySelectorAll('#home-screen, #setup-screen, #quiz-container, #leaderboard-screen');
         const settingsModalEl = document.getElementById('settings-modal');
         const questionCounterEl = document.getElementById('question-counter');
         const questionTextEl = document.getElementById('question-text');
         const answerOptionsEl = document.getElementById('answer-options');
-        const team1ScoreEl = document.getElementById('team1-score');
-        const team2ScoreEl = document.getElementById('team2-score');
-        const team1NameEl = document.getElementById('team1-name');
-        const team2NameEl = document.getElementById('team2-name');
-        const finalTeam1NameEl = document.getElementById('final-team1-name');
-        const finalTeam2NameEl = document.getElementById('final-team2-name');
+        const scoreboardContainer = document.getElementById('scoreboard-container');
+        const finalScoresContainer = document.getElementById('final-scores-container');
+        const awardPointsContainer = document.getElementById('award-points-container');
+        const teamNamesContainer = document.getElementById('team-names-container');
         const gameMasterNameEl = document.getElementById('game-master-name');
         const timerEl = document.getElementById('timer');
         const timerProgressCircle = document.getElementById('timer-progress-circle');
@@ -202,13 +281,23 @@
 
         const quotes = [{ text: "The only true wisdom is in knowing you know nothing.", author: "Socrates" }, { text: "An investment in knowledge pays the best interest.", author: "Benjamin Franklin" }];
         
-        const fullQuestionLibrary = [
-             // 33 Easy Questions
+        // --- GAME STATE VARIABLES ---
+        let gameQuestions = [], currentQuestionIndex = 0;
+        let teamNames = [], teamScores = [];
+        let gameMasterName = "Host";
+        let selectedTeamCount = 2;
+        let selectedQuantity = 30, selectedDifficulty = 'medium', selectedTimeLimit = 60, selectedTheme = 'theme-retro-wave';
+        let selectedLanguages = ['da', 'ar', 'sq'], timerInterval, timeLeft = 60;
+        let isPaused = false, answerRevealed = false, selectedAnswerIndex = null;
+        let fullQuestionLibrary = [];
+        let db, auth, userId, userName = 'Guest';
+
+        const seedQuestions = [
             { difficulty: 'easy', question: { da: "Hvilket dyr siger 'muh'?", ar: "أي حيوان يقول 'مو'؟", sq: "Cila kafshë bën 'mu'?" }, options: [{ da: "Hund", ar: "كلب", sq: "Qeni" }, { da: "Ko", ar: "بقرة", sq: "Lopa" }, { da: "Kat", ar: "قطة", sq: "Macja" }, { da: "Fugl", ar: "طائر", sq: "Zogu" }], correctAnswerIndex: 1 },
             { difficulty: 'easy', question: { da: "Hvad er farven på himlen på en klar dag?", ar: "ما هو لون السماء في يوم صافٍ؟", sq: "Çfarë ngjyre ka qielli në një ditë të kthjellët?" }, options: [{ da: "Grøn", ar: "أخضر", sq: "E gjelbër" }, { da: "Rød", ar: "أحمر", sq: "E kuqe" }, { da: "Blå", ar: "أزرق", sq: "Blu" }, { da: "Gul", ar: "أصفر", sq: "E verdhë" }], correctAnswerIndex: 2 },
             { difficulty: 'easy', question: { da: "Hvor mange dage er der i en uge?", ar: "كم عدد أيام الأسبوع؟", sq: "Sa ditë ka një javë?" }, options: [{ da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }, { da: "7", ar: "٧", sq: "7" }, { da: "8", ar: "٨", sq: "8" }], correctAnswerIndex: 2 },
             { difficulty: 'easy', question: { da: "Hvad hedder den store stjerne i vores solsystem?", ar: "ما اسم النجم الكبير في نظامنا الشمسي؟", sq: "Si quhet ylli i madh në sistemin tonë diellor?" }, options: [{ da: "Månen", ar: "القمر", sq: "Hëna" }, { da: "Mars", ar: "المريخ", sq: "Marsi" }, { da: "Solen", ar: "الشمس", sq: "Dielli" }, { da: "Jorden", ar: "الأرض", sq: "Toka" }], correctAnswerIndex: 2 },
-            { difficulty: 'easy', question: { da: "Hvilken frugt er rød og rund?", ar: "Cila frutë është e kuqe dhe e rrumbullakët?", sq: "أي فاكهة حمراء ومستديرة؟" }, options: [{ da: "Banan", ar: "موز", sq: "Banane" }, { da: "Æble", ar: "تفاحة", sq: "Mollë" }, { da: "Citron", ar: "ليمون", sq: "Limon" }, { da: "Agurk", ar: "خيار", sq: "Kastravec" }], correctAnswerIndex: 1 },
+            { difficulty: 'easy', question: { da: "Hvilken frugt er rød og rund?", ar: "أي فاكهة حمراء ومستديرة؟", sq: "Cila frutë është e kuqe dhe e rrumbullakët?" }, options: [{ da: "Banan", ar: "موز", sq: "Banane" }, { da: "Æble", ar: "تفاحة", sq: "Mollë" }, { da: "Citron", ar: "ليمون", sq: "Limon" }, { da: "Agurk", ar: "خيار", sq: "Kastravec" }], correctAnswerIndex: 1 },
             { difficulty: 'easy', question: { da: "Hvad bruger man til at klippe papir?", ar: "ماذا تستخدم لقص الورق؟", sq: "Çfarë përdor për të prerë letrën?" }, options: [{ da: "Saks", ar: "مقص", sq: "Gërshërë" }, { da: "Ske", ar: "ملعقة", sq: "Lugë" }, { da: "Bold", ar: "كرة", sq: "Top" }, { da: "Bog", ar: "كتاب", sq: "Libër" }], correctAnswerIndex: 0 },
             { difficulty: 'easy', question: { da: "Hvad er det modsatte af 'stor'?", ar: "ما هو عكس كلمة 'كبير'؟", sq: "Cila është e kundërta e 'i madh'?" }, options: [{ da: "Høj", ar: "طويل", sq: "I gjatë" }, { da: "Lille", ar: "صغير", sq: "I vogël" }, { da: "Hurtig", ar: "سريع", sq: "I shpejtë" }, { da: "Varm", ar: "حار", sq: "I nxehtë" }], correctAnswerIndex: 1 },
             { difficulty: 'easy', question: { da: "Hvilken form har et stopskilt?", ar: "ما هو شكل علامة التوقف؟", sq: "Çfarë forme ka një shenjë stopi?" }, options: [{ da: "Cirkel", ar: "دائرة", sq: "Rreth" }, { da: "Firkant", ar: "مربع", sq: "Katror" }, { da: "Trekant", ar: "مثلث", sq: "Trekëndësh" }, { da: "Ottekant", ar: "مثمن", sq: "Tetëkëndësh" }], correctAnswerIndex: 3 },
@@ -281,7 +370,7 @@
             { difficulty: 'hard', question: { da: "Hvilken krig blev udkæmpet mellem Athen og Sparta?", ar: "أي حرب دارت بين أثينا وسبارتا؟", sq: "Cila luftë u zhvillua midis Athinës dhe Spartës?" }, options: [{ da: "De persiske krige", ar: "الحروب الفارسية", sq: "Luftërat Persiane" }, { da: "Den peloponnesiske krig", ar: "الحرب البيلوبونيسية", sq: "Lufta e Peloponezit" }, { da: "De puniske krige", ar: "الحروب البونيقية", sq: "Luftërat Punike" }, { da: "Den trojanske krig", ar: "حرب طروادة", sq: "Lufta e Trojës" }], correctAnswerIndex: 1 },
             { difficulty: 'hard', question: { da: "Hvad er et Fibonacci-tal?", ar: "ما هو رقم فيبوناتشي؟", sq: "Çfarë është një numër Fibonaçi?" }, options: [{ da: "Et primtal", ar: "عدد أولي", sq: "Një numër i thjeshtë" }, { da: "Et tal, der er summen af de to foregående", ar: "رقم هو مجموع الرقمين السابقين", sq: "Një numër që është shuma e dy të mëparshmëve" }, { da: "Et perfekt tal", ar: "عدد مثالي", sq: "Një numër i përsosur" }, { da: "Et irrationelt tal", ar: "عدد غير نسبي", sq: "Një numër irracional" }], correctAnswerIndex: 1 },
             { difficulty: 'hard', question: { da: "Hvilken fredsaftale afsluttede officielt Trediveårskrigen?", ar: "أي معاهدة سلام أنهت حرب الثلاثين عامًا رسميًا؟", sq: "Cili traktat paqeje i dha fund zyrtarisht Luftës Tridhjetëvjeçare?" }, options: [{ da: "Versaillestraktaten", ar: "معاهدة فرساي", sq: "Traktati i Versajës" }, { da: "Den Westfalske Fred", ar: "صلح وستفاليا", sq: "Paqja e Vestfalisë" }, { da: "Wienkongressen", ar: "مؤتمر فيينا", sq: "Kongresi i Vjenës" }, { da: "Utrecht-traktaten", ar: "معاهدة أوترخت", sq: "Traktati i Utrehtit" }], correctAnswerIndex: 1 },
-            { difficulty: 'hard', question: { da: "Hvad beskriver Heisenbergs ubestemthedsprincip fundamentalt?", ar: "ماذا يصف مبدأ عدم اليقين لهايزنبرج بشكل أساسي؟", sq: "Çfarë përshkruan në thelb parimi i papërcaktueshmrisë së Heisenbergut?" }, options: [{ da: "Energi kan ikke skabes", ar: "لا يمكن خلق الطاقة", sq: "Energjia nuk mund të krijohet" }, { da: "En partikels position og impuls kan ikke kendes præcist samtidigt", ar: "لا يمكن معرفة موضع وزخم جسيم في نفس الوقت بدقة", sq: "Pozicioni dhe momenti i një grimce nuk mund të njihen saktësisht njëkohësisht" }, { da: "Lys opfører sig som både en partikel og en bølge", ar: "الضوء يتصرف كجسيم وموجة", sq: "Drita sillet si grimcë dhe si valë" }, { da: "Tiden går langsommere nær massive objekter", ar: "الزمن يتباطأ بالقرب من الأجسام الضخمة", sq: "Koha ngadalësohet pranë objekteve masive" }], correctAnswerIndex: 1 },
+            { difficulty: 'hard', question: { da: "Hvad beskriver Heisenbergs ubestemthedsprincip fundamentalt?", ar: "ماذا يصف مبدأ عدم اليقين لهايزنبرج بشكل أساسي؟", sq: "Çfarë përshkruan në thelb parimi i papërcaktueshmrisë së Heisenbergut?" }, options: [{ da: "Energi kan ikke skabes", ar: "لا يمكن خلق الطاقة", sq: "Energjia nuk mund të krijet" }, { da: "En partikels position og impuls kan ikke kendes præcist samtidigt", ar: "لا يمكن معرفة موضع وزخم جسيم في نفس الوقت بدقة", sq: "Pozicioni dhe momenti i një grimce nuk mund të njihen saktësisht njëkohësisht" }, { da: "Lys opfører sig som både en partikel og en bølge", ar: "الضوء يتصرف كجسيم وموجة", sq: "Drita sillet si grimcë dhe si valë" }, { da: "Tiden går langsommere nær massive objekter", ar: "الزمن يتباطأ بالقرب من الأجسام الضخمة", sq: "Koha ngadalësohet pranë objekteve masive" }], correctAnswerIndex: 1 },
             { difficulty: 'hard', question: { da: "I hvilken roman af Dostojevskij stilles spørgsmålet 'Hvis Gud ikke eksisterer, er alt så tilladt'?", ar: "في أي رواية لدوستويفسكي يُطرح سؤال 'إذا لم يكن الإله موجودًا، فكل شيء مباح'؟", sq: "Në cilin roman të Dostojevskit shtrohet pyetja 'Nëse Zoti nuk ekziston, a lejohet gjithçka'?" }, options: [{ da: "Forbrydelse og straf", ar: "الجريمة والعقاب", sq: "Krim dhe ndëshkim" }, { da: "Idioten", ar: "الأبله", sq: "Idioti" }, { da: "Brødrene Karamazov", ar: "الإخوة كارامازوف", sq: "Vëllezërit Karamazov" }, { da: "Onde ånder", ar: "الشياطين", sq: "Demonët" }], correctAnswerIndex: 2 },
             { difficulty: 'hard', question: { da: "Hvilken kunstbevægelse er maleren Artemisia Gentileschi primært forbundet med?", ar: "بأي حركة فنية ترتبط الرسامة أرتيميسيا جنتلسكي بشكل أساسي؟", sq: "Me cilën lëvizje artistike lidhet kryesisht piktorja Artemisia Gentileschi?" }, options: [{ da: "Renæssancen", ar: "عصر النهضة", sq: "Rilindja" }, { da: "Barokken", ar: "الباروك", sq: "Baroku" }, { da: "Rokoko", ar: "الروكوكو", sq: "Rokoko" }, { da: "Neoklassicismen", ar: "الكلاسيكية الجديدة", sq: "Neoklasicizmi" }], correctAnswerIndex: 1 },
             { difficulty: 'hard', question: { da: "Hvilken filosof er berømt for begrebet 'Übermensch' (Overmennesket)?", ar: "أي فيلسوف مشهور بمفهوم 'الإنسان المتفوق' (Übermensch)؟", sq: "Cili filozof është i famshëm për konceptin 'Übermensch' (Mbinjeriu)?" }, options: [{ da: "Immanuel Kant", ar: "إيمانويل كانط", sq: "Immanuel Kant" }, { da: "Søren Kierkegaard", ar: "سورين كيركغور", sq: "Søren Kierkegaard" }, { da: "Arthur Schopenhauer", ar: "آرثر شوبنهاور", sq: "Arthur Schopenhauer" }, { da: "Friedrich Nietzsche", ar: "فريدريك نيتشه", sq: "Friedrich Nietzsche" }], correctAnswerIndex: 3 },
@@ -297,38 +386,98 @@
             { difficulty: 'hard', question: { da: "Hvad er mitokondriers primære funktion i en eukaryot celle?", ar: "ما هي الوظيفة الأساسية للميتوكوندريا في خلية حقيقية النواة؟", sq: "Cili është funksioni primar i mitokondrive në një qelizë eukariote?" }, options: [{ da: "Proteinsyntese", ar: "تخليق البروتين", sq: "Sinteza e proteinave" }, { da: "Cellulær respiration og ATP-produktion", ar: "التنفس الخلوي وإنتاج ATP", sq: "Frymëmarrja qelizore dhe prodhimi i ATP-së" }, { da: "Lagring af genetisk materiale", ar: "تخزين المادة الوراثية", sq: "Ruajtja e materialit gjenetik" }, { da: "Affaldsbehandling", ar: "معالجة النفايات", sq: "Përpunimi i mbetjeve" }], correctAnswerIndex: 1 },
         ];
 
-
-        let gameQuestions = [], currentQuestionIndex = 0, team1Score = 0, team2Score = 0;
-        let team1Name = "Team 1", team2Name = "Team 2", gameMasterName = "Host";
-        let selectedQuantity = 30, selectedDifficulty = 'medium', selectedTimeLimit = 60, selectedTheme = 'theme-retro-wave';
-        let selectedLanguages = ['da', 'ar', 'sq'], timerInterval, timeLeft = 60;
-        let isPaused = false, answerRevealed = false, selectedAnswerIndex = null;
+        // --- CORE FUNCTIONS ---
+        window.createLangLine = (text, flag, isRtl = false) => `<div class="lang-line ${isRtl ? 'rtl' : ''}"><span class="text-xl">${flag}</span><span class="flex-1 ${isRtl ? 'arabic-text' : ''}">${text}</span></div>`;
+        window.showScreen = (screenId) => { allScreens.forEach(s => s.classList.add('hidden')); document.getElementById(screenId).classList.remove('hidden'); document.getElementById(screenId).classList.add('fade-in'); window.scrollTo(0, 0); };
+        window.setRandomQuote = () => { const quote = quotes[Math.floor(Math.random() * quotes.length)]; document.getElementById('quote-text').textContent = `"${quote.text}"`; document.getElementById('quote-author').textContent = `– ${quote.author}`;};
+        window.selectTheme = (theme, button) => { selectedTheme = theme; document.body.className = theme; document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected');};
+        window.openSettings = () => { document.querySelectorAll('#theme-selector .theme-btn').forEach(btn => btn.classList.toggle('selected', btn.id === selectedTheme)); settingsModalEl.classList.remove('hidden'); };
+        window.closeSettings = () => settingsModalEl.classList.add('hidden');
+        window.updateTimerSelection = (seconds) => { selectedTimeLimit = parseInt(seconds); const mins = Math.floor(selectedTimeLimit / 60); const secs = selectedTimeLimit % 60; document.getElementById('time-limit-display').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;};
+        window.selectQuantity = (quantity, button) => { selectedQuantity = quantity; document.querySelectorAll('#quantity-selector button').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
+        window.selectDifficulty = (difficulty, button) => { selectedDifficulty = difficulty; document.querySelectorAll('#difficulty-selector button').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
+        window.updateLanguageSelection = () => { selectedLanguages = Array.from(document.querySelectorAll('#language-selector input:checked')).map(cb => cb.value); langErrorEl.classList.toggle('hidden', selectedLanguages.length > 0);};
         
+        window.selectNumberOfTeams = (count, button) => {
+            selectedTeamCount = count;
+            document.querySelectorAll('#setup-content .flex.justify-center button').forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+            renderTeamNameInputs();
+        }
 
-        function createLangLine(text, flag, isRtl = false) { return `<div class="lang-line ${isRtl ? 'rtl' : ''}"><span class="text-xl">${flag}</span><span class="flex-1 ${isRtl ? 'arabic-text' : ''}">${text}</span></div>`; }
-        function showScreen(screenId) { allScreens.forEach(s => s.classList.add('hidden')); document.getElementById(screenId).classList.remove('hidden'); document.getElementById(screenId).classList.add('fade-in'); window.scrollTo(0, 0); }
-        function setRandomQuote() { const quote = quotes[Math.floor(Math.random() * quotes.length)]; document.getElementById('quote-text').textContent = `"${quote.text}"`; document.getElementById('quote-author').textContent = `– ${quote.author}`;};
-        function selectTheme(theme, button) { selectedTheme = theme; document.body.className = theme; document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected');};
-        function openSettings() { document.querySelectorAll('#theme-selector .theme-btn').forEach(btn => btn.classList.toggle('selected', btn.id === selectedTheme)); settingsModalEl.classList.remove('hidden'); };
-        function closeSettings() { settingsModalEl.classList.add('hidden'); };
-        function updateTimerSelection(seconds) { selectedTimeLimit = parseInt(seconds); const mins = Math.floor(selectedTimeLimit / 60); const secs = selectedTimeLimit % 60; document.getElementById('time-limit-display').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;};
-        function selectQuantity(quantity, button) { selectedQuantity = quantity; document.querySelectorAll('#quantity-selector .setup-option-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
-        function selectDifficulty(difficulty, button) { selectedDifficulty = difficulty; document.querySelectorAll('#difficulty-selector .setup-option-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
-        function updateLanguageSelection() { selectedLanguages = Array.from(document.querySelectorAll('#language-selector input:checked')).map(cb => cb.value); langErrorEl.classList.toggle('hidden', selectedLanguages.length > 0);};
-        function initGame() {
+        function renderTeamNameInputs() {
+            teamNamesContainer.innerHTML = '';
+            const teamColors = ['text-blue-400', 'text-pink-400', 'text-green-400', 'text-yellow-400'];
+            for (let i = 0; i < selectedTeamCount; i++) {
+                teamNamesContainer.innerHTML += `
+                    <div>
+                        <label for="team${i + 1}-name-input" class="block text-lg font-semibold ${teamColors[i]} mb-2">Team ${i + 1} Name</label>
+                        <input type="text" id="team${i + 1}-name-input" class="setup-input w-full" placeholder="Enter name">
+                    </div>
+                `;
+            }
+        }
+        
+        window.initGame = () => {
             updateLanguageSelection(); if (selectedLanguages.length === 0) return;
-            team1Name = document.getElementById('team1-name-input').value.trim() || "Team 1";
-            team2Name = document.getElementById('team2-name-input').value.trim() || "Team 2";
+            
             gameMasterName = document.getElementById('gamemaster-name-input').value.trim() || "Host";
             gameMasterNameEl.textContent = gameMasterName;
+            
+            teamNames = [];
+            teamScores = [];
+            for(let i = 0; i < selectedTeamCount; i++) {
+                const name = document.getElementById(`team${i+1}-name-input`).value.trim() || `Team ${i+1}`;
+                teamNames.push(name);
+                teamScores.push(0);
+            }
+
             let availableQuestions = (selectedDifficulty === 'mixed') ? fullQuestionLibrary : fullQuestionLibrary.filter(q => q.difficulty === selectedDifficulty);
             const maxQuestions = Math.min(selectedQuantity, availableQuestions.length);
             gameQuestions = availableQuestions.sort(() => 0.5 - Math.random()).slice(0, maxQuestions);
+
+            if (gameQuestions.length === 0) {
+                alert(`No questions found for '${selectedDifficulty}' difficulty. Please choose another difficulty.`);
+                return;
+            }
+            
+            renderScoreboard();
             showScreen('quiz-container');
             startGame();
         };
-        function startGame() { currentQuestionIndex = 0; team1Score = 0; team2Score = 0; updateScoreboard(); document.getElementById('quiz-area').classList.remove('hidden'); gameOverEl.classList.add('hidden'); loadQuestion(); };
-        function loadQuestion() {
+
+        function renderScoreboard() {
+            scoreboardContainer.innerHTML = '';
+            const teamColors = ['text-blue-400', 'text-pink-400', 'text-green-400', 'text-yellow-400'];
+            teamNames.forEach((name, i) => {
+                scoreboardContainer.innerHTML += `
+                    <div class="text-center">
+                        <h2 class="text-lg md:text-xl font-bold ${teamColors[i]}">${name}</h2>
+                        <div class="flex items-center justify-center gap-2">
+                           <button onclick="adjustScore(${i}, -1)" class="control-btn text-lg">-</button>
+                           <p id="team-score-${i}" class="text-3xl md:text-4xl font-bold w-16">${teamScores[i]}</p>
+                           <button onclick="adjustScore(${i}, 1)" class="control-btn text-lg">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        window.adjustScore = (teamIndex, amount) => {
+            teamScores[teamIndex] = Math.max(0, teamScores[teamIndex] + amount); // Ensure score doesn't go below 0
+            document.getElementById(`team-score-${teamIndex}`).textContent = teamScores[teamIndex];
+        }
+
+        window.startGame = () => { 
+            currentQuestionIndex = 0; 
+            teamScores.fill(0);
+            renderScoreboard();
+            document.getElementById('quiz-area').classList.remove('hidden'); 
+            gameOverEl.classList.add('hidden'); 
+            loadQuestion(); 
+        };
+        
+        window.loadQuestion = () => {
             resetStateForNewQuestion(); if (currentQuestionIndex >= gameQuestions.length) { endGame(); return; }
             const question = gameQuestions[currentQuestionIndex];
             questionCounterEl.textContent = `Q ${currentQuestionIndex + 1} / ${gameQuestions.length}`;
@@ -345,40 +494,80 @@
             });
             startTimer();
         };
-        function selectAnswer(index, button) { if (answerRevealed || isPaused) return; const allButtons = answerOptionsEl.querySelectorAll('.answer-btn'); allButtons.forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); selectedAnswerIndex = index; revealAnswerBtn.classList.remove('hidden'); };
-        function revealAnswer() {
+
+        window.selectAnswer = (index, button) => { if (answerRevealed || isPaused) return; const allButtons = answerOptionsEl.querySelectorAll('.answer-btn'); allButtons.forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); selectedAnswerIndex = index; revealAnswerBtn.classList.remove('hidden'); };
+        
+        window.revealAnswer = () => {
             clearInterval(timerInterval); answerRevealed = true; isPaused = true; pauseResumeBtn.innerHTML = playIcon; revealAnswerBtn.classList.add('hidden');
             const question = gameQuestions[currentQuestionIndex]; const allButtons = answerOptionsEl.querySelectorAll('.answer-btn');
             allButtons.forEach((btn, index) => { btn.disabled = true; btn.classList.remove('hover:brightness-110'); if (index === question.correctAnswerIndex) btn.classList.add('correct'); else if (index === selectedAnswerIndex) btn.classList.add('wrong'); });
             const correctOption = question.options[question.correctAnswerIndex]; let correctHTML = ''; const langMap = { da: '🇩🇰', ar: '🇸🇦', sq: '🇦🇱' };
             selectedLanguages.forEach(lang => { if (correctOption[lang]) correctHTML += createLangLine(correctOption[lang], langMap[lang], lang === 'ar'); });
             correctAnswerTextEl.innerHTML = `<p>Correct Answer:</p><div class="inline-block text-left text-sm space-y-1 bg-green-900/20 p-2 rounded-lg">${correctHTML}</div>`;
+            
+            renderAwardButtons();
             postAnswerControlsEl.classList.remove('hidden'); postAnswerControlsEl.classList.add('fade-in');
         };
-        function awardPoint(team) { if (team === 1) team1Score++; else team2Score++; updateScoreboard(); postAnswerControlsEl.querySelectorAll('button:not(#next-question-btn)').forEach(btn => btn.disabled = true); };
-        function updateScoreboard() { team1NameEl.textContent = team1Name; team2NameEl.textContent = team2Name; team1ScoreEl.textContent = team1Score; team2ScoreEl.textContent = team2Score; };
-        function nextQuestion() { currentQuestionIndex++; loadQuestion(); };
-        function resetStateForNewQuestion() { clearInterval(timerInterval); answerRevealed = false; isPaused = false; selectedAnswerIndex = null; postAnswerControlsEl.classList.add('hidden'); revealAnswerBtn.classList.add('hidden'); pauseResumeBtn.innerHTML = pauseIcon; postAnswerControlsEl.querySelectorAll('button').forEach(btn => btn.disabled = false); };
-        function resetCurrentQuestionState() { if (answerRevealed) return; selectedAnswerIndex = null; revealAnswerBtn.classList.add('hidden'); answerOptionsEl.querySelectorAll('.answer-btn').forEach(btn => btn.classList.remove('selected')); startTimer(); };
-        function startTimer() { clearInterval(timerInterval); timeLeft = selectedTimeLimit; isPaused = false; pauseResumeBtn.innerHTML = pauseIcon; updateTimerDisplay(); startTimerInterval(); };
-        function startTimerInterval() { clearInterval(timerInterval); timerInterval = setInterval(() => { if (timeLeft <= 0) { revealAnswer(); return; } timeLeft--; updateTimerDisplay(); }, 1000); };
-        function togglePauseResume() { if(answerRevealed) return; isPaused = !isPaused; if (isPaused) { clearInterval(timerInterval); pauseResumeBtn.innerHTML = playIcon; } else { startTimerInterval(); pauseResumeBtn.innerHTML = pauseIcon; }};
-        function updateTimerDisplay() { const mins = Math.floor(timeLeft / 60); const secs = timeLeft % 60; timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`; const progress = timeLeft / selectedTimeLimit; timerProgressCircle.style.strokeDashoffset = 283 * (1 - progress); };
-        function endGame() {
-            document.getElementById('quiz-area').classList.add('hidden'); gameOverEl.classList.remove('hidden'); gameOverEl.classList.add('fade-in');
-            document.getElementById('final-score1').textContent = team1Score; document.getElementById('final-score2').textContent = team2Score;
-            finalTeam1NameEl.textContent = `${team1Name}:`; finalTeam2NameEl.textContent = `${team2Name}:`;
-            const winnerMessageEl = document.getElementById('winner-message'); winnerMessageEl.className = 'text-3xl font-bold mb-4';
-            if (team1Score > team2Score) { winnerMessageEl.textContent = `${team1Name} Wins! 🎉`; winnerMessageEl.classList.add('text-blue-400'); } 
-            else if (team2Score > team1Score) { winnerMessageEl.textContent = `${team2Name} Wins! 🥳`; winnerMessageEl.classList.add('text-pink-400'); } 
-            else { winnerMessageEl.textContent = "It's a Tie! 🤝"; }
+
+        function renderAwardButtons() {
+            awardPointsContainer.innerHTML = '';
+             const teamColors = ['bg-blue-600 hover:bg-blue-700', 'bg-pink-600 hover:bg-pink-700', 'bg-green-600 hover:bg-green-700', 'bg-yellow-600 hover:bg-yellow-700'];
+            teamNames.forEach((name, i) => {
+                awardPointsContainer.innerHTML += `<button onclick="awardPoint(${i})" class="${teamColors[i]} text-white font-bold py-2 px-4 rounded-lg text-sm">${name}</button>`;
+            });
+        }
+
+        window.awardPoint = (teamIndex) => { 
+            adjustScore(teamIndex, 1);
+            awardPointsContainer.querySelectorAll('button').forEach(btn => btn.disabled = true);
         };
-        function goToHome() { clearInterval(timerInterval); setRandomQuote(); showScreen('home-screen'); };
+        
+        window.nextQuestion = () => { currentQuestionIndex++; loadQuestion(); };
+        window.resetStateForNewQuestion = () => { clearInterval(timerInterval); answerRevealed = false; isPaused = false; selectedAnswerIndex = null; postAnswerControlsEl.classList.add('hidden'); revealAnswerBtn.classList.add('hidden'); pauseResumeBtn.innerHTML = pauseIcon; };
+        window.resetCurrentQuestionState = () => { if (answerRevealed) return; selectedAnswerIndex = null; revealAnswerBtn.classList.add('hidden'); answerOptionsEl.querySelectorAll('.answer-btn').forEach(btn => btn.classList.remove('selected')); startTimer(); };
+        window.startTimer = () => { clearInterval(timerInterval); timeLeft = selectedTimeLimit; isPaused = false; pauseResumeBtn.innerHTML = pauseIcon; updateTimerDisplay(); startTimerInterval(); };
+        window.startTimerInterval = () => { clearInterval(timerInterval); timerInterval = setInterval(() => { if (timeLeft <= 0) { revealAnswer(); return; } timeLeft--; updateTimerDisplay(); }, 1000); };
+        window.togglePauseResume = () => { if(answerRevealed) return; isPaused = !isPaused; if (isPaused) { clearInterval(timerInterval); pauseResumeBtn.innerHTML = playIcon; } else { startTimerInterval(); pauseResumeBtn.innerHTML = pauseIcon; }};
+        window.updateTimerDisplay = () => { const mins = Math.floor(timeLeft / 60); const secs = timeLeft % 60; timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`; const progress = timeLeft / selectedTimeLimit; timerProgressCircle.style.strokeDashoffset = 283 * (1 - progress); };
+        
+        window.endGame = () => {
+            document.getElementById('quiz-area').classList.add('hidden'); gameOverEl.classList.remove('hidden'); gameOverEl.classList.add('fade-in');
+            
+            finalScoresContainer.innerHTML = '';
+            const teamColors = ['text-blue-400', 'text-pink-400', 'text-green-400', 'text-yellow-400'];
+            let highScore = -1;
+            let winners = [];
+
+            teamScores.forEach((score, i) => {
+                finalScoresContainer.innerHTML += `<p><span class="font-bold ${teamColors[i]}">${teamNames[i]}:</span> <span>${score}</span></p>`;
+                if (score > highScore) {
+                    highScore = score;
+                    winners = [teamNames[i]];
+                } else if (score === highScore) {
+                    winners.push(teamNames[i]);
+                }
+            });
+
+            const winnerMessageEl = document.getElementById('winner-message');
+            winnerMessageEl.className = 'text-3xl font-bold mb-4';
+            if (winners.length > 1 && highScore > 0) {
+                winnerMessageEl.textContent = `It's a Tie! 🤝`;
+            } else if (winners.length === 1) {
+                winnerMessageEl.textContent = `${winners[0]} Wins! 🎉`;
+                const winnerIndex = teamNames.indexOf(winners[0]);
+                winnerMessageEl.classList.add(teamColors[winnerIndex]);
+            } else {
+                 winnerMessageEl.textContent = "Game Over!";
+            }
+        };
+        window.goToHome = () => { clearInterval(timerInterval); setRandomQuote(); showScreen('home-screen'); };
 
         window.onload = () => {
             selectTheme(selectedTheme, document.getElementById(selectedTheme));
+            selectNumberOfTeams(2, document.querySelector('#setup-content .flex.justify-center button'));
             goToHome();
         };
     </script>
 </body>
 </html>
+
