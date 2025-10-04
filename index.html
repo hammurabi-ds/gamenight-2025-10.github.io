@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Quiz Night Deluxe</title>
+    <title>Family Quiz Night (Standalone)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,26 +45,14 @@
             --accent-color: #22c55e; --header-gradient-from: #4ade80; --header-gradient-to: #34d399;
         }
         body.theme-classic-light {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f1f5f9; /* slate-100 */
-            --bg-tertiary: #e2e8f0; /* slate-200 */
-            --text-primary: #0f172a; /* slate-900 */
-            --text-secondary: #475569; /* slate-600 */
-            --border-color: #cbd5e1; /* slate-300 */
-            --accent-color: #1e293b; /* slate-800 */
-            --header-gradient-from: #334155; /* slate-700 */
-            --header-gradient-to: #0f172a; /* slate-900 */
+            --bg-primary: #ffffff; --bg-secondary: #f1f5f9; --text-primary: #0f172a;
+            --bg-tertiary: #e2e8f0; --text-secondary: #475569; --border-color: #cbd5e1;
+            --accent-color: #1e293b; --header-gradient-from: #334155; --header-gradient-to: #0f172a;
         }
         body.theme-velvet-light {
-            --bg-primary: #fffbff;
-            --bg-secondary: #f8fafc; /* slate-50 */
-            --bg-tertiary: #f1f5f9; /* slate-100 */
-            --text-primary: #1e293b; /* slate-800 */
-            --text-secondary: #64748b; /* slate-500 */
-            --border-color: #e2e8f0; /* slate-200 */
-            --accent-color: #9f1239; /* rose-800 */
-            --header-gradient-from: #be123c; /* rose-700 */
-            --header-gradient-to: #881337; /* rose-900 */
+            --bg-primary: #fffbff; --bg-secondary: #f8fafc; --text-primary: #1e293b;
+            --bg-tertiary: #f1f5f9; --text-secondary: #64748b; --border-color: #e2e8f0;
+            --accent-color: #9f1239; --header-gradient-from: #be123c; --header-gradient-to: #881337;
         }
 
         body { font-family: 'Inter', sans-serif; touch-action: manipulation; background-color: var(--bg-primary); color: var(--text-primary); transition: background-color 0.3s, color 0.3s; }
@@ -81,10 +69,10 @@
         .answer-btn.wrong { background-color: #ef4444 !important; border-color: #dc2626 !important; color: white; }
         .lang-line { display: flex; align-items: center; gap: 0.5rem; width: 100%; }
         .lang-line.rtl { flex-direction: row-reverse; } .lang-line.rtl span { text-align: right; }
-        .control-btn, .header-icon-btn { background-color: rgba(255, 255, 255, 0.1); border-radius: 9999px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s; color: var(--text-primary); }
+        .control-btn, .header-icon-btn { background-color: rgba(255, 255, 255, 0.1); border-radius: 9999px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s; color: var(--text-primary); border: none; cursor: pointer; }
         .control-btn:hover, .header-icon-btn:hover { background-color: rgba(255, 255, 255, 0.2); }
-        .setup-input, .q-factory-input { background-color: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 0.5rem; padding: 0.75rem 1rem; color: var(--text-primary); font-weight: 600; transition: border-color 0.2s; width: 100%; }
-        .setup-input:focus, .q-factory-input:focus { outline: none; border-color: var(--accent-color); }
+        .setup-input { background-color: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 0.5rem; padding: 0.75rem 1rem; color: var(--text-primary); font-weight: 600; transition: border-color 0.2s; width: 100%; }
+        .setup-input:focus { outline: none; border-color: var(--accent-color); }
         .setup-option-btn { background-color: var(--bg-tertiary); border: 2px solid transparent; color: var(--text-primary); }
         .setup-option-btn.selected { background-color: var(--accent-color); border-color: var(--accent-color); color: white; }
         .theme-btn { width: 40px; height: 40px; border-radius: 9999px; border: 3px solid var(--bg-tertiary); transition: all 0.2s ease-in-out; cursor: pointer; }
@@ -98,10 +86,6 @@
         .lang-checkbox-label { display: flex; align-items: center; cursor: pointer; padding: 0.5rem 1rem; border-radius: 0.5rem; background-color: var(--bg-tertiary); border: 2px solid var(--border-color); transition: all 0.2s; }
         .lang-checkbox-label:hover { border-color: var(--accent-color); } .lang-checkbox { display: none; }
         .lang-checkbox:checked + .lang-checkbox-label { background-color: var(--accent-color); border-color: var(--accent-color); color: white; }
-        .loader { width: 48px; height: 48px; border: 5px solid var(--text-primary); border-bottom-color: transparent; border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; }
-        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .progress-bar-container { width: 100%; background-color: var(--bg-primary); border-radius: 0.5rem; overflow: hidden; height: 1.5rem; border: 2px solid var(--border-color); }
-        .progress-bar-fill { width: 0%; height: 100%; background-color: var(--accent-color); border-radius: 0.25rem; transition: width 0.3s ease-out; text-align: center; line-height: 1.5rem; font-weight: bold; color: white; }
     </style>
 </head>
 <body class="theme-retro-wave">
@@ -115,12 +99,8 @@
                 <h1 class="text-xl font-bold text-main-primary hidden sm:block">Family Quiz Night</h1>
             </div>
             <div class="flex items-center gap-3">
-                <span id="user-display" class="text-sm text-main-secondary hidden md:block"></span>
                 <button onclick="goToHome()" class="header-icon-btn" title="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/></svg>
-                </button>
-                <button onclick="showScreen('leaderboard-screen')" class="header-icon-btn" title="Leaderboard">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.173v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935"/></svg>
                 </button>
                 <button onclick="openSettings()" class="header-icon-btn" title="Settings">
                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311a1.464 1.464 0 0 1-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858"/></svg>
@@ -131,10 +111,6 @@
 
     <main class="p-4">
         <!-- Home Screen -->
-        <div id="app-error" class="hidden w-full max-w-3xl mx-auto text-center p-8 bg-red-900/50 rounded-2xl">
-            <h2 class="text-2xl font-bold text-red-300">Application Configuration Error</h2>
-            <p id="app-error-message" class="text-red-200 mt-2"></p>
-        </div>
         <div id="home-screen" class="w-full max-w-3xl mx-auto text-center fade-in md:py-12">
             <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">Welcome!</h1>
             <div class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
@@ -146,7 +122,7 @@
                     Create New Game
                 </button>
             </div>
-             <div class="bg-main-secondary p-4 md:p-6 rounded-2xl shadow-2xl mt-8 text-left">
+            <div class="bg-main-secondary p-4 md:p-6 rounded-2xl shadow-2xl mt-8 text-left">
                 <h3 class="text-2xl font-bold accent-text mb-4 text-center">💡 Team Creation Ideas</h3>
                 <ul class="space-y-3 text-main-secondary list-disc list-inside">
                     <li><strong class="text-main-primary">Generations Clash:</strong> Team "Boomers" vs. Team "Zoomers".</li>
@@ -161,7 +137,6 @@
         <!-- Setup Screen -->
         <div id="setup-screen" class="hidden w-full max-w-3xl mx-auto text-center fade-in md:py-12">
             <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">Game Setup</h1>
-            <div id="setup-loader" class="hidden text-center p-8"><span class="loader"></span><p class="mt-4 text-main-secondary">Fetching question database...</p></div>
             <div id="setup-content" class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-6">
@@ -177,16 +152,6 @@
                 </div>
                 <div class="mt-8 border-t-2 border-main pt-6"><label class="block text-lg font-semibold text-main-secondary mb-3">Languages</label><div id="language-selector" class="flex justify-center gap-4 flex-wrap"><input type="checkbox" id="lang-da" value="da" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-da" class="lang-checkbox-label">🇩🇰 Danish</label><input type="checkbox" id="lang-ar" value="ar" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-ar" class="lang-checkbox-label">🇸🇦 Arabic</label><input type="checkbox" id="lang-sq" value="sq" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-sq" class="lang-checkbox-label">🇦🇱 Albanian</label></div><p id="lang-error" class="text-red-400 text-sm mt-2 hidden">Please select at least one language.</p></div>
                 <button onclick="initGame()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105 mt-8">Start Game</button>
-                <p id="no-questions-error" class="text-red-400 text-sm mt-2 h-5"></p>
-            </div>
-        </div>
-
-        <!-- Leaderboard Screen -->
-        <div id="leaderboard-screen" class="hidden w-full max-w-3xl mx-auto text-center fade-in md:py-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">🏆 Leaderboard 🏆</h1>
-            <div class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
-                <div id="leaderboard-content" class="space-y-3"></div>
-                <div id="leaderboard-loader" class="text-center p-8"><span class="loader"></span></div>
             </div>
         </div>
 
@@ -205,61 +170,40 @@
             <button onclick="closeSettings()" class="absolute top-3 right-3 control-btn z-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
             <h2 class="text-3xl font-bold text-center mb-6 accent-text">Settings</h2>
             <div class="space-y-6 overflow-y-auto flex-grow pr-2">
-                <!-- User Profile -->
-                <div class="border-b-2 border-main pb-6"><h3 class="text-xl font-bold mb-4 text-main-secondary">User Profile</h3><div><label for="user-name-input" class="block text-sm font-semibold text-main-secondary mb-1">Your Name</label><input type="text" id="user-name-input" class="setup-input" placeholder="Enter your name..."></div></div>
                 <!-- Theme Selector -->
                 <div class="border-b-2 border-main pb-6"><label class="block text-lg font-semibold text-main-secondary mb-3 text-center">Party Theme</label><div id="theme-selector" class="flex justify-center gap-4 flex-wrap"><button id="theme-retro-wave" onclick="selectTheme('theme-retro-wave', this)" class="theme-btn"></button><button id="theme-jungle-vibe" onclick="selectTheme('theme-jungle-vibe', this)" class="theme-btn"></button><button id="theme-ocean-deep" onclick="selectTheme('theme-ocean-deep', this)" class="theme-btn"></button><button id="theme-cosmic-flare" onclick="selectTheme('theme-cosmic-flare', this)" class="theme-btn"></button><button id="theme-sunset-glow" onclick="selectTheme('theme-sunset-glow', this)" class="theme-btn"></button><button id="theme-minty-fresh" onclick="selectTheme('theme-minty-fresh', this)" class="theme-btn"></button><button id="theme-classic-light" onclick="selectTheme('theme-classic-light', this)" class="theme-btn"></button><button id="theme-velvet-light" onclick="selectTheme('theme-velvet-light', this)" class="theme-btn"></button></div></div>
-                <!-- Question Factory -->
-                <div>
-                     <h3 class="text-xl font-bold mb-4 text-main-secondary">Question Factory 🏭</h3>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- JSON Upload -->
-                        <div class="bg-main-tertiary p-4 rounded-lg">
-                             <h4 class="font-bold text-lg mb-2">Upload Questions</h4>
-                             <p class="text-sm text-main-secondary mb-3">Upload a `.json` file to add more questions. Duplicates will be ignored.</p>
-                             <input type="file" id="json-upload" class="text-sm text-main-secondary file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100" accept=".json">
-                             <p id="upload-msg" class="text-sm text-green-400 mt-2 h-4"></p>
-                             <a id="json-template-link" href="#" class="text-sm accent-text hover:underline mt-2 inline-block">Download Template</a>
-                        </div>
-                        <!-- DB Seeder -->
-                        <div class="bg-main-tertiary p-4 rounded-lg">
-                             <h4 class="font-bold text-lg mb-2">Prepare Questions</h4>
-                             <p class="text-sm text-main-secondary mb-3">Get started by adding 99 default questions to the database.</p>
-                             <button id="seed-db-btn" onclick="seedDatabase()" class="w-full bg-main-secondary hover:brightness-125 text-white font-bold py-2 px-4 rounded-lg">Add Default Questions</button>
-                             <div id="seed-progress-container" class="hidden mt-2">
-                                <div class="progress-bar-container">
-                                    <div id="seed-progress-bar" class="progress-bar-fill"></div>
-                                </div>
-                                <p id="seed-db-msg" class="text-sm text-center mt-1 h-4"></p>
-                             </div>
-                        </div>
-                     </div>
-                </div>
             </div>
-             <div class="mt-6 pt-4 border-t-2 border-main">
-                <button id="user-save-btn" onclick="saveUserName()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-5 rounded-lg">Save Profile</button>
-             </div>
         </div>
     </div>
 
-    <script type="module">
-        // Import Firebase modules
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, getDocs, doc, getDoc, setDoc, addDoc, query, where, limit, orderBy, onSnapshot, writeBatch } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    <script>
+        const allScreens = document.querySelectorAll('#home-screen, #setup-screen, #quiz-container');
+        const settingsModalEl = document.getElementById('settings-modal');
+        const questionCounterEl = document.getElementById('question-counter');
+        const questionTextEl = document.getElementById('question-text');
+        const answerOptionsEl = document.getElementById('answer-options');
+        const team1ScoreEl = document.getElementById('team1-score');
+        const team2ScoreEl = document.getElementById('team2-score');
+        const team1NameEl = document.getElementById('team1-name');
+        const team2NameEl = document.getElementById('team2-name');
+        const finalTeam1NameEl = document.getElementById('final-team1-name');
+        const finalTeam2NameEl = document.getElementById('final-team2-name');
+        const gameMasterNameEl = document.getElementById('game-master-name');
+        const timerEl = document.getElementById('timer');
+        const timerProgressCircle = document.getElementById('timer-progress-circle');
+        const postAnswerControlsEl = document.getElementById('post-answer-controls');
+        const revealAnswerBtn = document.getElementById('reveal-answer-btn');
+        const correctAnswerTextEl = document.getElementById('correct-answer-text');
+        const pauseResumeBtn = document.getElementById('pause-resume-btn');
+        const gameOverEl = document.getElementById('game-over');
+        const langErrorEl = document.getElementById('lang-error');
+        const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/></svg>`;
+        const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>`;
 
-        // --- FIREBASE SETUP ---
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'family-quiz-night-app';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "AIza...", authDomain: "...", projectId: "..." };
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : undefined;
-
-        let db, auth, userId, userName = 'Guest';
-        let fullQuestionLibrary = [];
-        
-        // --- DATA ---
         const quotes = [{ text: "The only true wisdom is in knowing you know nothing.", author: "Socrates" }, { text: "An investment in knowledge pays the best interest.", author: "Benjamin Franklin" }];
-        const seedQuestions = [
-            // 33 Easy
+        
+        const fullQuestionLibrary = [
+             // 33 Easy Questions
             { difficulty: 'easy', question: { da: "Hvilket dyr siger 'muh'?", ar: "أي حيوان يقول 'مو'؟", sq: "Cila kafshë bën 'mu'?" }, options: [{ da: "Hund", ar: "كلب", sq: "Qeni" }, { da: "Ko", ar: "بقرة", sq: "Lopa" }, { da: "Kat", ar: "قطة", sq: "Macja" }, { da: "Fugl", ar: "طائر", sq: "Zogu" }], correctAnswerIndex: 1 },
             { difficulty: 'easy', question: { da: "Hvad er farven på himlen på en klar dag?", ar: "ما هو لون السماء في يوم صافٍ؟", sq: "Çfarë ngjyre ka qielli në një ditë të kthjellët?" }, options: [{ da: "Grøn", ar: "أخضر", sq: "E gjelbër" }, { da: "Rød", ar: "أحمر", sq: "E kuqe" }, { da: "Blå", ar: "أزرق", sq: "Blu" }, { da: "Gul", ar: "أصفر", sq: "E verdhë" }], correctAnswerIndex: 2 },
             { difficulty: 'easy', question: { da: "Hvor mange dage er der i en uge?", ar: "كم عدد أيام الأسبوع؟", sq: "Sa ditë ka një javë?" }, options: [{ da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }, { da: "7", ar: "٧", sq: "7" }, { da: "8", ar: "٨", sq: "8" }], correctAnswerIndex: 2 },
@@ -274,11 +218,6 @@
             { difficulty: 'easy', question: { da: "Hvilken årstid kommer efter sommer?", ar: "أي فصل يأتي بعد الصيف؟", sq: "Cila stinë vjen pas verës?" }, options: [{ da: "Vinter", ar: "الشتاء", sq: "Dimri" }, { da: "Forår", ar: "الربيع", sq: "Pranvera" }, { da: "Efterår", ar: "الخريف", sq: "Vjeshta" }, { da: "Ingen", ar: "لا شيء", sq: "Asnjë" }], correctAnswerIndex: 2 },
             { difficulty: 'easy', question: { da: "Hvad er 2 + 2?", ar: "كم يساوي 2 + 2؟", sq: "Sa bëjnë 2 + 2?" }, options: [{ da: "3", ar: "٣", sq: "3" }, { da: "4", ar: "٤", sq: "4" }, { da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }], correctAnswerIndex: 1 },
             { difficulty: 'easy', question: { da: "Hvilket transportmiddel flyver i luften?", ar: "أي وسيلة نقل تطير في الهواء؟", sq: "Cili mjet transporti fluturon në ajër?" }, options: [{ da: "Bil", ar: "سيارة", sq: "Makinë" }, { da: "Båd", ar: "قارب", sq: "Varkë" }, { da: "Flyvemaskine", ar: "طائرة", sq: "Aeroplan" }, { da: "Cykel", ar: "دراجة", sq: "Biçikletë" }], correctAnswerIndex: 2 },
-             { difficulty: 'easy', question: { da: "Hvilken farve har en banan?", ar: "ما هو لون الموز؟", sq: "Çfarë ngjyre ka një banane?" }, options: [{ da: "Rød", ar: "أحمر", sq: "E kuqe" }, { da: "Gul", ar: "أصفر", sq: "E verdhë" }, { da: "Blå", ar: "أزرق", sq: "Blu" }, { da: "Grøn", ar: "أخضر", sq: "E gjelbër" }], correctAnswerIndex: 1 },
-            { difficulty: 'easy', question: { da: "Hvor mange ben har en edderkop?", ar: "كم عدد أرجل العنكبوت؟", sq: "Sa këmbë ka një merimangë?" }, options: [{ da: "6", ar: "٦", sq: "6" }, { da: "8", ar: "٨", sq: "8" }, { da: "10", ar: "١٠", sq: "10" }, { da: "4", ar: "٤", sq: "4" }], correctAnswerIndex: 1 },
-            { difficulty: 'easy', question: { da: "Hvad er hovedstaden i Frankrig?", ar: "ما هي عاصمة فرنسا؟", sq: "Cili është kryeqyteti i Francës?" }, options: [{ da: "London", ar: "لندن", sq: "Londra" }, { da: "Berlin", ar: "برلين", sq: "Berlini" }, { da: "Paris", ar: "باريس", sq: "Parisi" }, { da: "Rom", ar: "روما", sq: "Roma" }], correctAnswerIndex: 2 },
-            { difficulty: 'easy', question: { da: "Hvilken planet er kendt som 'Den Røde Planet'?", ar: "أي كوكب يُعرف بـ 'الكوكب الأحمر'؟", sq: "Cili planet njihet si 'Planeti i Kuq'?" }, options: [{ da: "Jorden", ar: "الأرض", sq: "Toka" }, { da: "Mars", ar: "المريخ", sq: "Marsi" }, { da: "Jupiter", ar: "المشتري", sq: "Jupiteri" }, { da: "Venus", ar: "الزهرة", sq: "Venusi" }], correctAnswerIndex: 1 },
-            { difficulty: 'easy', question: { da: "Hvad laver bier?", ar: "ماذا تصنع النحل؟", sq: "Çfarë bëjnë bletët?" }, options: [{ da: "Mælk", ar: "حليب", sq: "Qumësht" }, { da: "Silke", ar: "حرير", sq: "Mëndafsh" }, { da: "Honning", ar: "عسل", sq: "Mjaltë" }, { da: "Brød", ar: "خبز", sq: "Bukë" }], correctAnswerIndex: 2 },
             { difficulty: 'easy', question: { da: "Hvad er det modsatte af kold?", ar: "ما هو عكس كلمة بارد؟", sq: "Cila është e kundërta e ftohtë?" }, options: [{ da: "Varm", ar: "حار", sq: "Nxehtë" }, { da: "Våd", ar: "مبلل", sq: "Lagur" }, { da: "Mørk", ar: "مظلم", sq: "Errët" }, { da: "Stor", ar: "كبير", sq: "Madh" }], correctAnswerIndex: 0 },
             { difficulty: 'easy', question: { da: "Hvilket dyr har en lang snabel?", ar: "أي حيوان له خرطوم طويل؟", sq: "Cila kafshë ka një feçkë të gjatë?" }, options: [{ da: "Løve", ar: "أسد", sq: "Luan" }, { da: "Tiger", ar: "نمر", sq: "Tigër" }, { da: "Elefant", ar: "فيل", sq: "Elefant" }, { da: "Giraf", ar: "زرافة", sq: "Gjirafë" }], correctAnswerIndex: 2 },
             { difficulty: 'easy', question: { da: "Hvad hedder snemanden i 'Frost'?", ar: "ما هو اسم رجل الثلج في فيلم 'فروزن'؟", sq: "Si quhet njeriu prej bore në 'Frozen'?" }, options: [{ da: "Sven", ar: "سفين", sq: "Sven" }, { da: "Hans", ar: "هانز", sq: "Hans" }, { da: "Kristoffer", ar: "كريستوف", sq: "Kristoff" }, { da: "Olaf", ar: "أولاف", sq: "Olaf" }], correctAnswerIndex: 3 },
@@ -289,6 +228,14 @@
             { difficulty: 'easy', question: { da: "Hvor mange fingre har du på en hånd?", ar: "كم عدد أصابع يدك الواحدة؟", sq: "Sa gishta ke në një dorë?" }, options: [{ da: "4", ar: "٤", sq: "4" }, { da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }, { da: "10", ar: "١٠", sq: "10" }], correctAnswerIndex: 1 },
             { difficulty: 'easy', question: { da: "Hvad bruger vi til at se med?", ar: "بماذا نرى؟", sq: "Çfarë përdorim për të parë?" }, options: [{ da: "Ører", ar: "آذان", sq: "Veshët" }, { da: "Næse", ar: "أنف", sq: "Hunda" }, { da: "Øjne", ar: "عيون", sq: "Sytë" }, { da: "Mund", ar: "فم", sq: "Goja" }], correctAnswerIndex: 2 },
             { difficulty: 'easy', question: { da: "Hvilket dyr jager mus?", ar: "أي حيوان يصطاد الفئران؟", sq: "Cila kafshë gjuan minj?" }, options: [{ da: "Hund", ar: "كلب", sq: "Qen" }, { da: "Kat", ar: "قطة", sq: "Mace" }, { da: "Hest", ar: "حصان", sq: "Kalë" }, { da: "Ko", ar: "بقرة", sq: "Lopë" }], correctAnswerIndex: 1 },
+            { difficulty: 'easy', question: { da: "Hvilket kontinent er Egypten i?", ar: "في أي قارة تقع مصر؟", sq: "Në cilin kontinent ndodhet Egjipti?" }, options: [{ da: "Asien", ar: "آسيا", sq: "Azi" }, { da: "Europa", ar: "أوروبا", sq: "Evropë" }, { da: "Afrika", ar: "أفريقيا", sq: "Afrikë" }, { da: "Australien", ar: "أستراليا", sq: "Australi" }], correctAnswerIndex: 2 },
+            { difficulty: 'easy', question: { da: "Hvad kalder man en person, der bager brød?", ar: "ماذا تسمي الشخص الذي يخبز الخبز؟", sq: "Si e quan dikë që pjek bukë?" }, options: [{ da: "Læge", ar: "طبيب", sq: "Mjek" }, { da: "Bager", ar: "خباز", sq: "Bukëpjekës" }, { da: "Lærer", ar: "معلم", sq: "Mësues" }, { da: "Pilot", ar: "طيار", sq: "Pilot" }], correctAnswerIndex: 1 },
+            { difficulty: 'easy', question: { da: "Hvilken lyd laver en gris?", ar: "ما هو الصوت الذي يصدره الخنزير؟", sq: "Çfarë tingulli bën një derr?" }, options: [{ da: "Vov", ar: "نباح", sq: "Ham" }, { da: "Mjav", ar: "مواء", sq: "Mjau" }, { da: "Kykkeliky", ar: "صياح", sq: "Kikiriki" }, { da: "Øf", ar: "صهيل", sq: "Hung" }], correctAnswerIndex: 3 },
+            { difficulty: 'easy', question: { da: "Hvad er det modsatte af 'dag'?", ar: "ما هو عكس كلمة 'يوم'؟", sq: "Cila është e kundërta e 'ditë'?" }, options: [{ da: "Uge", ar: "أسبوع", sq: "Javë" }, { da: "Måned", ar: "شهر", sq: "Muaj" }, { da: "År", ar: "سنة", sq: "Vit" }, { da: "Nat", ar: "ليل", sq: "Natë" }], correctAnswerIndex: 3 },
+            { difficulty: 'easy', question: { da: "Hvilken frugt er gul og lang?", ar: "أي فاكهة صفراء وطويلة؟", sq: "Cila frutë është e verdhë dhe e gjatë?" }, options: [{ da: "Æble", ar: "تفاحة", sq: "Mollë" }, { da: "Banan", ar: "موز", sq: "Banane" }, { da: "Drue", ar: "عنب", sq: "Rrush" }, { da: "Jordbær", ar: "فراولة", sq: "Luleshtrydhe" }], correctAnswerIndex: 1 },
+            { difficulty: 'easy', question: { da: "Hvor mange farver er der i en regnbue?", ar: "كم عدد ألوان قوس قزح؟", sq: "Sa ngjyra ka një ylber?" }, options: [{ da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }, { da: "7", ar: "٧", sq: "7" }, { da: "8", ar: "٨", sq: "8" }], correctAnswerIndex: 2 },
+            { difficulty: 'easy', question: { da: "Hvilket dyr er 'junglens konge'?", ar: "أي حيوان هو 'ملك الغابة'؟", sq: "Cila kafshë është 'mbreti i xhunglës'?" }, options: [{ da: "Tiger", ar: "نمر", sq: "Tigër" }, { da: "Elefant", ar: "فيل", sq: "Elefant" }, { da: "Løve", ar: "أسد", sq: "Luan" }, { da: "Bjørn", ar: "دب", sq: "Ari" }], correctAnswerIndex: 2 },
+            { difficulty: 'easy', question: { da: "Hvad er 10 minus 5?", ar: "كم يساوي 10 ناقص 5؟", sq: "Sa bëjnë 10 minus 5?" }, options: [{ da: "3", ar: "٣", sq: "3" }, { da: "4", ar: "٤", sq: "4" }, { da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }], correctAnswerIndex: 2 },
 
             // 33 Medium
             { difficulty: 'medium', question: { da: "Hvilken gas trækker planter ind fra luften?", ar: "أي غاز تستنشقه النباتات من الهواء؟", sq: "Cilin gaz thithin bimët nga ajri?" }, options: [{ da: "Ilt", ar: "الأكسجين", sq: "Oksigjen" }, { da: "Kuldioxid", ar: "ثاني أكسيد الكربون", sq: "Dioksid karboni" }, { da: "Kvælstof", ar: "النيتروجين", sq: "Azot" }, { da: "Brint", ar: "الهيدروجين", sq: "Hidrogjen" }], correctAnswerIndex: 1 },
@@ -351,247 +298,37 @@
         ];
 
 
-        // --- STATE & DOM --- (Global variables for game state)
         let gameQuestions = [], currentQuestionIndex = 0, team1Score = 0, team2Score = 0;
         let team1Name = "Team 1", team2Name = "Team 2", gameMasterName = "Host";
         let selectedQuantity = 30, selectedDifficulty = 'medium', selectedTimeLimit = 60, selectedTheme = 'theme-retro-wave';
         let selectedLanguages = ['da', 'ar', 'sq'], timerInterval, timeLeft = 60;
         let isPaused = false, answerRevealed = false, selectedAnswerIndex = null;
         
-        const allScreens = document.querySelectorAll('#home-screen, #setup-screen, #quiz-container, #leaderboard-screen');
-        const settingsModalEl = document.getElementById('settings-modal');
-        const questionCounterEl = document.getElementById('question-counter');
-        const questionTextEl = document.getElementById('question-text');
-        const answerOptionsEl = document.getElementById('answer-options');
-        const team1ScoreEl = document.getElementById('team1-score');
-        const team2ScoreEl = document.getElementById('team2-score');
-        const team1NameEl = document.getElementById('team1-name');
-        const team2NameEl = document.getElementById('team2-name');
-        const finalTeam1NameEl = document.getElementById('final-team1-name');
-        const finalTeam2NameEl = document.getElementById('final-team2-name');
-        const gameMasterNameEl = document.getElementById('game-master-name');
-        const timerEl = document.getElementById('timer');
-        const timerProgressCircle = document.getElementById('timer-progress-circle');
-        const postAnswerControlsEl = document.getElementById('post-answer-controls');
-        const revealAnswerBtn = document.getElementById('reveal-answer-btn');
-        const correctAnswerTextEl = document.getElementById('correct-answer-text');
-        const pauseResumeBtn = document.getElementById('pause-resume-btn');
-        const gameOverEl = document.getElementById('game-over');
-        const langErrorEl = document.getElementById('lang-error');
-        const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/></svg>`;
-        const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>`;
 
-        // --- FIREBASE & DATA HANDLING ---
-
-        async function initializeFirebase() {
-            const appErrorEl = document.getElementById('app-error');
-            const appErrorMessageEl = document.getElementById('app-error-message');
-            if (typeof __firebase_config === 'undefined' || !__firebase_config || firebaseConfig.apiKey === "AIza...") {
-                appErrorMessageEl.textContent = 'Firebase configuration is missing or invalid. The application cannot connect to the database.';
-                appErrorEl.classList.remove('hidden');
-                allScreens.forEach(s => s.classList.add('hidden'));
-                return;
-            }
-            try {
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-                onAuthStateChanged(auth, async (user) => {
-                    if (user) {
-                        userId = user.uid;
-                        await fetchUserProfile();
-                        listenToLeaderboard();
-                    } else {
-                        try {
-                            if (initialAuthToken) await signInWithCustomToken(auth, initialAuthToken);
-                            else await signInAnonymously(auth);
-                        } catch(authError) {
-                            console.error("Authentication failed:", authError);
-                            appErrorMessageEl.textContent = 'User authentication failed. The app may not work correctly.';
-                            appErrorEl.classList.remove('hidden');
-                        }
-                    }
-                });
-            } catch (e) {
-                console.error("Firebase initialization failed:", e);
-                appErrorMessageEl.textContent = 'Failed to initialize Firebase. Please check the console for details.';
-                appErrorEl.classList.remove('hidden');
-                allScreens.forEach(s => s.classList.add('hidden'));
-            }
-        }
-        
-        async function fetchUserProfile() {
-            if (!userId) return;
-            const userDocRef = doc(db, `artifacts/${appId}/users/${userId}`);
-            const userDoc = await getDoc(userDocRef);
-            if (userDoc.exists() && userDoc.data().name) {
-                userName = userDoc.data().name;
-                document.getElementById('user-name-input').value = userName;
-                document.getElementById('user-display').textContent = `Welcome, ${userName}!`;
-                document.getElementById('gamemaster-name-input').value = userName;
-            } else {
-                document.getElementById('user-display').textContent = 'Welcome, Guest!';
-            }
-        }
-        
-        async function saveUserName() {
-            const nameInput = document.getElementById('user-name-input');
-            const newName = nameInput.value.trim();
-            const saveBtn = document.getElementById('user-save-btn');
-            if (newName && userId) {
-                saveBtn.textContent = 'Saving...';
-                saveBtn.disabled = true;
-                const userDocRef = doc(db, `artifacts/${appId}/users/${userId}`);
-                try {
-                    await setDoc(userDocRef, { name: newName });
-                    userName = newName;
-                    document.getElementById('user-display').textContent = `Welcome, ${newName}!`;
-                    document.getElementById('gamemaster-name-input').value = newName;
-                    saveBtn.textContent = 'Saved!';
-                    saveBtn.classList.remove('accent-bg');
-                    saveBtn.classList.add('bg-green-600');
-                } catch(e) { 
-                    console.error("Error saving name: ", e); 
-                    saveBtn.textContent = 'Error!';
-                    saveBtn.classList.remove('accent-bg');
-                    saveBtn.classList.add('bg-red-600');
-                } finally {
-                    setTimeout(() => {
-                        saveBtn.textContent = 'Save Profile';
-                        saveBtn.disabled = false;
-                        saveBtn.classList.remove('bg-green-600', 'bg-red-600');
-                        saveBtn.classList.add('accent-bg');
-                    }, 2000);
-                }
-            }
-        }
-
-        async function fetchQuestions() {
-            const setupLoader = document.getElementById('setup-loader');
-            const setupContent = document.getElementById('setup-content');
-            setupLoader.classList.remove('hidden');
-            setupContent.classList.add('hidden');
-            try {
-                const qCollection = collection(db, `artifacts/${appId}/public/data/questions`);
-                const qSnapshot = await getDocs(qCollection);
-                fullQuestionLibrary = qSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-                if (fullQuestionLibrary.length === 0) console.log("No questions found in the database. Try seeding it!");
-            } catch (e) { console.error("Error fetching questions: ", e); } 
-            finally { setupLoader.classList.add('hidden'); setupContent.classList.remove('hidden'); }
-        }
-
-        async function updateLeaderboard(teamName, score) {
-            if (!userId) return;
-            try {
-                const lbCollection = collection(db, `artifacts/${appId}/public/data/leaderboard`);
-                await addDoc(lbCollection, { teamName, score, gameMasterName: userName, gameMasterId: userId, timestamp: new Date() });
-            } catch(e) { console.error("Error updating leaderboard: ", e); }
-        }
-
-        function listenToLeaderboard() {
-            const lbCollection = collection(db, `artifacts/${appId}/public/data/leaderboard`);
-            const q = query(lbCollection, orderBy("score", "desc"), limit(10));
-            const loader = document.getElementById('leaderboard-loader');
-            const content = document.getElementById('leaderboard-content');
-            onSnapshot(q, (querySnapshot) => {
-                loader.classList.add('hidden'); content.innerHTML = '';
-                if(querySnapshot.empty) { content.innerHTML = '<p class="text-main-secondary">No scores yet. Go play a game!</p>'; return; }
-                const medalColors = ['text-yellow-400', 'text-gray-400', 'text-orange-400']; const medals = ['🥇', '🥈', '🥉']; let rank = 1;
-                querySnapshot.forEach((doc) => {
-                    const entry = doc.data();
-                    const medal = rank <= 3 ? `<span class="text-2xl">${medals[rank-1]}</span>` : `<span class="font-bold text-main-secondary">${rank}.</span>`;
-                    content.innerHTML += `<div class="flex items-center justify-between p-3 bg-main-tertiary rounded-lg"><div class="flex items-center gap-4">${medal}<div><p class="font-bold text-lg ${rank <= 3 ? medalColors[rank-1] : 'text-main-primary'}">${entry.teamName}</p><p class="text-xs text-main-secondary">Hosted by: ${entry.gameMasterName}</p></div></div><p class="font-bold text-2xl accent-text">${entry.score}</p></div>`;
-                    rank++;
-                });
-            }, (error) => { console.error("Error listening to leaderboard:", error); loader.classList.add('hidden'); content.innerHTML = '<p class="text-red-400">Error loading leaderboard.</p>'; });
-        }
-        
-        async function seedDatabase() {
-            const msgEl = document.getElementById('seed-db-msg');
-            const btn = document.getElementById('seed-db-btn');
-            const progressContainer = document.getElementById('seed-progress-container');
-            const progressBar = document.getElementById('seed-progress-bar');
-            
-            btn.disabled = true;
-            progressContainer.classList.remove('hidden');
-            progressBar.style.width = '0%';
-            msgEl.textContent = 'Checking existing questions...';
-
-            try {
-                const qCollection = collection(db, `artifacts/${appId}/public/data/questions`);
-                const batch = writeBatch(db);
-                let questionsAdded = 0;
-                let questionsProcessed = 0;
-                const totalQuestions = seedQuestions.length;
-
-                for (const question of seedQuestions) {
-                    const q = query(qCollection, where("question.da", "==", question.question.da), limit(1));
-                    const querySnapshot = await getDocs(q);
-                    if (querySnapshot.empty) {
-                        const newDocRef = doc(qCollection);
-                        batch.set(newDocRef, question);
-                        questionsAdded++;
-                    }
-                    questionsProcessed++;
-                    const progress = (questionsProcessed / totalQuestions) * 100;
-                    progressBar.style.width = `${progress}%`;
-                    progressBar.textContent = `${Math.round(progress)}%`;
-                    msgEl.textContent = `Processing ${questionsProcessed}/${totalQuestions}...`;
-                }
-                
-                if (questionsAdded > 0) {
-                    await batch.commit();
-                    msgEl.textContent = `Done! Added ${questionsAdded} new questions.`;
-                    await fetchQuestions();
-                } else {
-                    msgEl.textContent = 'Done! Database already up to date.';
-                }
-            } catch (e) {
-                console.error("Error seeding database:", e);
-                msgEl.textContent = 'Error seeding database.';
-            } finally {
-                setTimeout(() => {
-                    progressContainer.classList.add('hidden');
-                    btn.disabled = false;
-                    msgEl.textContent = '';
-                }, 4000);
-            }
-        }
-        
-        // --- GLOBAL FUNCTIONS ATTACHED TO WINDOW ---
-        window.createLangLine = (text, flag, isRtl = false) => `<div class="lang-line ${isRtl ? 'rtl' : ''}"><span class="text-xl">${flag}</span><span class="flex-1 ${isRtl ? 'arabic-text' : ''}">${text}</span></div>`;
-        window.showScreen = (screenId) => { allScreens.forEach(s => s.classList.add('hidden')); document.getElementById(screenId).classList.remove('hidden'); document.getElementById(screenId).classList.add('fade-in'); window.scrollTo(0, 0); if(screenId === 'setup-screen' && fullQuestionLibrary.length === 0) fetchQuestions(); };
-        window.setRandomQuote = () => { const quote = quotes[Math.floor(Math.random() * quotes.length)]; document.getElementById('quote-text').textContent = `"${quote.text}"`; document.getElementById('quote-author').textContent = `– ${quote.author}`;};
-        window.selectTheme = (theme, button) => { selectedTheme = theme; document.body.className = theme; document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected');};
-        window.openSettings = () => { document.querySelectorAll('#theme-selector .theme-btn').forEach(btn => btn.classList.toggle('selected', btn.id === selectedTheme)); settingsModalEl.classList.remove('hidden'); };
-        window.closeSettings = () => settingsModalEl.classList.add('hidden');
-        window.updateTimerSelection = (seconds) => { selectedTimeLimit = parseInt(seconds); const mins = Math.floor(selectedTimeLimit / 60); const secs = selectedTimeLimit % 60; document.getElementById('time-limit-display').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;};
-        window.selectQuantity = (quantity, button) => { selectedQuantity = quantity; document.querySelectorAll('#quantity-selector .setup-option-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
-        window.selectDifficulty = (difficulty, button) => { selectedDifficulty = difficulty; document.querySelectorAll('#difficulty-selector .setup-option-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); document.getElementById('no-questions-error').classList.add('hidden'); };
-        window.updateLanguageSelection = () => { selectedLanguages = Array.from(document.querySelectorAll('#language-selector input:checked')).map(cb => cb.value); langErrorEl.classList.toggle('hidden', selectedLanguages.length > 0);};
-        window.initGame = () => {
+        function createLangLine(text, flag, isRtl = false) { return `<div class="lang-line ${isRtl ? 'rtl' : ''}"><span class="text-xl">${flag}</span><span class="flex-1 ${isRtl ? 'arabic-text' : ''}">${text}</span></div>`; }
+        function showScreen(screenId) { allScreens.forEach(s => s.classList.add('hidden')); document.getElementById(screenId).classList.remove('hidden'); document.getElementById(screenId).classList.add('fade-in'); window.scrollTo(0, 0); }
+        function setRandomQuote() { const quote = quotes[Math.floor(Math.random() * quotes.length)]; document.getElementById('quote-text').textContent = `"${quote.text}"`; document.getElementById('quote-author').textContent = `– ${quote.author}`;};
+        function selectTheme(theme, button) { selectedTheme = theme; document.body.className = theme; document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected');};
+        function openSettings() { document.querySelectorAll('#theme-selector .theme-btn').forEach(btn => btn.classList.toggle('selected', btn.id === selectedTheme)); settingsModalEl.classList.remove('hidden'); };
+        function closeSettings() { settingsModalEl.classList.add('hidden'); };
+        function updateTimerSelection(seconds) { selectedTimeLimit = parseInt(seconds); const mins = Math.floor(selectedTimeLimit / 60); const secs = selectedTimeLimit % 60; document.getElementById('time-limit-display').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;};
+        function selectQuantity(quantity, button) { selectedQuantity = quantity; document.querySelectorAll('#quantity-selector .setup-option-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
+        function selectDifficulty(difficulty, button) { selectedDifficulty = difficulty; document.querySelectorAll('#difficulty-selector .setup-option-btn').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
+        function updateLanguageSelection() { selectedLanguages = Array.from(document.querySelectorAll('#language-selector input:checked')).map(cb => cb.value); langErrorEl.classList.toggle('hidden', selectedLanguages.length > 0);};
+        function initGame() {
             updateLanguageSelection(); if (selectedLanguages.length === 0) return;
-            const noQuestionsErrorEl = document.getElementById('no-questions-error');
-            noQuestionsErrorEl.textContent = ''; 
-
             team1Name = document.getElementById('team1-name-input').value.trim() || "Team 1";
             team2Name = document.getElementById('team2-name-input').value.trim() || "Team 2";
-            gameMasterName = document.getElementById('gamemaster-name-input').value.trim() || userName;
-            document.body.className = selectedTheme;
+            gameMasterName = document.getElementById('gamemaster-name-input').value.trim() || "Host";
             gameMasterNameEl.textContent = gameMasterName;
             let availableQuestions = (selectedDifficulty === 'mixed') ? fullQuestionLibrary : fullQuestionLibrary.filter(q => q.difficulty === selectedDifficulty);
             const maxQuestions = Math.min(selectedQuantity, availableQuestions.length);
             gameQuestions = availableQuestions.sort(() => 0.5 - Math.random()).slice(0, maxQuestions);
-
-            if (gameQuestions.length === 0) {
-                noQuestionsErrorEl.textContent = `No questions found for '${selectedDifficulty}' difficulty. Try 'Mixed' or add new questions in Settings.`;
-                return;
-            }
             showScreen('quiz-container');
             startGame();
         };
-        window.startGame = () => { currentQuestionIndex = 0; team1Score = 0; team2Score = 0; updateScoreboard(); document.getElementById('quiz-area').classList.remove('hidden'); gameOverEl.classList.add('hidden'); loadQuestion(); };
-        window.loadQuestion = () => {
+        function startGame() { currentQuestionIndex = 0; team1Score = 0; team2Score = 0; updateScoreboard(); document.getElementById('quiz-area').classList.remove('hidden'); gameOverEl.classList.add('hidden'); loadQuestion(); };
+        function loadQuestion() {
             resetStateForNewQuestion(); if (currentQuestionIndex >= gameQuestions.length) { endGame(); return; }
             const question = gameQuestions[currentQuestionIndex];
             questionCounterEl.textContent = `Q ${currentQuestionIndex + 1} / ${gameQuestions.length}`;
@@ -608,8 +345,8 @@
             });
             startTimer();
         };
-        window.selectAnswer = (index, button) => { if (answerRevealed || isPaused) return; const allButtons = answerOptionsEl.querySelectorAll('.answer-btn'); allButtons.forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); selectedAnswerIndex = index; revealAnswerBtn.classList.remove('hidden'); };
-        window.revealAnswer = () => {
+        function selectAnswer(index, button) { if (answerRevealed || isPaused) return; const allButtons = answerOptionsEl.querySelectorAll('.answer-btn'); allButtons.forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); selectedAnswerIndex = index; revealAnswerBtn.classList.remove('hidden'); };
+        function revealAnswer() {
             clearInterval(timerInterval); answerRevealed = true; isPaused = true; pauseResumeBtn.innerHTML = playIcon; revealAnswerBtn.classList.add('hidden');
             const question = gameQuestions[currentQuestionIndex]; const allButtons = answerOptionsEl.querySelectorAll('.answer-btn');
             allButtons.forEach((btn, index) => { btn.disabled = true; btn.classList.remove('hover:brightness-110'); if (index === question.correctAnswerIndex) btn.classList.add('correct'); else if (index === selectedAnswerIndex) btn.classList.add('wrong'); });
@@ -618,92 +355,30 @@
             correctAnswerTextEl.innerHTML = `<p>Correct Answer:</p><div class="inline-block text-left text-sm space-y-1 bg-green-900/20 p-2 rounded-lg">${correctHTML}</div>`;
             postAnswerControlsEl.classList.remove('hidden'); postAnswerControlsEl.classList.add('fade-in');
         };
-        window.awardPoint = (team) => { if (team === 1) team1Score++; else team2Score++; updateScoreboard(); postAnswerControlsEl.querySelectorAll('button:not(#next-question-btn)').forEach(btn => btn.disabled = true); };
-        window.updateScoreboard = () => { team1NameEl.textContent = team1Name; team2NameEl.textContent = team2Name; team1ScoreEl.textContent = team1Score; team2ScoreEl.textContent = team2Score; };
-        window.nextQuestion = () => { currentQuestionIndex++; loadQuestion(); };
-        window.resetStateForNewQuestion = () => { clearInterval(timerInterval); answerRevealed = false; isPaused = false; selectedAnswerIndex = null; postAnswerControlsEl.classList.add('hidden'); revealAnswerBtn.classList.add('hidden'); pauseResumeBtn.innerHTML = pauseIcon; postAnswerControlsEl.querySelectorAll('button').forEach(btn => btn.disabled = false); };
-        window.resetCurrentQuestionState = () => { if (answerRevealed) return; selectedAnswerIndex = null; revealAnswerBtn.classList.add('hidden'); answerOptionsEl.querySelectorAll('.answer-btn').forEach(btn => btn.classList.remove('selected')); startTimer(); };
-        window.startTimer = () => { clearInterval(timerInterval); timeLeft = selectedTimeLimit; isPaused = false; pauseResumeBtn.innerHTML = pauseIcon; updateTimerDisplay(); startTimerInterval(); };
-        window.startTimerInterval = () => { clearInterval(timerInterval); timerInterval = setInterval(() => { if (timeLeft <= 0) { revealAnswer(); return; } timeLeft--; updateTimerDisplay(); }, 1000); };
-        window.togglePauseResume = () => { if(answerRevealed) return; isPaused = !isPaused; if (isPaused) { clearInterval(timerInterval); pauseResumeBtn.innerHTML = playIcon; } else { startTimerInterval(); pauseResumeBtn.innerHTML = pauseIcon; }};
-        window.updateTimerDisplay = () => { const mins = Math.floor(timeLeft / 60); const secs = timeLeft % 60; timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`; const progress = timeLeft / selectedTimeLimit; timerProgressCircle.style.strokeDashoffset = 283 * (1 - progress); };
-        window.endGame = () => {
+        function awardPoint(team) { if (team === 1) team1Score++; else team2Score++; updateScoreboard(); postAnswerControlsEl.querySelectorAll('button:not(#next-question-btn)').forEach(btn => btn.disabled = true); };
+        function updateScoreboard() { team1NameEl.textContent = team1Name; team2NameEl.textContent = team2Name; team1ScoreEl.textContent = team1Score; team2ScoreEl.textContent = team2Score; };
+        function nextQuestion() { currentQuestionIndex++; loadQuestion(); };
+        function resetStateForNewQuestion() { clearInterval(timerInterval); answerRevealed = false; isPaused = false; selectedAnswerIndex = null; postAnswerControlsEl.classList.add('hidden'); revealAnswerBtn.classList.add('hidden'); pauseResumeBtn.innerHTML = pauseIcon; postAnswerControlsEl.querySelectorAll('button').forEach(btn => btn.disabled = false); };
+        function resetCurrentQuestionState() { if (answerRevealed) return; selectedAnswerIndex = null; revealAnswerBtn.classList.add('hidden'); answerOptionsEl.querySelectorAll('.answer-btn').forEach(btn => btn.classList.remove('selected')); startTimer(); };
+        function startTimer() { clearInterval(timerInterval); timeLeft = selectedTimeLimit; isPaused = false; pauseResumeBtn.innerHTML = pauseIcon; updateTimerDisplay(); startTimerInterval(); };
+        function startTimerInterval() { clearInterval(timerInterval); timerInterval = setInterval(() => { if (timeLeft <= 0) { revealAnswer(); return; } timeLeft--; updateTimerDisplay(); }, 1000); };
+        function togglePauseResume() { if(answerRevealed) return; isPaused = !isPaused; if (isPaused) { clearInterval(timerInterval); pauseResumeBtn.innerHTML = playIcon; } else { startTimerInterval(); pauseResumeBtn.innerHTML = pauseIcon; }};
+        function updateTimerDisplay() { const mins = Math.floor(timeLeft / 60); const secs = timeLeft % 60; timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`; const progress = timeLeft / selectedTimeLimit; timerProgressCircle.style.strokeDashoffset = 283 * (1 - progress); };
+        function endGame() {
             document.getElementById('quiz-area').classList.add('hidden'); gameOverEl.classList.remove('hidden'); gameOverEl.classList.add('fade-in');
             document.getElementById('final-score1').textContent = team1Score; document.getElementById('final-score2').textContent = team2Score;
             finalTeam1NameEl.textContent = `${team1Name}:`; finalTeam2NameEl.textContent = `${team2Name}:`;
             const winnerMessageEl = document.getElementById('winner-message'); winnerMessageEl.className = 'text-3xl font-bold mb-4';
-            let winningTeam = null, winningScore = 0;
-            if (team1Score > team2Score) { winnerMessageEl.textContent = `${team1Name} Wins! 🎉`; winnerMessageEl.classList.add('text-blue-400'); winningTeam = team1Name; winningScore = team1Score; } 
-            else if (team2Score > team1Score) { winnerMessageEl.textContent = `${team2Name} Wins! 🥳`; winnerMessageEl.classList.add('text-pink-400'); winningTeam = team2Name; winningScore = team2Score; } 
+            if (team1Score > team2Score) { winnerMessageEl.textContent = `${team1Name} Wins! 🎉`; winnerMessageEl.classList.add('text-blue-400'); } 
+            else if (team2Score > team1Score) { winnerMessageEl.textContent = `${team2Name} Wins! 🥳`; winnerMessageEl.classList.add('text-pink-400'); } 
             else { winnerMessageEl.textContent = "It's a Tie! 🤝"; }
-            if (winningTeam && winningScore > 0) { updateLeaderboard(winningTeam, winningScore); }
         };
-        window.goToHome = () => { clearInterval(timerInterval); setRandomQuote(); showScreen('home-screen'); };
-        window.saveUserName = saveUserName;
-        window.seedDatabase = seedDatabase;
+        function goToHome() { clearInterval(timerInterval); setRandomQuote(); showScreen('home-screen'); };
 
-        function setupEventListeners() {
-             document.getElementById('json-upload').addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                if (!file) return;
-                const reader = new FileReader();
-                const msgEl = document.getElementById('upload-msg');
-                reader.onload = async (e) => {
-                    try {
-                        const questions = JSON.parse(e.target.result);
-                        if (!Array.isArray(questions)) throw new Error("JSON must be an array.");
-                        
-                        msgEl.textContent = `Checking ${questions.length} questions...`;
-                        const batch = writeBatch(db);
-                        const qCollection = collection(db, `artifacts/${appId}/public/data/questions`);
-                        let addedCount = 0;
-                        
-                        for (const q of questions) {
-                             if (q.question && q.question.da && q.options && q.difficulty && q.correctAnswerIndex != null) {
-                                 // Prevent duplicates
-                                const checkQuery = query(qCollection, where("question.da", "==", q.question.da), limit(1));
-                                const snapshot = await getDocs(checkQuery);
-                                if (snapshot.empty) {
-                                     const newDocRef = doc(qCollection);
-                                     batch.set(newDocRef, q);
-                                     addedCount++;
-                                }
-                             }
-                        }
-
-                        if(addedCount > 0) {
-                            await batch.commit();
-                            msgEl.textContent = `Successfully added ${addedCount} new questions!`;
-                            await fetchQuestions(); // Refresh
-                        } else {
-                            msgEl.textContent = 'No new questions to add.';
-                        }
-
-                    } catch (err) {
-                        console.error("File upload error:", err);
-                        msgEl.textContent = `Error: ${err.message}`;
-                    } finally {
-                         setTimeout(() => msgEl.textContent = '', 4000);
-                         event.target.value = ''; // Reset file input
-                    }
-                };
-                reader.readAsText(file);
-            });
-        }
-
-        // --- INITIAL LOAD ---
         window.onload = () => {
-            initializeFirebase();
             selectTheme(selectedTheme, document.getElementById(selectedTheme));
             goToHome();
-            setupEventListeners();
-            // Create and set the download link for the JSON template
-            const template = [{ "difficulty": "easy", "question": { "da": "...", "ar": "...", "sq": "..." }, "options": [ { "da": "...", "ar": "...", "sq": "..." }, { "da": "...", "ar": "...", "sq": "..." }, { "da": "...", "ar": "...", "sq": "..." }, { "da": "...", "ar": "...", "sq": "..." } ], "correctAnswerIndex": 0 }];
-            const templateStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(template, null, 2));
-            document.getElementById('json-template-link').setAttribute("href", templateStr);
-            document.getElementById('json-template-link').setAttribute("download", "questions_template.json");
         };
     </script>
 </body>
 </html>
-
