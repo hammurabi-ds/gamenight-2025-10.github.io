@@ -96,7 +96,7 @@
     </style>
 </head>
 <!-- Set default theme on the body -->
-<body class="theme-emerald-light">
+<body class="theme-crimson-light">
     <!-- Top Bar -->
     <header class="p-3 bg-main-secondary/50 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div class="w-full max-w-7xl mx-auto flex justify-between items-center">
@@ -189,17 +189,51 @@
             <h2 class="text-3xl font-bold text-center mb-6 accent-text">Settings</h2>
             <div class="space-y-6 overflow-y-auto flex-grow pr-2">
                 <!-- Theme Selector -->
-                <div class="pb-6"><label class="block text-lg font-semibold text-main-secondary mb-3 text-center">Party Theme</label><div id="theme-selector" class="flex justify-center gap-4 flex-wrap">
-                    <button id="theme-retro-wave" onclick="selectTheme('theme-retro-wave', this)" class="theme-btn"></button>
-                    <button id="theme-jungle-vibe" onclick="selectTheme('theme-jungle-vibe', this)" class="theme-btn"></button>
-                    <button id="theme-ocean-deep" onclick="selectTheme('theme-ocean-deep', this)" class="theme-btn"></button>
-                    <button id="theme-crimson-dark" onclick="selectTheme('theme-crimson-dark', this)" class="theme-btn"></button>
-                    <button id="theme-sapphire-dark" onclick="selectTheme('theme-sapphire-dark', this)" class="theme-btn"></button>
-                    <button id="theme-emerald-dark" onclick="selectTheme('theme-emerald-dark', this)" class="theme-btn"></button>
-                    <button id="theme-crimson-light" onclick="selectTheme('theme-crimson-light', this)" class="theme-btn"></button>
-                    <button id="theme-sapphire-light" onclick="selectTheme('theme-sapphire-light', this)" class="theme-btn"></button>
-                    <button id="theme-emerald-light" onclick="selectTheme('theme-emerald-light', this)" class="theme-btn"></button>
-                </div></div>
+                <div class="pb-6">
+                    <label class="block text-lg font-semibold text-main-secondary mb-4 text-center">Party Theme</label>
+                    <div id="theme-selector" class="grid grid-cols-3 gap-x-4 gap-y-6 justify-items-center">
+                        
+                        <!-- Dark Themes -->
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-retro-wave" onclick="selectTheme('theme-retro-wave', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Retro Wave</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-jungle-vibe" onclick="selectTheme('theme-jungle-vibe', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Jungle Vibe</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-ocean-deep" onclick="selectTheme('theme-ocean-deep', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Ocean Deep</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-crimson-dark" onclick="selectTheme('theme-crimson-dark', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Crimson Dark</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-sapphire-dark" onclick="selectTheme('theme-sapphire-dark', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Sapphire Dark</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-emerald-dark" onclick="selectTheme('theme-emerald-dark', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Emerald Dark</span>
+                        </div>
+                        
+                        <!-- Light Themes -->
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-crimson-light" onclick="selectTheme('theme-crimson-light', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Crimson Light</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-sapphire-light" onclick="selectTheme('theme-sapphire-light', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Sapphire Light</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button id="theme-emerald-light" onclick="selectTheme('theme-emerald-light', this)" class="theme-btn"></button>
+                            <span class="text-xs font-medium text-main-secondary">Emerald Light</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -236,7 +270,7 @@
         let gameMasterName = "Host";
         let selectedTeamCount = 2;
         // Update default theme
-        let selectedQuantity = 30, selectedDifficulty = 'medium', selectedTimeLimit = 60, selectedTheme = 'theme-emerald-light';
+        let selectedQuantity = 30, selectedDifficulty = 'medium', selectedTimeLimit = 60, selectedTheme = 'theme-crimson-light';
         let selectedLanguages = ['da', 'ar', 'sq'], timerInterval, timeLeft = 60;
         let isPaused = false, answerRevealed = false, selectedAnswerIndex = null;
         
