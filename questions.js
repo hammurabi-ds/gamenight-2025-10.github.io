@@ -1,98 +1,518 @@
-// This file contains all the questions for the quiz.
-// You can easily add, edit, or remove questions from this array.
-
-window.fullQuestionLibrary = [
-    // 33 Easy Questions
-    { difficulty: 'easy', question: { da: "Hvilket dyr siger 'muh'?", ar: "أي حيوان يقول 'مو'؟", sq: "Cila kafshë bën 'mu'?" }, options: [{ da: "Hund", ar: "كلب", sq: "Qeni" }, { da: "Ko", ar: "بقرة", sq: "Lopa" }, { da: "Kat", ar: "قطة", sq: "Macja" }, { da: "Fugl", ar: "طائر", sq: "Zogu" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvad er farven på himlen på en klar dag?", ar: "ما هو لون السماء في يوم صافٍ؟", sq: "Çfarë ngjyre ka qielli në një ditë të kthjellët?" }, options: [{ da: "Grøn", ar: "أخضر", sq: "E gjelbër" }, { da: "Rød", ar: "أحمر", sq: "E kuqe" }, { da: "Blå", ar: "أزرق", sq: "Blu" }, { da: "Gul", ar: "أصفر", sq: "E verdhë" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvor mange dage er der i en uge?", ar: "كم عدد أيام الأسبوع؟", sq: "Sa ditë ka një javë?" }, options: [{ da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }, { da: "7", ar: "٧", sq: "7" }, { da: "8", ar: "٨", sq: "8" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvad hedder den store stjerne i vores solsystem?", ar: "ما اسم النجم الكبير في نظامنا الشمسي؟", sq: "Si quhet ylli i madh në sistemin tonë diellor?" }, options: [{ da: "Månen", ar: "القمر", sq: "Hëna" }, { da: "Mars", ar: "المريخ", sq: "Marsi" }, { da: "Solen", ar: "الشمس", sq: "Dielli" }, { da: "Jorden", ar: "الأرض", sq: "Toka" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvilken frugt er rød og rund?", ar: "أي فاكهة حمراء ومستديرة؟", sq: "Cila frutë është e kuqe dhe e rrumbullakët?" }, options: [{ da: "Banan", ar: "موز", sq: "Banane" }, { da: "Æble", ar: "تفاحة", sq: "Mollë" }, { da: "Citron", ar: "ليمون", sq: "Limon" }, { da: "Agurk", ar: "خيار", sq: "Kastravec" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvad bruger man til at klippe papir?", ar: "ماذا تستخدم لقص الورق؟", sq: "Çfarë përdor për të prerë letrën?" }, options: [{ da: "Saks", ar: "مقص", sq: "Gërshërë" }, { da: "Ske", ar: "ملعقة", sq: "Lugë" }, { da: "Bold", ar: "كرة", sq: "Top" }, { da: "Bog", ar: "كتاب", sq: "Libër" }], correctAnswerIndex: 0 },
-    { difficulty: 'easy', question: { da: "Hvad er det modsatte af 'stor'?", ar: "ما هو عكس كلمة 'كبير'؟", sq: "Cila është e kundërta e 'i madh'?" }, options: [{ da: "Høj", ar: "طويل", sq: "I gjatë" }, { da: "Lille", ar: "صغير", sq: "I vogël" }, { da: "Hurtig", ar: "سريع", sq: "I shpejtë" }, { da: "Varm", ar: "حار", sq: "I nxehtë" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvilken form har et stopskilt?", ar: "ما هو شكل علامة التوقف؟", sq: "Çfarë forme ka një shenjë stopi?" }, options: [{ da: "Cirkel", ar: "دائرة", sq: "Rreth" }, { da: "Firkant", ar: "مربع", sq: "Katror" }, { da: "Trekant", ar: "مثلث", sq: "Trekëndësh" }, { da: "Ottekant", ar: "مثمن", sq: "Tetëkëndësh" }], correctAnswerIndex: 3 },
-    { difficulty: 'easy', question: { da: "Hvad drikker katte?", ar: "ماذا تشرب القطط؟", sq: "Çfarë pijnë macet?" }, options: [{ da: "Sodavand", ar: "صودا", sq: "Sodë" }, { da: "Juice", ar: "عصير", sq: "Lëng" }, { da: "Mælk", ar: "حليب", sq: "Qumësht" }, { da: "Kaffe", ar: "قهوة", sq: "Kafe" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvor mange tommelfingre har et menneske?", ar: "كم عدد الإبهامات لدى الإنسان؟", sq: "Sa gishta të mëdhenj ka një njeri?" }, options: [{ da: "1", ar: "١", sq: "1" }, { da: "2", ar: "٢", sq: "2" }, { da: "5", ar: "٥", sq: "5" }, { da: "10", ar: "١٠", sq: "10" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvilken farve får man ved at blande rød og gul?", ar: "ما اللون الذي تحصل عليه عند خلط الأحمر والأصفر؟", sq: "Çfarë ngjyre përftohet duke përzier të kuqen dhe të verdhën?" }, options: [{ da: "Grøn", ar: "أخضر", sq: "E gjelbër" }, { da: "Lilla", ar: "بنفسجي", sq: "Vjollcë" }, { da: "Orange", ar: "برتقالي", sq: "Portokalli" }, { da: "Brun", ar: "بني", sq: "Kafe" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvilken årstid kommer efter sommer?", ar: "أي فصل يأتي بعد الصيف؟", sq: "Cila stinë vjen pas verës?" }, options: [{ da: "Vinter", ar: "الشتاء", sq: "Dimri" }, { da: "Forår", ar: "الربيع", sq: "Pranvera" }, { da: "Efterår", ar: "الخريف", sq: "Vjeshta" }, { da: "Ingen", ar: "لا شيء", sq: "Asnjë" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvad er 2 + 2?", ar: "كم يساوي 2 + 2؟", sq: "Sa bëjnë 2 + 2?" }, options: [{ da: "3", ar: "٣", sq: "3" }, { da: "4", ar: "٤", sq: "4" }, { da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvilket transportmiddel flyver i luften?", ar: "أي وسيلة نقل تطير في الهواء؟", sq: "Cili mjet transporti fluturon në ajër?" }, options: [{ da: "Bil", ar: "سيارة", sq: "Makinë" }, { da: "Båd", ar: "قارب", sq: "Varkë" }, { da: "Flyvemaskine", ar: "طائرة", sq: "Aeroplan" }, { da: "Cykel", ar: "دراجة", sq: "Biçikletë" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvad er det modsatte af kold?", ar: "ما هو عكس كلمة بارد؟", sq: "Cila është e kundërta e ftohtë?" }, options: [{ da: "Varm", ar: "حار", sq: "Nxehtë" }, { da: "Våd", ar: "مبلل", sq: "Lagur" }, { da: "Mørk", ar: "مظلم", sq: "Errët" }, { da: "Stor", ar: "كبير", sq: "Madh" }], correctAnswerIndex: 0 },
-    { difficulty: 'easy', question: { da: "Hvilket dyr har en lang snabel?", ar: "أي حيوان له خرطوم طويل؟", sq: "Cila kafshë ka një feçkë të gjatë?" }, options: [{ da: "Løve", ar: "أسد", sq: "Luan" }, { da: "Tiger", ar: "نمر", sq: "Tigër" }, { da: "Elefant", ar: "فيل", sq: "Elefant" }, { da: "Giraf", ar: "زرافة", sq: "Gjirafë" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvad hedder snemanden i 'Frost'?", ar: "ما هو اسم رجل الثلج في فيلم 'فروزن'؟", sq: "Si quhet njeriu prej bore në 'Frozen'?" }, options: [{ da: "Sven", ar: "سفين", sq: "Sven" }, { da: "Hans", ar: "هانز", sq: "Hans" }, { da: "Kristoffer", ar: "كريستوف", sq: "Kristoff" }, { da: "Olaf", ar: "أولاف", sq: "Olaf" }], correctAnswerIndex: 3 },
-    { difficulty: 'easy', question: { da: "Hvor mange hjul har en trehjulet cykel?", ar: "كم عدد عجلات الدراجة ثلاثية العجلات؟", sq: "Sa rrota ka një biçikletë me tri rrota?" }, options: [{ da: "1", ar: "١", sq: "1" }, { da: "2", ar: "٢", sq: "2" }, { da: "3", ar: "٣", sq: "3" }, { da: "4", ar: "٤", sq: "4" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvad er babyens får kaldet?", ar: "ماذا يسمى صغير الخروف؟", sq: "Si quhet i vogli i deles?" }, options: [{ da: "Føl", ar: "مهر", sq: "Mëz" }, { da: "Killing", ar: "هريرة", sq: "Kotele" }, { da: "Lam", ar: "حمل", sq: "Qengj" }, { da: "Hvalp", ar: "جرو", sq: "Këlysh" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvad er hovedstaden i Italien?", ar: "ما هي عاصمة إيطاليا؟", sq: "Cili është kryeqyteti i Italisë?" }, options: [{ da: "Paris", ar: "باريس", sq: "Paris" }, { da: "Madrid", ar: "مدريد", sq: "Madrid" }, { da: "Berlin", ar: "برلين", sq: "Berlin" }, { da: "Rom", ar: "روما", sq: "Romë" }], correctAnswerIndex: 3 },
-    { difficulty: 'easy', question: { da: "Hvad er farven på græs?", ar: "ما هو لون العشب؟", sq: "Çfarë ngjyre ka bari?" }, options: [{ da: "Rød", ar: "أحمر", sq: "Kuqe" }, { da: "Grøn", ar: "أخضر", sq: "Gjelbër" }, { da: "Blå", ar: "أزرق", sq: "Blu" }, { da: "Lilla", ar: "بنفسجي", sq: "Vjollcë" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvor mange fingre har du på en hånd?", ar: "كم عدد أصابع يدك الواحدة؟", sq: "Sa gishta ke në një dorë?" }, options: [{ da: "4", ar: "٤", sq: "4" }, { da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }, { da: "10", ar: "١٠", sq: "10" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvad bruger vi til at se med?", ar: "بماذا نرى؟", sq: "Çfarë përdorim për të parë?" }, options: [{ da: "Ører", ar: "آذان", sq: "Veshët" }, { da: "Næse", ar: "أنف", sq: "Hunda" }, { da: "Øjne", ar: "عيون", sq: "Sytë" }, { da: "Mund", ar: "فم", sq: "Goja" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvilket dyr jager mus?", ar: "أي حيوان يصطاد الفئران؟", sq: "Cila kafshë gjuan minj?" }, options: [{ da: "Hund", ar: "كلب", sq: "Qen" }, { da: "Kat", ar: "قطة", sq: "Mace" }, { da: "Hest", ar: "حصان", sq: "Kalë" }, { da: "Ko", ar: "بقرة", sq: "Lopë" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvilket kontinent er Egypten i?", ar: "في أي قارة تقع مصر؟", sq: "Në cilin kontinent ndodhet Egjipti?" }, options: [{ da: "Asien", ar: "آسيا", sq: "Azi" }, { da: "Europa", ar: "أوروبا", sq: "Evropë" }, { da: "Afrika", ar: "أفريقيا", sq: "Afrikë" }, { da: "Australien", ar: "أستراليا", sq: "Australi" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvad kalder man en person, der bager brød?", ar: "ماذا تسمي الشخص الذي يخبز الخبز؟", sq: "Si e quan dikë që pjek bukë?" }, options: [{ da: "Læge", ar: "طبيب", sq: "Mjek" }, { da: "Bager", ar: "خباز", sq: "Bukëpjekës" }, { da: "Lærer", ar: "معلم", sq: "Mësues" }, { da: "Pilot", ar: "طيار", sq: "Pilot" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvilken lyd laver en gris?", ar: "ما هو الصوت الذي يصدره الخنزير؟", sq: "Çfarë tingulli bën një derr?" }, options: [{ da: "Vov", ar: "نباح", sq: "Ham" }, { da: "Mjav", ar: "مواء", sq: "Mjau" }, { da: "Kykkeliky", ar: "صياح", sq: "Kikiriki" }, { da: "Øf", ar: "صهيل", sq: "Hung" }], correctAnswerIndex: 3 },
-    { difficulty: 'easy', question: { da: "Hvad er det modsatte af 'dag'?", ar: "ما هو عكس كلمة 'يوم'؟", sq: "Cila është e kundërta e 'ditë'?" }, options: [{ da: "Uge", ar: "أسبوع", sq: "Javë" }, { da: "Måned", ar: "شهر", sq: "Muaj" }, { da: "År", ar: "سنة", sq: "Vit" }, { da: "Nat", ar: "ليل", sq: "Natë" }], correctAnswerIndex: 3 },
-    { difficulty: 'easy', question: { da: "Hvilken frugt er gul og lang?", ar: "أي فاكهة صفراء وطويلة؟", sq: "Cila frutë është e verdhë dhe e gjatë?" }, options: [{ da: "Æble", ar: "تفاحة", sq: "Mollë" }, { da: "Banan", ar: "موز", sq: "Banane" }, { da: "Drue", ar: "عنب", sq: "Rrush" }, { da: "Jordbær", ar: "فراولة", sq: "Luleshtrydhe" }], correctAnswerIndex: 1 },
-    { difficulty: 'easy', question: { da: "Hvor mange farver er der i en regnbue?", ar: "كم عدد ألوان قوس قزح؟", sq: "Sa ngjyra ka një ylber?" }, options: [{ da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }, { da: "7", ar: "٧", sq: "7" }, { da: "8", ar: "٨", sq: "8" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvilket dyr er 'junglens konge'?", ar: "أي حيوان هو 'ملك الغابة'؟", sq: "Cila kafshë është 'mbreti i xhunglës'?" }, options: [{ da: "Tiger", ar: "نمر", sq: "Tigër" }, { da: "Elefant", ar: "فيل", sq: "Elefant" }, { da: "Løve", ar: "أسد", sq: "Luan" }, { da: "Bjørn", ar: "دب", sq: "Ari" }], correctAnswerIndex: 2 },
-    { difficulty: 'easy', question: { da: "Hvad er 10 minus 5?", ar: "كم يساوي 10 ناقص 5؟", sq: "Sa bëjnë 10 minus 5?" }, options: [{ da: "3", ar: "٣", sq: "3" }, { da: "4", ar: "٤", sq: "4" }, { da: "5", ar: "٥", sq: "5" }, { da: "6", ar: "٦", sq: "6" }], correctAnswerIndex: 2 },
-
-    // 33 Medium
-    { difficulty: 'medium', question: { da: "Hvilken gas trækker planter ind fra luften?", ar: "أي غاز تستنشقه النباتات من الهواء؟", sq: "Cilin gaz thithin bimët nga ajri?" }, options: [{ da: "Ilt", ar: "الأكسجين", sq: "Oksigjen" }, { da: "Kuldioxid", ar: "ثاني أكسيد الكربون", sq: "Dioksid karboni" }, { da: "Kvælstof", ar: "النيتروجين", sq: "Azot" }, { da: "Brint", ar: "الهيدروجين", sq: "Hidrogjen" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvem opfandt telefonen?", ar: "من اخترع الهاتف؟", sq: "Kush e shpiku telefonin?" }, options: [{ da: "Thomas Edison", ar: "توماس إديسون", sq: "Thomas Edison" }, { da: "Nikola Tesla", ar: "نيكولا تيسلا", sq: "Nikola Tesla" }, { da: "Alexander Graham Bell", ar: "ألكسندر جراهام بيل", sq: "Alexander Graham Bell" }, { da: "Albert Einstein", ar: "ألبرت أينشتاين", sq: "Albert Einstein" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvad er Jordens største kontinent?", ar: "ما هي أكبر قارة في العالم؟", sq: "Cili është kontinenti më i madh i Tokës?" }, options: [{ da: "Afrika", ar: "أفريقيا", sq: "Afrika" }, { da: "Europa", ar: "أوروبا", sq: "Evropa" }, { da: "Nordamerika", ar: "أمريكا الشمالية", sq: "Amerika e Veriut" }, { da: "Asien", ar: "آسيا", sq: "Azia" }], correctAnswerIndex: 3 },
-    { difficulty: 'medium', question: { da: "Hvad er den kemiske formel for vand?", ar: "ما هي الصيغة الكيميائية للماء؟", sq: "Cila është formula kimike e ujit?" }, options: [{ da: "CO2", ar: "CO2", sq: "CO2" }, { da: "O2", ar: "O2", sq: "O2" }, { da: "H2O", ar: "H2O", sq: "H2O" }, { da: "NaCl", ar: "NaCl", sq: "NaCl" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvilken by er hovedstad i Japan?", ar: "ما هي عاصمة اليابان؟", sq: "Cili qytet është kryeqyteti i Japonisë?" }, options: [{ da: "Beijing", ar: "بكين", sq: "Pekin" }, { da: "Seoul", ar: "سيول", sq: "Seul" }, { da: "Tokyo", ar: "طوكيو", sq: "Tokio" }, { da: "Bangkok", ar: "بانكوك", sq: "Bangkok" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvem skrev 'Harry Potter' bøgerne?", ar: "من كتب سلسلة كتب 'هاري بوتر'؟", sq: "Kush i shkroi librat 'Harry Potter'?" }, options: [{ da: "J.R.R. Tolkien", ar: "ج. ر. ر. تولكين", sq: "J.R.R. Tolkien" }, { da: "George R.R. Martin", ar: "جورج ر. ر. مارتن", sq: "George R.R. Martin" }, { da: "J.K. Rowling", ar: "ج. ك. رولينج", sq: "J.K. Rowling" }, { da: "C.S. Lewis", ar: "سي. إس. لويس", sq: "C.S. Lewis" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvad er den længste flod i verden?", ar: "ما هو أطول نهر في العالم؟", sq: "Cili është lumi më i gjatë në botë?" }, options: [{ da: "Amazonas", ar: "الأمازون", sq: "Amazona" }, { da: "Nilen", ar: "النيل", sq: "Nili" }, { da: "Yangtze", ar: "اليانغتسي", sq: "Jangce" }, { da: "Mississippi", ar: "المسيسيبي", sq: "Misisipi" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvilket instrument bruges til at se stjerner?", ar: "Cili instrument përdoret për të parë yjet?", sq: "ما هي الأداة المستخدمة لرؤية النجوم؟" }, options: [{ da: "Mikroskop", ar: "مجهر", sq: "Mikroskop" }, { da: "Teleskop", ar: "تلسكوب", sq: "Teleskop" }, { da: "Stetoskop", ar: "سماعة الطبيب", sq: "Stetoskop" }, { da: "Kompas", ar: "بوصلة", sq: "Busull" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvor mange planeter er der i vores solsystem?", ar: "كم عدد الكواكب في نظامنا الشمسي؟", sq: "Sa planetë ka në sistemin tonë diellor?" }, options: [{ da: "7", ar: "٧", sq: "7" }, { da: "8", ar: "٨", sq: "8" }, { da: "9", ar: "٩", sq: "9" }, { da: "10", ar: "١٠", sq: "10" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvem var den første mand på månen?", ar: "من هو أول رجل مشى على سطح القمر؟", sq: "Kush ishte njeriu i parë në Hënë?" }, options: [{ da: "Buzz Aldrin", ar: "بز ألدرن", sq: "Buzz Aldrin" }, { da: "Yuri Gagarin", ar: "يوري جاجارين", sq: "Yuri Gagarin" }, { da: "Neil Armstrong", ar: "نيل أرمسترونج", sq: "Neil Armstrong" }, { da: "Michael Collins", ar: "مايكل كولينز", sq: "Michael Collins" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvilket land gav Frihedsgudinden til USA?", ar: "أي بلد أهدى تمثال الحرية للولايات المتحدة؟", sq: "Cili shtet i dhuroi Statujën e Lirisë SHBA-së?" }, options: [{ da: "Spanien", ar: "إسبانيا", sq: "Spanja" }, { da: "Storbritannien", ar: "بريطانيا العظمى", sq: "Britania e Madhe" }, { da: "Italien", ar: "إيطاليا", sq: "Italia" }, { da: "Frankrig", ar: "فرنسا", sq: "Franca" }], correctAnswerIndex: 3 },
-    { difficulty: 'medium', question: { da: "Hvad er Mount Everest?", ar: "ما هو جبل إيفرست؟", sq: "Çfarë është Mali Everest?" }, options: [{ da: "En vulkan", ar: "بركان", sq: "Një vullkan" }, { da: "Verdens højeste bjerg", ar: "أعلى جبل في العالم", sq: "Mali më i lartë në botë" }, { da: "En flod", ar: "نهر", sq: "Një lumë" }, { da: "En ørken", ar: "صحراء", sq: "Një shkretëtirë" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvilken farve er en smaragd?", ar: "ما هو لون الزمرد؟", sq: "Çfarë ngjyre ka një smerald?" }, options: [{ da: "Rød", ar: "أحمر", sq: "E kuqe" }, { da: "Blå", ar: "أزرق", sq: "Blu" }, { da: "Grøn", ar: "أخضر", sq: "E gjelbër" }, { da: "Gul", ar: "أصفر", sq: "E verdhë" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvad er den primære ingrediens i guacamole?", ar: "ما هو المكون الرئيسي في الجواكامولي؟", sq: "Cili është përbërësi kryesor i guakamoles?" }, options: [{ da: "Tomat", ar: "طماطم", sq: "Domate" }, { da: "Avocado", ar: "أفوكادو", sq: "Avokado" }, { da: "Løg", ar: "بصل", sq: "Qepë" }, { da: "Lime", ar: "ليمون حامض", sq: "Lime" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvor mange sider har en terning?", ar: "كم عدد أوجه المكعب؟", sq: "Sa faqe ka një kub?" }, options: [{ da: "4", ar: "٤", sq: "4" }, { da: "6", ar: "٦", sq: "6" }, { da: "8", ar: "٨", sq: "8" }, { da: "12", ar: "١٢", sq: "12" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvilket dyr er kendt som 'skibets ørken'?", ar: "أي حيوان يُعرف بـ 'سفينة الصحراء'؟", sq: "Cila kafshë njihet si 'anija e shkretëtirës'?" }, options: [{ da: "Hest", ar: "حصان", sq: "Kalë" }, { da: "Elefant", ar: "فيل", sq: "Elefant" }, { da: "Kamel", ar: "جمل", sq: "Deve" }, { da: "Slange", ar: "ثعبان", sq: "Gjarpër" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvilken italiensk by er berømt for sine kanaler?", ar: "أي مدينة إيطالية تشتهر بقنواتها؟", sq: "Cili qytet italian është i famshëm për kanalet e tij?" }, options: [{ da: "Rom", ar: "روما", sq: "Romë" }, { da: "Firenze", ar: "فلورنسا", sq: "Firence" }, { da: "Milano", ar: "ميلانو", sq: "Milano" }, { da: "Venedig", ar: "البندقية", sq: "Venecia" }], correctAnswerIndex: 3 },
-    { difficulty: 'medium', question: { da: "Hvad er det hårdeste naturlige stof på Jorden?", ar: "ما هي أصلب مادة طبيعية على الأرض؟", sq: "Cila është substanca natyrale më e fortë në Tokë?" }, options: [{ da: "Guld", ar: "ذهب", sq: "Ar" }, { da: "Jern", ar: "حديد", sq: "Hekur" }, { da: "Diamant", ar: "ألماس", sq: "Diamant" }, { da: "Kvarts", ar: "كوارتز", sq: "Kuartz" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvilken sport spilles ved Wimbledon?", ar: "أي رياضة تُلعب في ويمبلدون؟", sq: "Cili sport luhet në Wimbledon?" }, options: [{ da: "Fodbold", ar: "كرة القدم", sq: "Futboll" }, { da: "Golf", ar: "الجولف", sq: "Golf" }, { da: "Cricket", ar: "الكريكيت", sq: "Kriket" }, { da: "Tennis", ar: "التنس", sq: "Tenis" }], correctAnswerIndex: 3 },
-    { difficulty: 'medium', question: { da: "Hvem skrev 'Romeo og Julie'?", ar: "من كتب 'روميو وجولييت'؟", sq: "Kush e shkroi 'Romeo dhe Zhuljeta'?" }, options: [{ da: "Charles Dickens", ar: "تشارلز ديكنز", sq: "Charles Dickens" }, { da: "Jane Austen", ar: "جين أوستن", sq: "Jane Austen" }, { da: "William Shakespeare", ar: "ويليام شكسبير", sq: "William Shakespeare" }, { da: "Mark Twain", ar: "مارك توين", sq: "Mark Twain" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvad er det kemiske symbol for guld?", ar: "ما هو الرمز الكيميائي للذهب؟", sq: "Cili është simboli kimik për arin?" }, options: [{ da: "Ag", ar: "Ag", sq: "Ag" }, { da: "Au", ar: "Au", sq: "Au" }, { da: "Fe", ar: "Fe", sq: "Fe" }, { da: "Pb", ar: "Pb", sq: "Pb" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvilket land er kendt for pyramiderne?", ar: "أي بلد مشهور بالأهرامات؟", sq: "Cili vend është i njohur për piramidat?" }, options: [{ da: "Grækenland", ar: "اليونان", sq: "Greqia" }, { da: "Mexico", ar: "المكسيك", sq: "Meksika" }, { da: "Kina", ar: "الصين", sq: "Kina" }, { da: "Egypten", ar: "مصر", sq: "Egjipti" }], correctAnswerIndex: 3 },
-    { difficulty: 'medium', question: { da: "Hvad hedder det største ocean på Jorden?", ar: "ما هو اسم أكبر محيط على الأرض؟", sq: "Si quhet oqeani më i madh në Tokë?" }, options: [{ da: "Atlanterhavet", ar: "المحيط الأطلسي", sq: "Oqeani Atlantik" }, { da: "Indiske Ocean", ar: "المحيط الهندي", sq: "Oqeani Indian" }, { da: "Stillehavet", ar: "المحيط الهادئ", sq: "Oqeani Paqësor" }, { da: "Ishavet", ar: "المحيط المتجمد الشمالي", sq: "Oqeani Arktik" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvem malede Mona Lisa?", ar: "من رسم الموناليزا؟", sq: "Kush e pikturoi Mona Lizën?" }, options: [{ da: "Vincent van Gogh", ar: "فينسنت فان جوخ", sq: "Vincent van Gogh" }, { da:Ample,
-    well-commented, runnable code for this single file"Leonardo da Vinci", ar: "ليوناردو دافنشي", sq: "Leonardo da Vinci" }, { da: "Pablo Picasso", ar: "بابلو بيكاسو", sq: "Pablo Picasso" }, { da: "Michelangelo", ar: "مايكل أنجلو", sq: "Mikelanxhelo" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvilket år var den første månelanding?", ar: "في أي سنة كان أول هبوط على سطح القمر؟", sq: "Në cilin vit ishte ulja e parë në Hënë?" }, options: [{ da: "1965", ar: "١٩٦٥", sq: "1965" }, { da: "1969", ar: "١٩٦٩", sq: "1969" }, { da: "1971", ar: "١٩٧١", sq: "1971" }, { da: "1973", ar: "١٩٧٣", sq: "1973" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvad er fotosyntese?", ar: "ما هي عملية التمثيل الضوئي؟", sq: "Çfarë është fotosinteza?" }, options: [{ da: "Planter spiser jord", ar: "النباتات تأكل التربة", sq: "Bimët hanë dhe" }, { da: "Planter omdanner lys til energi", ar: "النباتات تحول الضوء إلى طاقة", sq: "Bimët e shndërrojnë dritën në energji" }, { da: "Planter drikker vand", ar: "النباتات تشرب الماء", sq: "Bimët pinë ujë" }, { da: "Planter sover om natten", ar: "النباتات تنام في الليل", sq: "Bimët flenë natën" }], correctAnswerIndex: 1 },
-    { difficulty: 'medium', question: { da: "Hvilken planet er tættest på Solen?", ar: "أي كوكب هو الأقرب إلى الشمس؟", sq: "Cili planet është më afër Diellit?" }, options: [{ da: "Venus", ar: "الزهرة", sq: "Venusi" }, { da: "Jorden", ar: "الأرض", sq: "Toka" }, { da: "Mars", ar: "المريخ", sq: "Marsi" }, { da: "Merkur", ar: "عطارد", sq: "Mërkuri" }], correctAnswerIndex: 3 },
-    { difficulty: 'medium', question: { da: "Hvem var den første kvindelige pilot, der fløj solo over Atlanten?", ar: "من هي أول امرأة طيارة تطير بمفردها عبر المحيط الأطلسي؟", sq: "Kush ishte pilotja e parë femër që fluturoi solo përtej Atlantikut?" }, options: [{ da: "Bessie Coleman", ar: "بيسي كولمان", sq: "Bessie Coleman" }, { da: "Harriet Quimby", ar: "هارييت كيمبي", sq: "Harriet Quimby" }, { da: "Amelia Earhart", ar: "أميليا إيرهارت", sq: "Amelia Earhart" }, { da: "Jacqueline Cochran", ar: "جاكلين كوكران", sq: "Jacqueline Cochran" }], correctAnswerIndex: 2 },
-    { difficulty: 'medium', question: { da: "Hvad hedder processen, hvor vand bliver til damp?", ar: "ما اسم عملية تحول الماء إلى بخار؟", sq: "Si quhet procesi kur uji kthehet në avull?" }, options: [{ da: "Kondensation", ar: "تكثف", sq: "Kondensim" }, { da: "Fordampning", ar: "تبخر", sq: "Avullim" }, { da: "Frysning", ar: "تجمد", sq: "Ngrirje" }, { da: "Smeltning", ar: "انصهار", sq: "Shkrirje" }], correctAnswerIndex: 1 },
-
-
-    // 33 Hard
-    { difficulty: 'hard', question: { da: "Hvilket år faldt Berlinmuren?", ar: "في أي عام سقط جدار برلين؟", sq: "Në cilin vit ra Muri i Berlinit?" }, options: [{ da: "1987", ar: "١٩٨٧", sq: "1987" }, { da: "1989", ar: "١٩٨٩", sq: "1989" }, { da: "1991", ar: "١٩٩١", sq: "1991" }, { da: "1993", ar: "١٩٩٣", sq: "1993" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvem skrev 'Kapitalen' (Das Kapital)?", ar: "من كتب 'رأس المال' (Das Kapital)؟", sq: "Kush e shkroi 'Das Kapital'?" }, options: [{ da: "Adam Smith", ar: "آدم سميث", sq: "Adam Smith" }, { da: "John Maynard Keynes", ar: "جون ماينارد كينز", sq: "John Maynard Keynes" }, { da: "Karl Marx", ar: "كارل ماركس", sq: "Karl Marx" }, { da: "Friedrich Engels", ar: "فريدريك إنجلز", sq: "Friedrich Engels" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvad måler man lydstyrke i?", ar: "بماذا تقاس شدة الصوت؟", sq: "Me çfarë matet intensiteti i zërit?" }, options: [{ da: "Watt", ar: "واط", sq: "Watt" }, { da: "Decibel", ar: "ديسيبل", sq: "Decibel" }, { da: "Hertz", ar: "هرتز", sq: "Hertz" }, { da: "Lumen", ar: "لومن", sq: "Lumen" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvad er navnet på den anden puniske krig's berømte kartagiske general?", ar: "ما هو اسم الجنرال القرطاجي الشهير في الحرب البونيقية الثانية؟", sq: "Si quhej gjenerali i famshëm kartagjenas i Luftës së Dytë Punike?" }, options: [{ da: "Hamilcar Barca", ar: "حملقار برقا", sq: "Hamilcar Barca" }, { da: "Hannibal Barca", ar: "حنبعل برقا", sq: "Hannibal Barca" }, { da: "Hasdrubal Barca", ar: "حسدروبعل برقا", sq: "Hasdrubal Barca" }, { da: "Scipio Africanus", ar: "سيبيو الأفريقي", sq: "Scipio Africanus" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvad er 'Schrödingers kat' et eksempel på?", ar: "مثال على ماذا 'قطة شرودنجر'؟", sq: "Për çfarë është shembull 'macja e Schrödingerit'?" }, options: [{ da: "Klassisk mekanik", ar: "الميكانيكا الكلاسيكية", sq: "Mekanika klasike" }, { da: "Et biologisk eksperiment", ar: "تجربة بيولوجية", sq: "Një eksperiment biologjik" }, { da: "Et tankeeksperiment i kvantemekanik", ar: "تجربة فكرية في ميكانيكا الكم", sq: "Një eksperiment mendor në mekanikën kuantike" }, { da: "En filosofisk gåde", ar: "لغز فلسفي", sq: "Një enigmë filozofike" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "I hvilket land ligger Timbuktu?", ar: "في أي بلد تقع تمبكتو؟", sq: "Në cilin vend ndodhet Timbuktu?" }, options: [{ da: "Nigeria", ar: "نيجيريا", sq: "Nigeri" }, { da: "Etiopien", ar: "إثيوبيا", sq: "Etiopi" }, { da: "Mali", ar: "مالي", sq: "Mali" }, { da: "Marokko", ar: "المغرب", sq: "Marok" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvem komponerede 'De fire årstider'?", ar: "من قام بتأليف 'الفصول الأربعة'؟", sq: "Kush i kompozoi 'Katër Stinët'?" }, options: [{ da: "Bach", ar: "باخ", sq: "Bach" }, { da: "Mozart", ar: "موزارت", sq: "Mozart" }, { da: "Beethoven", ar: "بيتهوفن", sq: "Beethoven" }, { da: "Vivaldi", ar: "فيفالدي", sq: "Vivaldi" }], correctAnswerIndex: 3 },
-    { difficulty: 'hard', question: { da: "Hvad er det filosofiske studie af viden?", ar: "ما هي الدراسة الفلسفية للمعرفة؟", sq: "Cili është studimi filozofik i njohurive?" }, options: [{ da: "Metafysik", ar: "الميتافيزيقيا", sq: "Metafizika" }, { da: "Etik", ar: "الأخلاق", sq: "Etika" }, { da: "Epistemologi", ar: "نظرية المعرفة", sq: "Epistemologjia" }, { da: "Logik", ar: "المنطق", sq: "Logjika" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvilken krig blev udkæmpet mellem Athen og Sparta?", ar: "أي حرب دارت بين أثينا وسبارتا؟", sq: "Cila luftë u zhvillua midis Athinës dhe Spartës?" }, options: [{ da: "De persiske krige", ar: "الحروب الفارسية", sq: "Luftërat Persiane" }, { da: "Den peloponnesiske krig", ar: "الحرب البيلوبونيسية", sq: "Lufta e Peloponezit" }, { da: "De puniske krige", ar: "الحروب البونيقية", sq: "Luftërat Punike" }, { da: "Den trojanske krig", ar: "حرب طروادة", sq: "Lufta e Trojës" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvad er et Fibonacci-tal?", ar: "ما هو رقم فيبوناتشي؟", sq: "Çfarë është një numër Fibonaçi?" }, options: [{ da: "Et primtal", ar: "عدد أولي", sq: "Një numër i thjeshtë" }, { da: "Et tal, der er summen af de to foregående", ar: "رقم هو مجموع الرقمين السابقين", sq: "Një numër që është shuma e dy të mëparshmëve" }, { da: "Et perfekt tal", ar: "عدد مثالي", sq: "Një numër i përsosur" }, { da: "Et irrationelt tal", ar: "عدد غير نسبي", sq: "Një numër irracional" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvilken fredsaftale afsluttede officielt Trediveårskrigen?", ar: "أي معاهدة سلام أنهت حرب الثلاثين عامًا رسميًا؟", sq: "Cili traktat paqeje i dha fund zyrtarisht Luftës Tridhjetëvjeçare?" }, options: [{ da: "Versaillestraktaten", ar: "معاهدة فرساي", sq: "Traktati i Versajës" }, { da: "Den Westfalske Fred", ar: "صلح وستفاليا", sq: "Paqja e Vestfalisë" }, { da: "Wienkongressen", ar: "مؤتمر فيينا", sq: "Kongresi i Vjenës" }, { da: "Utrecht-traktaten", ar: "معاهدة أوترخت", sq: "Traktati i Utrehtit" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvad beskriver Heisenbergs ubestemthedsprincip fundamentalt?", ar: "ماذا يصف مبدأ عدم اليقين لهايزنبرج بشكل أساسي؟", sq: "Çfarë përshkruan në thelb parimi i papërcaktueshmrisë së Heisenbergut?" }, options: [{ da: "Energi kan ikke skabes", ar: "لا يمكن خلق الطاقة", sq: "Energjia nuk mund të krijet" }, { da: "En partikels position og impuls kan ikke kendes præcist samtidigt", ar: "لا يمكن معرفة موضع وزخم جسيم في نفس الوقت بدقة", sq: "Pozicioni dhe momenti i një grimce nuk mund të njihen saktësisht njëkohësisht" }, { da: "Lys opfører sig som både en partikel og en bølge", ar: "الضوء يتصرف كجسيم وموجة", sq: "Drita sillet si grimcë dhe si valë" }, { da: "Tiden går langsommere nær massive objekter", ar: "الزمن يتباطأ بالقرب من الأجسام الضخمة", sq: "Koha ngadalësohet pranë objekteve masive" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "I hvilken roman af Dostojevskij stilles spørgsmålet 'Hvis Gud ikke eksisterer, er alt så tilladt'?", ar: "في أي رواية لدوستويفسكي يُطرح سؤال 'إذا لم يكن الإله موجودًا، فكل شيء مباح'؟", sq: "Në cilin roman të Dostojevskit shtrohet pyetja 'Nëse Zoti nuk ekziston, a lejohet gjithçka'?" }, options: [{ da: "Forbrydelse og straf", ar: "الجريمة والعقاب", sq: "Krim dhe ndëshkim" }, { da: "Idioten", ar: "الأبله", sq: "Idioti" }, { da: "Brødrene Karamazov", ar: "الإخوة كارامازوف", sq: "Vëllezërit Karamazov" }, { da: "Onde ånder", ar: "الشياطين", sq: "Demonët" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvilken kunstbevægelse er maleren Artemisia Gentileschi primært forbundet med?", ar: "بأي حركة فنية ترتبط الرسامة أرتيميسيا جنتلسكي بشكل أساسي؟", sq: "Me cilën lëvizje artistike lidhet kryesisht piktorja Artemisia Gentileschi?" }, options: [{ da: "Renæssancen", ar: "عصر النهضة", sq: "Rilindja" }, { da: "Barokken", ar: "الباروك", sq: "Baroku" }, { da: "Rokoko", ar: "الروكوكو", sq: "Rokoko" }, { da: "Neoklassicismen", ar: "الكلاسيكية الجديدة", sq: "Neoklasicizmi" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvilken filosof er berømt for begrebet 'Übermensch' (Overmennesket)?", ar: "أي فيلسوف مشهور بمفهوم 'الإنسان المتفوق' (Übermensch)؟", sq: "Cili filozof është i famshëm për konceptin 'Übermensch' (Mbinjeriu)?" }, options: [{ da: "Immanuel Kant", ar: "إيمانويل كانط", sq: "Immanuel Kant" }, { da: "Søren Kierkegaard", ar: "سورين كيركغور", sq: "Søren Kierkegaard" }, { da: "Arthur Schopenhauer", ar: "آرثر شوبنهاور", sq: "Arthur Schopenhauer" }, { da: "Friedrich Nietzsche", ar: "فريدريك نيتشه", sq: "Friedrich Nietzsche" }], correctAnswerIndex: 3 },
-    { difficulty: 'hard', question: { da: "Hvem var den sidste kejser af Qing-dynastiet i Kina?", ar: "من كان آخر إمبراطور لسلالة تشينغ في الصين؟", sq: "Kush ishte perandori i fundit i dinastisë Qing në Kinë?" }, options: [{ da: "Puyi", ar: "بوئي", sq: "Puyi" }, { da: "Cixi", ar: "تسيشي", sq: "Cixi" }, { da: "Guangxu", ar: "غوانغشو", sq: "Guangxu" }, { da: "Hongwu", ar: "هونغوو", sq: "Hongwu" }], correctAnswerIndex: 0 },
-    { difficulty: 'hard', question: { da: "I nordisk mytologi, hvad er navnet på verdenstræet, der forbinder de ni verdener?", ar: "في الميثولوجيا الإسكندنافية، ما هو اسم شجرة العالم التي تربط العوالم التسعة؟", sq: "Në mitologjinë nordike, si quhet pema e botës që lidh nëntë botët?" }, options: [{ da: "Asgård", ar: "أسكارد", sq: "Asgard" }, { da: "Bifrost", ar: "بيفروست", sq: "Bifrost" }, { da:Gacrux"Yggdrasil", ar: "يغدراسيل", sq: "Yggdrasil" }, { da: "Ragnarok", ar: "راجناروك", sq: "Ragnarok" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvilken økonom er krediteret for teorien om 'komparative fordele'?", ar: "من هو الاقتصادي الذي يُنسب إليه نظرية 'الميزة النسبية'؟", sq: "Cili ekonomist njihet për teorinë e 'përparësisë krahasuese'?" }, options: [{ da: "Adam Smith", ar: "آدم سميث", sq: "Adam Smith" }, { da: "Karl Marx", ar: "كارل ماركس", sq: "Karl Marx" }, { da: "John Maynard Keynes", ar: "جون ماينارد كينز", sq: "John Maynard Keynes" }, { da: "David Ricardo", ar: "ديفيد ريكاردو", sq: "David Ricardo" }], correctAnswerIndex: 3 },
-    { difficulty: 'hard', question: { da: "Slaget ved Agincourt i 1415 var en afgørende engelsk sejr i hvilken krig?", ar: "كانت معركة أجينكور عام 1415 انتصارًا إنجليزيًا حاسمًا في أي حرب؟", sq: "Beteja e Agincourt në 1415 ishte një fitore vendimtare angleze në cilën luftë?" }, options: [{ da: "Rosekrigene", ar: "حرب الوردتين", sq: "Lufta e Trëndafilave" }, { da: "Hundredårskrigen", ar: "حرب المئة عام", sq: "Lufta Njëqindvjeçare" }, { da: "Trediveårskrigen", ar: "حرب الثلاثين عامًا", sq: "Lufta Tridhjetëvjeçare" }, { da: "Syvårskrigen", ar: "حرب السنوات السبع", sq: "Lufta Shtatëvjeçare" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvem skrev den episke digtcyklus 'The Waste Land'?", ar: "من كتب القصيدة الملحمية 'الأرض اليباب'؟", sq: "Kush e shkroi poemën epike 'Toka e shkretë'?" }, options: [{ da: "W.B. Yeats", ar: "ويليام بتلر ييتس", sq: "W.B. Yeats" }, { da: "Ezra Pound", ar: "عزرا باوند", sq: "Ezra Pound" }, { da: "T.S. Eliot", ar: "ت. س. إليوت", sq: "T.S. Eliot" }, { da: "James Joyce", ar: "جيمس جويس", sq: "James Joyce" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvad er en pulsar?", ar: "ما هو النجم النابض (بولسار)؟", sq: "Çfarë është një pulsar?" }, options: [{ da: "En type galakse", ar: "نوع من المجرات", sq: "Një lloj galaktike" }, { da: "Et sort hul, der udsender stråling", ar: "ثقب أسود يطلق إشعاعًا", sq: "Një vrimë e zezë që lëshon rrezatim" }, { da: "En hurtigt roterende neutronstjerne", ar: "نجم نيوتروني يدور بسرعة", sq: "Një yll neutronesh me rrotullim të shpejtë" }, { da: "En døende stjerne på størrelse med Solen", ar: "نجم محتضر بحجم الشمس", sq: "Një yll në vdekje me madhësinë e Diellit" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvem er arkitekten bag Guggenheim-museet i Bilbao, Spanien?", ar: "من هو مهندس متحف غوغنهايم في بلباو، إسبانيا؟", sq: "Kush është arkitekti i Muzeut Guggenheim në Bilbao, Spanjë?" }, options: [{ da: "Zaha Hadid", ar: "زها حديد", sq: "Zaha Hadid" }, { da: "Frank Gehry", ar: "فرانك جيري", sq: "Frank Gehry" }, { da: "I. M. Pei", ar: "آي. إم. باي", sq: "I. M. Pei" }, { da: "Norman Foster", ar: "نورمان فوستر", sq: "Norman Foster" }], correctAnswerIndex: 1 },
-    { difficulty: 'hard', question: { da: "Hvilket imperium blev styret af Suleiman den Store i sin guldalder?", ar: "أي إمبراطورية حكمها سليمان القانوني خلال عصرها الذهبي؟", sq: "Cila perandori u sundua nga Sulejmani i Madhërishëm gjatë epokës së saj të artë?" }, options: [{ da: "Mogulriget", ar: "الإمبراطورية المغولية", sq: "Perandoria Mogule" }, { da: "Safavideriget", ar: "الإمبراطورية الصفوية", sq: "Perandoria Safavide" }, { da: "Det Osmanniske Rige", ar: "الإمبراطورية العثمانية", sq: "Perandoria Osmane" }, { da: "Romerriget", ar: "الإمبراطورية الرومانية", sq: "Perandoria Romake" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvilken gas udgør størstedelen af Venus' atmosfære?", ar: "أي غاز يشكل غالبية الغلاف الجوي لكوكب الزهرة؟", sq: "Cili gaz përbën shumicën e atmosferës së Venusit?" }, options: [{ da: "Nitrogen", ar: "النيتروجين", sq: "Nitrogjeni" }, { da: "Oxygen", ar: "الأكسجين", sq: "Oksigjeni" }, { da: "Kuldioxid", ar: "ثاني أكسيد الكربون", sq: "Dioksidi i karbonit" }, { da: "Metan", ar: "الميثان", sq: "Metani" }], correctAnswerIndex: 2 },
-    { difficulty: 'hard', question: { da: "Hvad er mitokondriers primære funktion i en eukaryot celle?", ar: "ما هي الوظيفة الأساسية للميتوكوندريا في خلية حقيقية النواة؟", sq: "Cili është funksioni primar i mitokondrive në një qelizë eukariote?" }, options: [{ da: "Proteinsyntese", ar: "تخليق البروتين", sq: "Sinteza e proteinave" }, { da: "Cellulær respiration og ATP-produktion", ar: "التنفس الخلوي وإنتاج ATP", sq: "Frymëmarrja qelizore dhe prodhimi i ATP-së" }, { da: "Lagring af genetisk materiale", ar: "تخزين المادة الوراثية", sq: "Ruajtja e materialit gjenetik" }, { da: "Affaldsbehandling", ar: "معالجة النفايات", sq: "Përpunimi i mbetjeve" }], correctAnswerIndex: 1 },
-];
+[
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilket dyr siger 'muh'?", "ar": "أي حيوان يقول 'مو'؟", "sq": "Cila kafshë bën 'mu'?" },
+        "options": [{ "da": "Hund", "ar": "كلب", "sq": "Qeni" }, { "da": "Ko", "ar": "بقرة", "sq": "Lopa" }, { "da": "Kat", "ar": "قطة", "sq": "Macja" }, { "da": "Fugl", "ar": "طائر", "sq": "Zogu" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er farven på himlen på en klar dag?", "ar": "ما هو لون السماء في يوم صافٍ؟", "sq": "Çfarë ngjyre ka qielli në një ditë të kthjellët?" },
+        "options": [{ "da": "Grøn", "ar": "أخضر", "sq": "E gjelbër" }, { "da": "Rød", "ar": "أحمر", "sq": "E kuqe" }, { "da": "Blå", "ar": "أزرق", "sq": "Blu" }, { "da": "Gul", "ar": "أصفر", "sq": "E verdhë" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvor mange dage er der i en uge?", "ar": "كم عدد أيام الأسبوع؟", "sq": "Sa ditë ka një javë?" },
+        "options": [{ "da": "5", "ar": "٥", "sq": "5" }, { "da": "6", "ar": "٦", "sq": "6" }, { "da": "7", "ar": "٧", "sq": "7" }, { "da": "8", "ar": "٨", "sq": "8" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad hedder den store stjerne i vores solsystem?", "ar": "ما اسم النجم الكبير في نظامنا الشمسي؟", "sq": "Si quhet ylli i madh në sistemin tonë diellor?" },
+        "options": [{ "da": "Månen", "ar": "القمر", "sq": "Hëna" }, { "da": "Mars", "ar": "المريخ", "sq": "Marsi" }, { "da": "Solen", "ar": "الشمس", "sq": "Dielli" }, { "da": "Jorden", "ar": "الأرض", "sq": "Toka" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilken frugt er rød og rund?", "ar": "أي فاكهة حمراء ومستديرة؟", "sq": "Cila frutë është e kuqe dhe e rrumbullakët?" },
+        "options": [{ "da": "Banan", "ar": "موز", "sq": "Banane" }, { "da": "Æble", "ar": "تفاحة", "sq": "Mollë" }, { "da": "Citron", "ar": "ليمون", "sq": "Limon" }, { "da": "Agurk", "ar": "خيار", "sq": "Kastravec" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad bruger man til at klippe papir?", "ar": "ماذا تستخدم لقص الورق؟", "sq": "Çfarë përdor për të prerë letrën?" },
+        "options": [{ "da": "Saks", "ar": "مقص", "sq": "Gërshërë" }, { "da": "Ske", "ar": "ملعقة", "sq": "Lugë" }, { "da": "Bold", "ar": "كرة", "sq": "Top" }, { "da": "Bog", "ar": "كتاب", "sq": "Libër" }],
+        "correctAnswerIndex": 0
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er det modsatte af 'stor'?", "ar": "ما هو عكس كلمة 'كبير'؟", "sq": "Cila është e kundërta e 'i madh'?" },
+        "options": [{ "da": "Høj", "ar": "طويل", "sq": "I gjatë" }, { "da": "Lille", "ar": "صغير", "sq": "I vogël" }, { "da": "Hurtig", "ar": "سريع", "sq": "I shpejtë" }, { "da": "Varm", "ar": "حار", "sq": "I nxehtë" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilken form har et stopskilt?", "ar": "ما هو شكل علامة التوقف؟", "sq": "Çfarë forme ka një shenjë stopi?" },
+        "options": [{ "da": "Cirkel", "ar": "دائرة", "sq": "Rreth" }, { "da": "Firkant", "ar": "مربع", "sq": "Katror" }, { "da": "Trekant", "ar": "مثلث", "sq": "Trekëndësh" }, { "da": "Ottekant", "ar": "مثمن", "sq": "Tetëkëndësh" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad drikker katte?", "ar": "ماذا تشرب القطط؟", "sq": "Çfarë pijnë macet?" },
+        "options": [{ "da": "Sodavand", "ar": "صودا", "sq": "Sodë" }, { "da": "Juice", "ar": "عصير", "sq": "Lëng" }, { "da": "Mælk", "ar": "حليب", "sq": "Qumësht" }, { "da": "Kaffe", "ar": "قهوة", "sq": "Kafe" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvor mange tommelfingre har et menneske?", "ar": "كم عدد الإبهامات لدى الإنسان؟", "sq": "Sa gishta të mëdhenj ka një njeri?" },
+        "options": [{ "da": "1", "ar": "١", "sq": "1" }, { "da": "2", "ar": "٢", "sq": "2" }, { "da": "5", "ar": "٥", "sq": "5" }, { "da": "10", "ar": "١٠", "sq": "10" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilken farve får man ved at blande rød og gul?", "ar": "ما اللون الذي تحصل عليه عند خلط الأحمر والأصفر؟", "sq": "Çfarë ngjyre përftohet duke përzier të kuqen dhe të verdhën?" },
+        "options": [{ "da": "Grøn", "ar": "أخضر", "sq": "E gjelbër" }, { "da": "Lilla", "ar": "بنفسجي", "sq": "Vjollcë" }, { "da": "Orange", "ar": "برتقالي", "sq": "Portokalli" }, { "da": "Brun", "ar": "بني", "sq": "Kafe" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilken årstid kommer efter sommer?", "ar": "أي فصل يأتي بعد الصيف؟", "sq": "Cila stinë vjen pas verës?" },
+        "options": [{ "da": "Vinter", "ar": "الشتاء", "sq": "Dimri" }, { "da": "Forår", "ar": "الربيع", "sq": "Pranvera" }, { "da": "Efterår", "ar": "الخريف", "sq": "Vjeshta" }, { "da": "Ingen", "ar": "لا شيء", "sq": "Asnjë" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er 2 + 2?", "ar": "كم يساوي 2 + 2؟", "sq": "Sa bëjnë 2 + 2?" },
+        "options": [{ "da": "3", "ar": "٣", "sq": "3" }, { "da": "4", "ar": "٤", "sq": "4" }, { "da": "5", "ar": "٥", "sq": "5" }, { "da": "6", "ar": "٦", "sq": "6" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilket transportmiddel flyver i luften?", "ar": "أي وسيلة نقل تطير في الهواء؟", "sq": "Cili mjet transporti fluturon në ajër?" },
+        "options": [{ "da": "Bil", "ar": "سيارة", "sq": "Makinë" }, { "da": "Båd", "ar": "قارب", "sq": "Varkë" }, { "da": "Flyvemaskine", "ar": "طائرة", "sq": "Aeroplan" }, { "da": "Cykel", "ar": "دراجة", "sq": "Biçikletë" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er det modsatte af kold?", "ar": "ما هو عكس كلمة بارد؟", "sq": "Cila është e kundërta e ftohtë?" },
+        "options": [{ "da": "Varm", "ar": "حار", "sq": "Nxehtë" }, { "da": "Våd", "ar": "مبلل", "sq": "Lagur" }, { "da": "Mørk", "ar": "مظلم", "sq": "Errët" }, { "da": "Stor", "ar": "كبير", "sq": "Madh" }],
+        "correctAnswerIndex": 0
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilket dyr har en lang snabel?", "ar": "أي حيوان له خرطوم طويل؟", "sq": "Cila kafshë ka një feçkë të gjatë?" },
+        "options": [{ "da": "Løve", "ar": "أسد", "sq": "Luan" }, { "da": "Tiger", "ar": "نمر", "sq": "Tigër" }, { "da": "Elefant", "ar": "فيل", "sq": "Elefant" }, { "da": "Giraf", "ar": "زرافة", "sq": "Gjirafë" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad hedder snemanden i 'Frost'?", "ar": "ما هو اسم رجل الثلج في فيلم 'فروزن'؟", "sq": "Si quhet njeriu prej bore në 'Frozen'?" },
+        "options": [{ "da": "Sven", "ar": "سفين", "sq": "Sven" }, { "da": "Hans", "ar": "هانز", "sq": "Hans" }, { "da": "Kristoffer", "ar": "كريستوف", "sq": "Kristoff" }, { "da": "Olaf", "ar": "أولاف", "sq": "Olaf" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvor mange hjul har en trehjulet cykel?", "ar": "كم عدد عجلات الدراجة ثلاثية العجلات؟", "sq": "Sa rrota ka një biçikletë me tri rrota?" },
+        "options": [{ "da": "1", "ar": "١", "sq": "1" }, { "da": "2", "ar": "٢", "sq": "2" }, { "da": "3", "ar": "٣", "sq": "3" }, { "da": "4", "ar": "٤", "sq": "4" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er babyens får kaldet?", "ar": "ماذا يسمى صغير الخروف؟", "sq": "Si quhet i vogli i deles?" },
+        "options": [{ "da": "Føl", "ar": "مهر", "sq": "Mëz" }, { "da": "Killing", "ar": "هريرة", "sq": "Kotele" }, { "da": "Lam", "ar": "حمل", "sq": "Qengj" }, { "da": "Hvalp", "ar": "جرو", "sq": "Këlysh" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er hovedstaden i Italien?", "ar": "ما هي عاصمة إيطاليا؟", "sq": "Cili është kryeqyteti i Italisë?" },
+        "options": [{ "da": "Paris", "ar": "باريس", "sq": "Paris" }, { "da": "Madrid", "ar": "مدريد", "sq": "Madrid" }, { "da": "Berlin", "ar": "برلين", "sq": "Berlin" }, { "da": "Rom", "ar": "روما", "sq": "Romë" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er farven på græs?", "ar": "ما هو لون العشب؟", "sq": "Çfarë ngjyre ka bari?" },
+        "options": [{ "da": "Rød", "ar": "أحمر", "sq": "Kuqe" }, { "da": "Grøn", "ar": "أخضر", "sq": "Gjelbër" }, { "da": "Blå", "ar": "أزرق", "sq": "Blu" }, { "da": "Lilla", "ar": "بنفسجي", "sq": "Vjollcë" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvor mange fingre har du på en hånd?", "ar": "كم عدد أصابع يدك الواحدة؟", "sq": "Sa gishta ke në një dorë?" },
+        "options": [{ "da": "4", "ar": "٤", "sq": "4" }, { "da": "5", "ar": "٥", "sq": "5" }, { "da": "6", "ar": "٦", "sq": "6" }, { "da": "10", "ar": "١٠", "sq": "10" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad bruger vi til at se med?", "ar": "بماذا نرى؟", "sq": "Çfarë përdorim për të parë?" },
+        "options": [{ "da": "Ører", "ar": "آذان", "sq": "Veshët" }, { "da": "Næse", "ar": "أنف", "sq": "Hunda" }, { "da": "Øjne", "ar": "عيون", "sq": "Sytë" }, { "da": "Mund", "ar": "فم", "sq": "Goja" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilket dyr jager mus?", "ar": "أي حيوان يصطاد الفئران؟", "sq": "Cila kafshë gjuan minj?" },
+        "options": [{ "da": "Hund", "ar": "كلب", "sq": "Qen" }, { "da": "Kat", "ar": "قطة", "sq": "Mace" }, { "da": "Hest", "ar": "حصان", "sq": "Kalë" }, { "da": "Ko", "ar": "بقرة", "sq": "Lopë" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilket kontinent er Egypten i?", "ar": "في أي قارة تقع مصر؟", "sq": "Në cilin kontinent ndodhet Egjipti?" },
+        "options": [{ "da": "Asien", "ar": "آسيا", "sq": "Azi" }, { "da": "Europa", "ar": "أوروبا", "sq": "Evropë" }, { "da": "Afrika", "ar": "أفريقيا", "sq": "Afrikë" }, { "da": "Australien", "ar": "أستراليا", "sq": "Australi" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad kalder man en person, der bager brød?", "ar": "ماذا تسمي الشخص الذي يخبز الخبز؟", "sq": "Si e quan dikë që pjek bukë?" },
+        "options": [{ "da": "Læge", "ar": "طبيب", "sq": "Mjek" }, { "da": "Bager", "ar": "خباز", "sq": "Bukëpjekës" }, { "da": "Lærer", "ar": "معلم", "sq": "Mësues" }, { "da": "Pilot", "ar": "طيار", "sq": "Pilot" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilken lyd laver en gris?", "ar": "ما هو الصوت الذي يصدره الخنزير؟", "sq": "Çfarë tingulli bën një derr?" },
+        "options": [{ "da": "Vov", "ar": "نباح", "sq": "Ham" }, { "da": "Mjav", "ar": "مواء", "sq": "Mjau" }, { "da": "Kykkeliky", "ar": "صياح", "sq": "Kikiriki" }, { "da": "Øf", "ar": "صهيل", "sq": "Hung" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er det modsatte af 'dag'?", "ar": "ما هو عكس كلمة 'يوم'؟", "sq": "Cila është e kundërta e 'ditë'?" },
+        "options": [{ "da": "Uge", "ar": "أسبوع", "sq": "Javë" }, { "da": "Måned", "ar": "شهر", "sq": "Muaj" }, { "da": "År", "ar": "سنة", "sq": "Vit" }, { "da": "Nat", "ar": "ليل", "sq": "Natë" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilken frugt er gul og lang?", "ar": "أي فاكهة صفراء وطويلة؟", "sq": "Cila frutë është e verdhë dhe e gjatë?" },
+        "options": [{ "da": "Æble", "ar": "تفاحة", "sq": "Mollë" }, { "da": "Banan", "ar": "موز", "sq": "Banane" }, { "da": "Drue", "ar": "عنب", "sq": "Rrush" }, { "da": "Jordbær", "ar": "فراولة", "sq": "Luleshtrydhe" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvor mange farver er der i en regnbue?", "ar": "كم عدد ألوان قوس قزح؟", "sq": "Sa ngjyra ka një ylber?" },
+        "options": [{ "da": "5", "ar": "٥", "sq": "5" }, { "da": "6", "ar": "٦", "sq": "6" }, { "da": "7", "ar": "٧", "sq": "7" }, { "da": "8", "ar": "٨", "sq": "8" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvilket dyr er 'junglens konge'?", "ar": "أي حيوان هو 'ملك الغابة'؟", "sq": "Cila kafshë është 'mbreti i xhunglës'?" },
+        "options": [{ "da": "Tiger", "ar": "نمر", "sq": "Tigër" }, { "da": "Elefant", "ar": "فيل", "sq": "Elefant" }, { "da": "Løve", "ar": "أسد", "sq": "Luan" }, { "da": "Bjørn", "ar": "دب", "sq": "Ari" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "easy",
+        "question": { "da": "Hvad er 10 minus 5?", "ar": "كم يساوي 10 ناقص 5؟", "sq": "Sa bëjnë 10 minus 5?" },
+        "options": [{ "da": "3", "ar": "٣", "sq": "3" }, { "da": "4", "ar": "٤", "sq": "4" }, { "da": "5", "ar": "٥", "sq": "5" }, { "da": "6", "ar": "٦", "sq": "6" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilken gas trækker planter ind fra luften?", "ar": "أي غاز تستنشقه النباتات من الهواء؟", "sq": "Cilin gaz thithin bimët nga ajri?" },
+        "options": [{ "da": "Ilt", "ar": "الأكسجين", "sq": "Oksigjen" }, { "da": "Kuldioxid", "ar": "ثاني أكسيد الكربون", "sq": "Dioksid karboni" }, { "da": "Kvælstof", "ar": "النيتروجين", "sq": "Azot" }, { "da": "Brint", "ar": "الهيدروجين", "sq": "Hidrogjen" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvem opfandt telefonen?", "ar": "من اخترع الهاتف؟", "sq": "Kush e shpiku telefonin?" },
+        "options": [{ "da": "Thomas Edison", "ar": "توماس إديسون", "sq": "Thomas Edison" }, { "da": "Nikola Tesla", "ar": "نيكولا تيسلا", "sq": "Nikola Tesla" }, { "da": "Alexander Graham Bell", "ar": "ألكسندر جراهام بيل", "sq": "Alexander Graham Bell" }, { "da": "Albert Einstein", "ar": "ألبرت أينشتاين", "sq": "Albert Einstein" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad er Jordens største kontinent?", "ar": "ما هي أكبر قارة في العالم؟", "sq": "Cili është kontinenti më i madh i Tokës?" },
+        "options": [{ "da": "Afrika", "ar": "أفريقيا", "sq": "Afrika" }, { "da": "Europa", "ar": "أوروبا", "sq": "Evropa" }, { "da": "Nordamerika", "ar": "أمريكا الشمالية", "sq": "Amerika e Veriut" }, { "da": "Asien", "ar": "آسيا", "sq": "Azia" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad er den kemiske formel for vand?", "ar": "ما هي الصيغة الكيميائية للماء؟", "sq": "Cila është formula kimike e ujit?" },
+        "options": [{ "da": "CO2", "ar": "CO2", "sq": "CO2" }, { "da": "O2", "ar": "O2", "sq": "O2" }, { "da": "H2O", "ar": "H2O", "sq": "H2O" }, { "da": "NaCl", "ar": "NaCl", "sq": "NaCl" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilken by er hovedstad i Japan?", "ar": "ما هي عاصمة اليابان؟", "sq": "Cili qytet është kryeqyteti i Japonisë?" },
+        "options": [{ "da": "Beijing", "ar": "بكين", "sq": "Pekin" }, { "da": "Seoul", "ar": "سيول", "sq": "Seul" }, { "da": "Tokyo", "ar": "طوكيو", "sq": "Tokio" }, { "da": "Bangkok", "ar": "بانكوك", "sq": "Bangkok" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvem skrev 'Harry Potter' bøgerne?", "ar": "من كتب سلسلة كتب 'هاري بوتر'؟", "sq": "Kush i shkroi librat 'Harry Potter'?" },
+        "options": [{ "da": "J.R.R. Tolkien", "ar": "ج. ر. ر. تولكين", "sq": "J.R.R. Tolkien" }, { "da": "George R.R. Martin", "ar": "جورج ر. ر. مارتن", "sq": "George R.R. Martin" }, { "da": "J.K. Rowling", "ar": "ج. ك. رولينج", "sq": "J.K. Rowling" }, { "da": "C.S. Lewis", "ar": "سي. إس. لويس", "sq": "C.S. Lewis" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad er den længste flod i verden?", "ar": "ما هو أطول نهر في العالم؟", "sq": "Cili është lumi më i gjatë në botë?" },
+        "options": [{ "da": "Amazonas", "ar": "الأمازون", "sq": "Amazona" }, { "da": "Nilen", "ar": "النيل", "sq": "Nili" }, { "da": "Yangtze", "ar": "اليانغتسي", "sq": "Jangce" }, { "da": "Mississippi", "ar": "المسيسيبي", "sq": "Misisipi" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilket instrument bruges til at se stjerner?", "ar": "Cili instrument përdoret për të parë yjet?", "sq": "ما هي الأداة المستخدمة لرؤية النجوم؟" },
+        "options": [{ "da": "Mikroskop", "ar": "مجهر", "sq": "Mikroskop" }, { "da": "Teleskop", "ar": "تلسكوب", "sq": "Teleskop" }, { "da": "Stetoskop", "ar": "سماعة الطبيب", "sq": "Stetoskop" }, { "da": "Kompas", "ar": "بوصلة", "sq": "Busull" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvor mange planeter er der i vores solsystem?", "ar": "كم عدد الكواكب في نظامنا الشمسي؟", "sq": "Sa planetë ka në sistemin tonë diellor?" },
+        "options": [{ "da": "7", "ar": "٧", "sq": "7" }, { "da": "8", "ar": "٨", "sq": "8" }, { "da": "9", "ar": "٩", "sq": "9" }, { "da": "10", "ar": "١٠", "sq": "10" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvem var den første mand på månen?", "ar": "من هو أول رجل مشى على سطح القمر؟", "sq": "Kush ishte njeriu i parë në Hënë?" },
+        "options": [{ "da": "Buzz Aldrin", "ar": "بز ألدرن", "sq": "Buzz Aldrin" }, { "da": "Yuri Gagarin", "ar": "يوري جاجارين", "sq": "Yuri Gagarin" }, { "da": "Neil Armstrong", "ar": "نيل أرمسترونج", "sq": "Neil Armstrong" }, { "da": "Michael Collins", "ar": "مايكل كولينز", "sq": "Michael Collins" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilket land gav Frihedsgudinden til USA?", "ar": "أي بلد أهدى تمثال الحرية للولايات المتحدة؟", "sq": "Cili shtet i dhuroi Statujën e Lirisë SHBA-së?" },
+        "options": [{ "da": "Spanien", "ar": "إسبانيا", "sq": "Spanja" }, { "da": "Storbritannien", "ar": "بريطانيا العظمى", "sq": "Britania e Madhe" }, { "da": "Italien", "ar": "إيطاليا", "sq": "Italia" }, { "da": "Frankrig", "ar": "فرنسا", "sq": "Franca" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad er Mount Everest?", "ar": "ما هو جبل إيفرست؟", "sq": "Çfarë është Mali Everest?" },
+        "options": [{ "da": "En vulkan", "ar": "بركان", "sq": "Një vullkan" }, { "da": "Verdens højeste bjerg", "ar": "أعلى جبل في العالم", "sq": "Mali më i lartë në botë" }, { "da": "En flod", "ar": "نهر", "sq": "Një lumë" }, { "da": "En ørken", "ar": "صحراء", "sq": "Një shkretëtirë" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilken farve er en smaragd?", "ar": "ما هو لون الزمرد؟", "sq": "Çfarë ngjyre ka një smerald?" },
+        "options": [{ "da": "Rød", "ar": "أحمر", "sq": "E kuqe" }, { "da": "Blå", "ar": "أزرق", "sq": "Blu" }, { "da": "Grøn", "ar": "أخضر", "sq": "E gjelbër" }, { "da": "Gul", "ar": "أصفر", "sq": "E verdhë" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad er den primære ingrediens i guacamole?", "ar": "ما هو المكون الرئيسي في الجواكامولي؟", "sq": "Cili është përbërësi kryesor i guakamoles?" },
+        "options": [{ "da": "Tomat", "ar": "طماطم", "sq": "Domate" }, { "da": "Avocado", "ar": "أفوكادو", "sq": "Avokado" }, { "da": "Løg", "ar": "بصل", "sq": "Qepë" }, { "da": "Lime", "ar": "ليمون حامض", "sq": "Lime" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvor mange sider har en terning?", "ar": "كم عدد أوجه المكعب؟", "sq": "Sa faqe ka një kub?" },
+        "options": [{ "da": "4", "ar": "٤", "sq": "4" }, { "da": "6", "ar": "٦", "sq": "6" }, { "da": "8", "ar": "٨", "sq": "8" }, { "da": "12", "ar": "١٢", "sq": "12" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilket dyr er kendt som 'skibets ørken'?", "ar": "أي حيوان يُعرف بـ 'سفينة الصحراء'؟", "sq": "Cila kafshë njihet si 'anija e shkretëtirës'?" },
+        "options": [{ "da": "Hest", "ar": "حصان", "sq": "Kalë" }, { "da": "Elefant", "ar": "فيل", "sq": "Elefant" }, { "da": "Kamel", "ar": "جمل", "sq": "Deve" }, { "da": "Slange", "ar": "ثعبان", "sq": "Gjarpër" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilken italiensk by er berømt for sine kanaler?", "ar": "أي مدينة إيطالية تشتهر بقنواتها؟", "sq": "Cili qytet italian është i famshëm për kanalet e tij?" },
+        "options": [{ "da": "Rom", "ar": "روما", "sq": "Romë" }, { "da": "Firenze", "ar": "فلورنسا", "sq": "Firence" }, { "da": "Milano", "ar": "ميلانو", "sq": "Milano" }, { "da": "Venedig", "ar": "البندقية", "sq": "Venecia" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad er det hårdeste naturlige stof på Jorden?", "ar": "ما هي أصلب مادة طبيعية على الأرض؟", "sq": "Cila është substanca natyrale më e fortë në Tokë?" },
+        "options": [{ "da": "Guld", "ar": "ذهب", "sq": "Ar" }, { "da": "Jern", "ar": "حديد", "sq": "Hekur" }, { "da": "Diamant", "ar": "ألماس", "sq": "Diamant" }, { "da": "Kvarts", "ar": "كوارتز", "sq": "Kuartz" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilken sport spilles ved Wimbledon?", "ar": "أي رياضة تُلعب في ويمبلدون؟", "sq": "Cili sport luhet në Wimbledon?" },
+        "options": [{ "da": "Fodbold", "ar": "كرة القدم", "sq": "Futboll" }, { "da": "Golf", "ar": "الجولف", "sq": "Golf" }, { "da": "Cricket", "ar": "الكريكيت", "sq": "Kriket" }, { "da": "Tennis", "ar": "التنس", "sq": "Tenis" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvem skrev 'Romeo og Julie'?", "ar": "من كتب 'روميو وجولييت'؟", "sq": "Kush e shkroi 'Romeo dhe Zhuljeta'?" },
+        "options": [{ "da": "Charles Dickens", "ar": "تشارلز ديكنز", "sq": "Charles Dickens" }, { "da": "Jane Austen", "ar": "جين أوستن", "sq": "Jane Austen" }, { "da": "William Shakespeare", "ar": "ويليام شكسبير", "sq": "William Shakespeare" }, { "da": "Mark Twain", "ar": "مارك توين", "sq": "Mark Twain" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad er det kemiske symbol for guld?", "ar": "ما هو الرمز الكيميائي للذهب؟", "sq": "Cili është simboli kimik për arin?" },
+        "options": [{ "da": "Ag", "ar": "Ag", "sq": "Ag" }, { "da": "Au", "ar": "Au", "sq": "Au" }, { "da": "Fe", "ar": "Fe", "sq": "Fe" }, { "da": "Pb", "ar": "Pb", "sq": "Pb" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilket land er kendt for pyramiderne?", "ar": "أي بلد مشهور بالأهرامات؟", "sq": "Cili vend është i njohur për piramidat?" },
+        "options": [{ "da": "Grækenland", "ar": "اليونان", "sq": "Greqia" }, { "da": "Mexico", "ar": "المكسيك", "sq": "Meksika" }, { "da": "Kina", "ar": "الصين", "sq": "Kina" }, { "da": "Egypten", "ar": "مصر", "sq": "Egjipti" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad hedder det største ocean på Jorden?", "ar": "ما هو اسم أكبر محيط على الأرض؟", "sq": "Si quhet oqeani më i madh në Tokë?" },
+        "options": [{ "da": "Atlanterhavet", "ar": "المحيط الأطلسي", "sq": "Oqeani Atlantik" }, { "da": "Indiske Ocean", "ar": "المحيط الهندي", "sq": "Oqeani Indian" }, { "da": "Stillehavet", "ar": "المحيط الهادئ", "sq": "Oqeani Paqësor" }, { "da": "Ishavet", "ar": "المحيط المتجمد الشمالي", "sq": "Oqeani Arktik" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvem malede Mona Lisa?", "ar": "من رسم الموناليزا؟", "sq": "Kush e pikturoi Mona Lizën?" },
+        "options": [{ "da": "Vincent van Gogh", "ar": "فينسنت فان جوخ", "sq": "Vincent van Gogh" }, { "da": "Leonardo da Vinci", "ar": "ليوناردو دافنشي", "sq": "Leonardo da Vinci" }, { "da": "Pablo Picasso", "ar": "بابلو بيكاسو", "sq": "Pablo Picasso" }, { "da": "Michelangelo", "ar": "مايكل أنجلو", "sq": "Mikelanxhelo" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilket år var den første månelanding?", "ar": "في أي سنة كان أول هبوط على سطح القمر؟", "sq": "Në cilin vit ishte ulja e parë në Hënë?" },
+        "options": [{ "da": "1965", "ar": "١٩٦٥", "sq": "1965" }, { "da": "1969", "ar": "١٩٦٩", "sq": "1969" }, { "da": "1971", "ar": "١٩٧١", "sq": "1971" }, { "da": "1973", "ar": "١٩٧٣", "sq": "1973" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad er fotosyntese?", "ar": "ما هي عملية التمثيل الضوئي؟", "sq": "Çfarë është fotosinteza?" },
+        "options": [{ "da": "Planter spiser jord", "ar": "النباتات تأكل التربة", "sq": "Bimët hanë dhe" }, { "da": "Planter omdanner lys til energi", "ar": "النباتات تحول الضوء إلى طاقة", "sq": "Bimët e shndërrojnë dritën në energji" }, { "da": "Planter drikker vand", "ar": "النباتات تشرب الماء", "sq": "Bimët pinë ujë" }, { "da": "Planter sover om natten", "ar": "النباتات تنام في الليل", "sq": "Bimët flenë natën" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvilken planet er tættest på Solen?", "ar": "أي كوكب هو الأقرب إلى الشمس؟", "sq": "Cili planet është më afër Diellit?" },
+        "options": [{ "da": "Venus", "ar": "الزهرة", "sq": "Venusi" }, { "da": "Jorden", "ar": "الأرض", "sq": "Toka" }, { "da": "Mars", "ar": "المريخ", "sq": "Marsi" }, { "da": "Merkur", "ar": "عطارد", "sq": "Mërkuri" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvem var den første kvindelige pilot, der fløj solo over Atlanten?", "ar": "من هي أول امرأة طيارة تطير بمفردها عبر المحيط الأطلسي؟", "sq": "Kush ishte pilotja e parë femër që fluturoi solo përtej Atlantikut?" },
+        "options": [{ "da": "Bessie Coleman", "ar": "بيسي كولمان", "sq": "Bessie Coleman" }, { "da": "Harriet Quimby", "ar": "هارييت كيمبي", "sq": "Harriet Quimby" }, { "da": "Amelia Earhart", "ar": "أميليا إيرهارت", "sq": "Amelia Earhart" }, { "da": "Jacqueline Cochran", "ar": "جاكلين كوكران", "sq": "Jacqueline Cochran" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "medium",
+        "question": { "da": "Hvad hedder processen, hvor vand bliver til damp?", "ar": "ما اسم عملية تحول الماء إلى بخار؟", "sq": "Si quhet procesi kur uji kthehet në avull?" },
+        "options": [{ "da": "Kondensation", "ar": "تكثف", "sq": "Kondensim" }, { "da": "Fordampning", "ar": "تبخر", "sq": "Avullim" }, { "da": "Frysning", "ar": "تجمد", "sq": "Ngrirje" }, { "da": "Smeltning", "ar": "انصهار", "sq": "Shkrirje" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvilket år faldt Berlinmuren?", "ar": "في أي عام سقط جدار برلين؟", "sq": "Në cilin vit ra Muri i Berlinit?" },
+        "options": [{ "da": "1987", "ar": "١٩٨٧", "sq": "1987" }, { "da": "1989", "ar": "١٩٨٩", "sq": "1989" }, { "da": "1991", "ar": "١٩٩١", "sq": "1991" }, { "da": "1993", "ar": "١٩٩٣", "sq": "1993" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvem skrev 'Kapitalen' (Das Kapital)?", "ar": "من كتب 'رأس المال' (Das Kapital)؟", "sq": "Kush e shkroi 'Das Kapital'?" },
+        "options": [{ "da": "Adam Smith", "ar": "آدم سميث", "sq": "Adam Smith" }, { "da": "John Maynard Keynes", "ar": "جون ماينارد كينز", "sq": "John Maynard Keynes" }, { "da": "Karl Marx", "ar": "كارل ماركس", "sq": "Karl Marx" }, { "da": "Friedrich Engels", "ar": "فريدريك إنجلز", "sq": "Friedrich Engels" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvad måler man lydstyrke i?", "ar": "بماذا تقاس شدة الصوت؟", "sq": "Me çfarë matet intensiteti i zërit?" },
+        "options": [{ "da": "Watt", "ar": "واط", "sq": "Watt" }, { "da": "Decibel", "ar": "ديسيبل", "sq": "Decibel" }, { "da": "Hertz", "ar": "هرتز", "sq": "Hertz" }, { "da": "Lumen", "ar": "لومن", "sq": "Lumen" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvad er navnet på den anden puniske krig's berømte kartagiske general?", "ar": "ما هو اسم الجنرال القرطاجي الشهير في الحرب البونيقية الثانية؟", "sq": "Si quhej gjenerali i famshëm kartagjenas i Luftës së Dytë Punike?" },
+        "options": [{ "da": "Hamilcar Barca", "ar": "حملقار برقا", "sq": "Hamilcar Barca" }, { "da": "Hannibal Barca", "ar": "حنبعل برقا", "sq": "Hannibal Barca" }, { "da": "Hasdrubal Barca", "ar": "حسدروبعل برقا", "sq": "Hasdrubal Barca" }, { "da": "Scipio Africanus", "ar": "سيبيو الأفريقي", "sq": "Scipio Africanus" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvad er 'Schrödingers kat' et eksempel på?", "ar": "مثال على ماذا 'قطة شرودنجر'؟", "sq": "Për çfarë është shembull 'macja e Schrödingerit'?" },
+        "options": [{ "da": "Klassisk mekanik", "ar": "الميكانيكا الكلاسيكية", "sq": "Mekanika klasike" }, { "da": "Et biologisk eksperiment", "ar": "تجربة بيولوجية", "sq": "Një eksperiment biologjik" }, { "da": "Et tankeeksperiment i kvantemekanik", "ar": "تجربة فكرية في ميكانيكا الكم", "sq": "Një eksperiment mendor në mekanikën kuantike" }, { "da": "En filosofisk gåde", "ar": "لغز فلسفي", "sq": "Një enigmë filozofike" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "I hvilket land ligger Timbuktu?", "ar": "في أي بلد تقع تمبكتو؟", "sq": "Në cilin vend ndodhet Timbuktu?" },
+        "options": [{ "da": "Nigeria", "ar": "نيجيريا", "sq": "Nigeri" }, { "da": "Etiopien", "ar": "إثيوبيا", "sq": "Etiopi" }, { "da": "Mali", "ar": "مالي", "sq": "Mali" }, { "da": "Marokko", "ar": "المغرب", "sq": "Marok" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvem komponerede 'De fire årstider'?", "ar": "من قام بتأليف 'الفصول الأربعة'؟", "sq": "Kush i kompozoi 'Katër Stinët'?" },
+        "options": [{ "da": "Bach", "ar": "باخ", "sq": "Bach" }, { "da": "Mozart", "ar": "موزارت", "sq": "Mozart" }, { "da": "Beethoven", "ar": "بيتهوفن", "sq": "Beethoven" }, { "da": "Vivaldi", "ar": "فيفالدي", "sq": "Vivaldi" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvad er det filosofiske studie af viden?", "ar": "ما هي الدراسة الفلسفية للمعرفة؟", "sq": "Cili është studimi filozofik i njohurive?" },
+        "options": [{ "da": "Metafysik", "ar": "الميتافيزيقيا", "sq": "Metafizika" }, { "da": "Etik", "ar": "الأخلاق", "sq": "Etika" }, { "da": "Epistemologi", "ar": "نظرية المعرفة", "sq": "Epistemologjia" }, { "da": "Logik", "ar": "المنطق", "sq": "Logjika" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvilken krig blev udkæmpet mellem Athen og Sparta?", "ar": "أي حرب دارt بين أثينا وسبارتا؟", "sq": "Cila luftë u zhvillua midis Athinës dhe Spartës?" },
+        "options": [{ "da": "De persiske krige", "ar": "الحروب الفارسية", "sq": "Luftërat Persiane" }, { "da": "Den peloponnesiske krig", "ar": "الحرب البيلوبونيسية", "sq": "Lufta e Peloponezit" }, { "da": "De puniske krige", "ar": "الحروب البونيقية", "sq": "Luftërat Punike" }, { "da": "Den trojanske krig", "ar": "حرب طروادة", "sq": "Lufta e Trojës" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvad er et Fibonacci-tal?", "ar": "ما هو رقم فيبوناتشي؟", "sq": "Çfarë është një numër Fibonaçi?" },
+        "options": [{ "da": "Et primtal", "ar": "عدد أولي", "sq": "Një numër i thjeshtë" }, { "da": "Et tal, der er summen af de to foregående", "ar": "رقم هو مجموع الرقمين السابقين", "sq": "Një numër që është shuma e dy të mëparshmëve" }, { "da": "Et perfekt tal", "ar": "عدد مثالي", "sq": "Një numër i përsosur" }, { "da": "Et irrationelt tal", "ar": "عدد غير نسبي", "sq": "Një numër irracional" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvilken fredsaftale afsluttede officielt Trediveårskrigen?", "ar": "أي معاهدة سلام أنهت حرب الثلاثين عامًا رسميًا؟", "sq": "Cili traktat paqeje i dha fund zyrtarisht Luftës Tridhjetëvjeçare?" },
+        "options": [{ "da": "Versaillestraktaten", "ar": "معاهدة فرساي", "sq": "Traktati i Versajës" }, { "da": "Den Westfalske Fred", "ar": "صلح وستفاليا", "sq": "Paqja e Vestfalisë" }, { "da": "Wienkongressen", "ar": "مؤتمر فيينا", "sq": "Kongresi i Vjenës" }, { "da": "Utrecht-traktaten", "ar": "معاهدة أوترخت", "sq": "Traktati i Utrehtit" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvad beskriver Heisenbergs ubestemthedsprincip fundamentalt?", "ar": "ماذا يصف مبدأ عدم اليقين لهايزنبرج بشكل أساسي؟", "sq": "Çfarë përshkruan në thelb parimi i papërcaktueshmrisë së Heisenbergut?" },
+        "options": [{ "da": "Energi kan ikke skabes", "ar": "لا يمكن خلق الطاقة", "sq": "Energjia nuk mund të krijet" }, { "da": "En partikels position og impuls kan ikke kendes præcist samtidigt", "ar": "لا يمكن معرفة موضع وزخم جسيم في نفس الوقت بدقة", "sq": "Pozicioni dhe momenti i një grimce nuk mund të njihen saktësisht njëkohësisht" }, { "da": "Lys opfører sig som både en partikel og en bølge", "ar": "الضوء يتصرف كجسيم وموجة", "sq": "Drita sillet si grimcë dhe si valë" }, { "da": "Tiden går langsommere nær massive objekter", "ar": "الزمن يتباطأ بالقرب من الأجسام الضخمة", "sq": "Koha ngadalësohet pranë objekteve masive" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "I hvilken roman af Dostojevskij stilles spørgsmålet 'Hvis Gud ikke eksisterer, er alt så tilladt'?", "ar": "في أي رواية لدوستويفسكي يُطرح سؤال 'إذا لم يكن الإله موجودًا، فكل شيء مباح'؟", "sq": "Në cilin roman të Dostojevskit shtrohet pyetja 'Nëse Zoti nuk ekziston, a lejohet gjithçka'?" },
+        "options": [{ "da": "Forbrydelse og straf", "ar": "الجريمة والعقاب", "sq": "Krim dhe ndëshkim" }, { "da": "Idioten", "ar": "الأبله", "sq": "Idioti" }, { "da": "Brødrene Karamazov", "ar": "الإخوة كارامازوف", "sq": "Vëllezërit Karamazov" }, { "da": "Onde ånder", "ar": "الشياطين", "sq": "Demonët" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvilken kunstbevægelse er maleren Artemisia Gentileschi primært forbundet med?", "ar": "بأي حركة فنية ترتبط الرسامة أرتيميسيا جنتلسكي بشكل أساسي؟", "sq": "Me cilën lëvizje artistike lidhet kryesisht piktorja Artemisia Gentileschi?" },
+        "options": [{ "da": "Renæssancen", "ar": "عصر النهضة", "sq": "Rilindja" }, { "da": "Barokken", "ar": "الباروك", "sq": "Baroku" }, { "da": "Rokoko", "ar": "الروكوكو", "sq": "Rokoko" }, { "da": "Neoklassicismen", "ar": "الكلاسيكية الجديدة", "sq": "Neoklasicizmi" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvilken filosof er berømt for begrebet 'Übermensch' (Overmennesket)?", "ar": "أي فيلسوف مشهور بمفهوم 'الإنسان المتفوق' (Übermensch)؟", "sq": "Cili filozof është i famshëm për konceptin 'Übermensch' (Mbinjeriu)?" },
+        "options": [{ "da": "Immanuel Kant", "ar": "إيمانويل كانط", "sq": "Immanuel Kant" }, { "da": "Søren Kierkegaard", "ar": "سورين كيركغور", "sq": "Søren Kierkegaard" }, { "da": "Arthur Schopenhauer", "ar": "آرثر شوبنهاور", "sq": "Arthur Schopenhauer" }, { "da": "Friedrich Nietzsche", "ar": "فريدريك نيتشه", "sq": "Friedrich Nietzsche" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvem var den sidste kejser af Qing-dynastiet i Kina?", "ar": "من كان آخر إمبراطور لسلالة تشينغ في الصين؟", "sq": "Kush ishte perandori i fundit i dinastisë Qing në Kinë?" },
+        "options": [{ "da": "Puyi", "ar": "بوئي", "sq": "Puyi" }, { "da": "Cixi", "ar": "تسيشي", "sq": "Cixi" }, { "da": "Guangxu", "ar": "غوانغشو", "sq": "Guangxu" }, { "da": "Hongwu", "ar": "هونغوو", "sq": "Hongwu" }],
+        "correctAnswerIndex": 0
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "I nordisk mytologi, hvad er navnet på verdenstræet, der forbinder de ni verdener?", "ar": "في الميثولوجيا الإسكندنافية، ما هو اسم شجرة العالم التي تربط العوالم التسعة؟", "sq": "Në mitologjinë nordike, si quhet pema e botës që lidh nëntë botët?" },
+        "options": [{ "da": "Asgård", "ar": "أسكارد", "sq": "Asgard" }, { "da": "Bifrost", "ar": "بيفروست", "sq": "Bifrost" }, { "da": "Yggdrasil", "ar": "يغدراسيل", "sq": "Yggdrasil" }, { "da": "Ragnarok", "ar": "راجناروك", "sq": "Ragnarok" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvilken økonom er krediteret for teorien om 'komparative fordele'?", "ar": "من هو الاقتصادي الذي يُنسب إليه نظرية 'الميزة النسبية'؟", "sq": "Cili ekonomist njihet për teorinë e 'përparësisë krahasuese'?" },
+        "options": [{ "da": "Adam Smith", "ar": "آدم سميث", "sq": "Adam Smith" }, { "da": "Karl Marx", "ar": "كارل ماركس", "sq": "Karl Marx" }, { "da": "John Maynard Keynes", "ar": "جون ماينارد كينز", "sq": "John Maynard Keynes" }, { "da": "David Ricardo", "ar": "ديفيد ريكاردو", "sq": "David Ricardo" }],
+        "correctAnswerIndex": 3
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Slaget ved Agincourt i 1415 var en afgørende engelsk sejr i hvilken krig?", "ar": "كانت معركة أجينكور عام 1415 انتصارًا إنجليزيًا حاسمًا في أي حرب؟", "sq": "Beteja e Agincourt në 1415 ishte një fitore vendimtare angleze në cilën luftë?" },
+        "options": [{ "da": "Rosekrigene", "ar": "حرب الوردتين", "sq": "Lufta e Trëndafilave" }, { "da": "Hundredårskrigen", "ar": "حرب المئة عام", "sq": "Lufta Njëqindvjeçare" }, { "da": "Trediveårskrigen", "ar": "حرب الثلاثين عامًا", "sq": "Lufta Tridhjetëvjeçare" }, { "da": "Syvårskrigen", "ar": "حرب السنوات السبع", "sq": "Lufta Shtatëvjeçare" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvem skrev den episke digtcyklus 'The Waste Land'?", "ar": "من كتب القصيدة الملحمية 'الأرض اليباب'؟", "sq": "Kush e shkroi poemën epike 'Toka e shkretë'?" },
+        "options": [{ "da": "W.B. Yeats", "ar": "ويليام بتلر ييتس", "sq": "W.B. Yeats" }, { "da": "Ezra Pound", "ar": "عزرا باوند", "sq": "Ezra Pound" }, { "da": "T.S. Eliot", "ar": "ت. س. إليوت", "sq": "T.S. Eliot" }, { "da": "James Joyce", "ar": "جيمس جويس", "sq": "James Joyce" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvad er en pulsar?", "ar": "ما هو النجم النابض (بولسار)؟", "sq": "Çfarë është një pulsar?" },
+        "options": [{ "da": "En type galakse", "ar": "نوع من المجرات", "sq": "Një lloj galaktike" }, { "da": "Et sort hul, der udsender stråling", "ar": "ثقب أسود يطلق إشعاعًا", "sq": "Një vrimë e zezë që lëshon rrezatim" }, { "da": "En hurtigt roterende neutronstjerne", "ar": "نجم نيوتروني يدور بسرعة", "sq": "Një yll neutronesh me rrotullim të shpejtë" }, { "da": "En døende stjerne på størrelse med Solen", "ar": "نجم محتضر بحجم الشمس", "sq": "Një yll në vdekje me madhësinë e Diellit" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvem er arkitekten bag Guggenheim-museet i Bilbao, Spanien?", "ar": "من هو مهندس متحف غوغنهايم في بلباو، إسبانيا؟", "sq": "Kush është arkitekti i Muzeut Guggenheim në Bilbao, Spanjë?" },
+        "options": [{ "da": "Zaha Hadid", "ar": "زها حديد", "sq": "Zaha Hadid" }, { "da": "Frank Gehry", "ar": "فرانك جيري", "sq": "Frank Gehry" }, { "da": "I. M. Pei", "ar": "آي. إم. باي", "sq": "I. M. Pei" }, { "da": "Norman Foster", "ar": "نورمان فوستر", "sq": "Norman Foster" }],
+        "correctAnswerIndex": 1
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvilket imperium blev styret af Suleiman den Store i sin guldalder?", "ar": "أي إمبراطورية حكمها سليمان القانوني خلال عصرها الذهبي؟", "sq": "Cila perandori u sundua nga Sulejmani i Madhërishëm gjatë epokës së saj të artë?" },
+        "options": [{ "da": "Mogulriget", "ar": "الإمبراطورية المغولية", "sq": "Perandoria Mogule" }, { "da": "Safavideriget", "ar": "الإمبراطورية الصفوية", "sq": "Perandoria Safavide" }, { "da": "Det Osmanniske Rige", "ar": "الإمبراطورية العثمانية", "sq": "Perandoria Osmane" }, { "da": "Romerriget", "ar": "الإمبراطورية الرومانية", "sq": "Perandoria Romake" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvilken gas udgør størstedelen af Venus' atmosfære?", "ar": "أي غاز يشكل غالبية الغلاف الجوي لكوكب الزهرة؟", "sq": "Cili gaz përbën shumicën e atmosferës së Venusit?" },
+        "options": [{ "da": "Nitrogen", "ar": "النيتروجين", "sq": "Nitrogjeni" }, { "da": "Oxygen", "ar": "الأكسجين", "sq": "Oksigjeni" }, { "da": "Kuldioxid", "ar": "ثاني أكسيد الكربون", "sq": "Dioksidi i karbonit" }, { "da": "Metan", "ar": "الميثان", "sq": "Metani" }],
+        "correctAnswerIndex": 2
+    },
+    {
+        "difficulty": "hard",
+        "question": { "da": "Hvad er mitokondriers primære funktion i en eukaryot celle?", "ar": "ما هي الوظيفة الأساسية للميتوكوندريا في خلية حقيقية النواة؟", "sq": "Cili është funksioni primar i mitokondrive në një qelizë eukariote?" },
+        "options": [{ "da": "Proteinsyntese", "ar": "تخليق البروتين", "sq": "Sinteza e proteinave" }, { "da": "Cellulær respiration og ATP-produktion", "ar": "التنفس الخلوي وإنتاج ATP", "sq": "Frymëmarrja qelizore dhe prodhimi i ATP-së" }, { "da": "Lagring af genetisk materiale", "ar": "تخزين المادة الوراثية", "sq": "Ruajtja e materialit gjenetik" }, { "da": "Affaldsbehandling", "ar": "معالجة النفايات", "sq": "Përpunimi i mbetjeve" }],
+        "correctAnswerIndex": 1
+    }
+]
