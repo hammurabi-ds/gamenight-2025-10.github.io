@@ -44,7 +44,7 @@
             --text-primary: #e0e7ff; --text-secondary: #a5b4fc; --border-color: #1e3a8a;
             --accent-color: #60a5fa; --header-gradient-from: #93c5fd; --header-gradient-to: #3b82f6;
         }
-         body.theme-sapphire-light {
+          body.theme-sapphire-light {
             --bg-primary: #f0f9ff; --bg-secondary: #dbeafe; --bg-tertiary: #bfdbfe;
             --text-primary: #1e3a8a; --text-secondary: #1d4ed8; --border-color: #93c5fd;
             --accent-color: #2563eb; --header-gradient-from: #3b82f6; --header-gradient-to: #1d4ed8;
@@ -98,7 +98,7 @@
     <header class="p-3 bg-main-secondary/50 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div class="w-full max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                 <svg class="h-8 w-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-8 w-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <h1 class="text-xl font-bold text-main-primary hidden sm:block">Family Quiz Night</h1>
@@ -108,7 +108,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/></svg>
                 </button>
                 <button onclick="openSettings()" class="header-icon-btn" title="Settings">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311a1.464 1.464 0 0 1-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311a1.464 1.464 0 0 1-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858"/></svg>
                 </button>
             </div>
         </div>
@@ -146,9 +146,10 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Left Column: Game Settings -->
                     <div class="space-y-6">
-                        <div>
+                        <!-- FIX 1: Added specific ID for team count selector -->
+                        <div id="team-count-group"> 
                             <label class="block text-lg font-semibold text-main-secondary mb-3">Number of Teams</label>
-                            <div class="flex justify-center gap-2 md:gap-3">
+                            <div id="team-count-selector" class="flex justify-center gap-2 md:gap-3">
                                 <button onclick="selectNumberOfTeams(2, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg selected">2</button>
                                 <button onclick="selectNumberOfTeams(3, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">3</button>
                                 <button onclick="selectNumberOfTeams(4, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">4</button>
@@ -160,11 +161,22 @@
                     </div>
                     <!-- Right Column: Player/Team Names -->
                     <div class="space-y-4">
-                         <div><label for="gamemaster-name-input" class="block text-lg font-semibold accent-text mb-2">Game Master</label><input type="text" id="gamemaster-name-input" class="setup-input w-full" placeholder="Enter host's name"></div>
-                         <div id="team-names-container" class="space-y-4"></div>
+                        <div><label for="gamemaster-name-input" class="block text-lg font-semibold accent-text mb-2">Game Master</label><input type="text" id="gamemaster-name-input" class="setup-input w-full" placeholder="Enter host's name"></div>
+                        <div id="team-names-container" class="space-y-4"></div>
                     </div>
                 </div>
-                <div class="mt-8 border-t-2 border-main pt-6"><label class="block text-lg font-semibold text-main-secondary mb-3">Languages</label><div id="language-selector" class="flex justify-center gap-4 flex-wrap"><input type="checkbox" id="lang-da" value="da" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-da" class="lang-checkbox-label">🇩🇰 Danish</label><input type="checkbox" id="lang-ar" value="ar" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-ar" class="lang-checkbox-label">🇸🇦 Arabic</label><input type="checkbox" id="lang-sq" value="sq" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-sq" class="lang-checkbox-label">🇦🇱 Albanian</label></div><p id="lang-error" class="text-red-400 text-sm mt-2 hidden">Please select at least one language.</p></div>
+                <div class="mt-8 border-t-2 border-main pt-6">
+                    <label class="block text-lg font-semibold text-main-secondary mb-3">Languages</label>
+                    <div id="language-selector" class="flex justify-center gap-4 flex-wrap">
+                        <input type="checkbox" id="lang-da" value="da" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-da" class="lang-checkbox-label">🇩🇰 Danish</label>
+                        <input type="checkbox" id="lang-ar" value="ar" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-ar" class="lang-checkbox-label">🇸🇦 Arabic</label>
+                        <input type="checkbox" id="lang-sq" value="sq" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-sq" class="lang-checkbox-label">🇦🇱 Albanian</label>
+                    </div>
+                    <p id="lang-error" class="text-red-400 text-sm mt-2 hidden">Please select at least one language.</p>
+                </div>
+                <!-- FIX 2: Added setup error message element (replacing alert) -->
+                <p id="setup-error" class="text-red-400 font-semibold mt-4 hidden">There was an issue starting the game. Please adjust your settings.</p>
+                
                 <button onclick="initGame()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105 mt-8">Start Game</button>
             </div>
         </div>
@@ -185,7 +197,6 @@
             <h2 class="text-3xl font-bold text-center mb-6 accent-text">Settings</h2>
             <div class="space-y-6 overflow-y-auto flex-grow pr-2">
                 <!-- Theme Selector -->
-                
                 <div class="pb-6"><label class="block text-lg font-semibold text-main-secondary mb-3 text-center">Party Theme</label><div id="theme-selector" class="flex justify-center gap-4 flex-wrap">
                     <button id="theme-retro-wave" onclick="selectTheme('theme-retro-wave', this)" class="theme-btn"></button>
                     <button id="theme-jungle-vibe" onclick="selectTheme('theme-jungle-vibe', this)" class="theme-btn"></button>
@@ -221,6 +232,9 @@
         const pauseResumeBtn = document.getElementById('pause-resume-btn');
         const gameOverEl = document.getElementById('game-over');
         const langErrorEl = document.getElementById('lang-error');
+        // FIX 3: Added setup error element to global vars
+        const setupErrorEl = document.getElementById('setup-error');
+
         const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/></svg>`;
         const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>`;
 
@@ -311,7 +325,7 @@
             { difficulty: 'medium', question: { da: "Hvem var den første præsident i USA?", ar: "من كان أول رئيس للولايات المتحدة؟", sq: "Kush ishte presidenti i parë i SHBA-së?" }, options: [{ da: "Thomas Jefferson", ar: "توماس جيفرسون", sq: "Thomas Jefferson" }, { da: "Abraham Lincoln", ar: "أبراهام لنكولن", sq: "Abraham Lincoln" }, { da: "George Washington", ar: "جورج واشنطن", sq: "George Washington" }, { da: "John Adams", ar: "جون آدامز", sq: "John Adams" }], correctAnswerIndex: 2 },
             { difficulty: 'medium', question: { da: "Hvilket grundstof består diamanter primært af?", ar: "ما هو العنصر الأساسي المكون للألماس؟", sq: "Nga cili element përbëhen kryesisht diamantet?" }, options: [{ da: "Silicium", ar: "السيليكون", sq: "Silic" }, { da: "Oxygen", ar: "الأكسجين", sq: "Oksigjen" }, { da: "Jern", ar: "الحديد", sq: "Hekur" }, { da: "Kulstof", ar: "الكربون", sq: "Karbon" }], correctAnswerIndex: 3 },
             { difficulty: 'medium', question: { da: "Hvilket ocean er det mindste i verden?", ar: "ما هو أصغر محيط في العالم؟", sq: "Cili oqean është më i vogli në botë?" }, options: [{ da: "Det Arktiske Ocean", ar: "المحيط المتجمد الشمالي", sq: "Oqeani Arktik" }, { da: "Det Indiske Ocean", ar: "المحيط الهندي", sq: "Oqeani Indian" }, { da: "Atlanterhavet", ar: "المحيط الأطلسي", sq: "Oqeani Atlantik" }, { da: "Stillehavet", ar: "المحيط الهادئ", sq: "Oqeani Paqësor" }], correctAnswerIndex: 0 },
-            { difficulty: 'medium', question: { da: "Hvilken gas trækker planter ind fra luften?", ar: "أي غاز تستنشقه النباتات من الهواء؟", sq: "Cilin gaz thithin bimët nga ajri?" }, options: [{ da: "Ilt", ar: "الأكسجين", sq: "Oksigjen" }, { da: "Kuldioxid", ar: "ثاني أكسيد الكربون", sq: "Dioksid karboni" }, { da: "Kvælstof", ar: "النيتروجين", sq: "Azot" }, { da: "Brint", ar: "الهيدروجين", sq: "Hidrogjen" }], correctAnswerIndex: 1 },
+            { difficulty: 'medium', question: { da: "Hvilken gas trækker planter ind fra luften?", ar: "أي غاز تستنشقه النباتات من الهواء؟", sq: "Cilin gaz thithin bimët nga ajri?" }, options: [{ da: "Ilt", ar: "الأكسجين", sq: "Oksigjen" }, { da: "Kuldioxid", ar: "ثاني أكسيد الكربون", sq: "Dioksid karboni" }, { da: "Kvælstof", ar: "النيترogen", sq: "Azot" }, { da: "Brint", ar: "الهيدروجين", sq: "Hidrogjen" }], correctAnswerIndex: 1 },
             { difficulty: 'medium', question: { da: "Hvem opfandt telefonen?", ar: "من اخترع الهاتف؟", sq: "Kush e shpiku telefonin?" }, options: [{ da: "Thomas Edison", ar: "توماس إديسون", sq: "Thomas Edison" }, { da: "Nikola Tesla", ar: "نيكولا تيسلا", sq: "Nikola Tesla" }, { da: "Alexander Graham Bell", ar: "ألكسندر جراهام بيل", sq: "Alexander Graham Bell" }, { da: "Albert Einstein", ar: "ألبرت أينشتاين", sq: "Albert Einstein" }], correctAnswerIndex: 2 },
             { difficulty: 'medium', question: { da: "Hvad er Jordens største kontinent?", ar: "ما هي أكبر قارة في العالم؟", sq: "Cili është kontinenti më i madh i Tokës?" }, options: [{ da: "Afrika", ar: "أفريقيا", sq: "Afrika" }, { da: "Europa", ar: "أوروبا", sq: "Evropa" }, { da: "Nordamerika", ar: "أمريكا الشمالية", sq: "Amerika e Veriut" }, { da: "Asien", ar: "آسيا", sq: "Azia" }], correctAnswerIndex: 3 },
             { difficulty: 'medium', question: { da: "Hvad er den kemiske formel for vand?", ar: "ما هي الصيغة الكيميائية للماء؟", sq: "Cila është formula kimike e ujit?" }, options: [{ da: "CO2", ar: "CO2", sq: "CO2" }, { da: "O2", ar: "O2", sq: "O2" }, { da: "H2O", ar: "H2O", sq: "H2O" }, { da: "NaCl", ar: "NaCl", sq: "NaCl" }], correctAnswerIndex: 2 },
@@ -341,7 +355,6 @@
             { difficulty: 'medium', question: { da: "Hvem var den første kvindelige pilot, der fløj solo over Atlanten?", ar: "من هي أول امرأة طيارة تطير بمفردها عبر المحيط الأطلسي؟", sq: "Kush ishte pilotja e parë femër që fluturoi solo përtej Atlantikut?" }, options: [{ da: "Bessie Coleman", ar: "بيسي كولمان", sq: "Bessie Coleman" }, { da: "Harriet Quimby", ar: "هارييت كيمبي", sq: "Harriet Quimby" }, { da: "Amelia Earhart", ar: "أميليا إيرهارت", sq: "Amelia Earhart" }, { da: "Jacqueline Cochran", ar: "جاكلين كوكران", sq: "Jacqueline Cochran" }], correctAnswerIndex: 2 },
             { difficulty: 'medium', question: { da: "Hvad hedder processen, hvor vand bliver til damp?", ar: "ما اسم عملية تحول الماء إلى بخار؟", sq: "Si quhet procesi kur uji kthehet në avull?" }, options: [{ da: "Kondensation", ar: "تكثف", sq: "Kondensim" }, { da: "Fordampning", ar: "تبخر", sq: "Avullim" }, { da: "Frysning", ar: "تجمد", sq: "Ngrirje" }, { da: "Smeltning", ar: "انصهار", sq: "Shkrirje" }], correctAnswerIndex: 1 },
 
-
             // 53 Hard
             { difficulty: 'hard', question: { da: "Hvem skrev det filosofiske værk 'Væren og intet' (L'être et le néant)?", ar: "من كتب العمل الفلسفي 'الوجود والعدم'؟", sq: "Kush e shkroi veprën filozofike 'Qenia dhe Asgjëja'?" }, options: [{ da: "Albert Camus", ar: "ألبير كامو", sq: "Albert Camus" }, { da: "Simone de Beauvoir", ar: "سيمون دي بوفوار", sq: "Simone de Beauvoir" }, { da: "Jean-Paul Sartre", ar: "جان بول سارتر", sq: "Jean-Paul Sartre" }, { da: "Martin Heidegger", ar: "مارتن هايدجر", sq: "Martin Heidegger" }], correctAnswerIndex: 2 },
             { difficulty: 'hard', question: { da: "Hvad kaldes processen, hvor et fast stof bliver direkte til en gas?", ar: "ماذا تسمى العملية التي يتحول فيها الصلب مباشرة إلى غاز؟", sq: "Si quhet procesi kur një trup i ngurtë kthehet direkt në gaz?" }, options: [{ da: "Fordampning", ar: "تبخر", sq: "Avullim" }, { da: "Kondensation", ar: "تكثف", sq: "Kondensim" }, { da: "Smeltning", ar: "انصهار", sq: "Shkrirje" }, { da: "Sublimation", ar: "تسامي", sq: "Sublimim" }], correctAnswerIndex: 3 },
@@ -362,7 +375,7 @@
             { difficulty: 'hard', question: { da: "Hvad er den primære bestanddel af Jordens kerne?", ar: "ما هو المكون الرئيسي لنواة الأرض؟", sq: "Cili është përbërësi kryesor i bërthamës së Tokës?" }, options: [{ da: "Jern", ar: "حديد", sq: "Hekur" }, { da: "Nikkel", ar: "نيكل", sq: "Nikel" }, { da: "Silicium", ar: "سيليكون", sq: "Silic" }, { da: "Guld", ar: "ذهب", sq: "Ar" }], correctAnswerIndex: 0 },
             { difficulty: 'hard', question: { da: "I hvilket slag blev Napoleon Bonaparte endeligt besejret i 1815?", ar: "في أي معركة هُزم نابليون بونابرت نهائيًا عام 1815؟", sq: "Në cilën betejë u mund përfundimisht Napoleon Bonaparti në 1815?" }, options: [{ da: "Slaget ved Trafalgar", ar: "معركة الطرف الأغر", sq: "Beteja e Trafalgarit" }, { da: "Slaget ved Austerlitz", ar: "معركة أوسترليتز", sq: "Beteja e Austerlitz" }, { da: "Slaget ved Leipzig", ar: "معركة لايبزيغ", sq: "Beteja e Leipzigut" }, { da: "Slaget ved Waterloo", ar: "معركة واترلو", sq: "Beteja e Waterloos" }], correctAnswerIndex: 3 },
             { difficulty: 'hard', question: { da: "Hvad er 'Ockhams ragekniv' (Occam's Razor)?", ar: "ما هي 'شفرة أوكام'؟", sq: "Çfarë është 'Brima e Okamit'?" }, options: [{ da: "En kirurgisk procedure", ar: "إجراء جراحي", sq: "Një procedurë kirurgjikale" }, { da: "Et filosofisk princip om, at den simpleste forklaring ofte er den bedste", ar: "مبدأ فلسفي ينص على أن أبسط تفسير هو الأفضل غالبًا", sq: "Një parim filozofik që shpjegimi më i thjeshtë është shpesh më i miri" }, { da: "Et våben fra middelalderen", ar: "سلاح من العصور الوسطى", sq: "Një armë mesjetare" }, { da: "En matematisk formel", ar: "صيغة رياضية", sq: "Një formulë matematikore" }], correctAnswerIndex: 1 },
-            { difficulty: 'hard', question: { da: "Hvem var den romerske gud for krig?", ar: "من كان إله الحرب الروماني؟", sq: "Kush ishte perëndia romake e luftës?" }, options: [{ da: "Jupiter", ar: "جوبيتر", sq: "Jupiteri" }, { da: "Mars", ar: "مارس", sq: "Marsi" }, { da: "Neptun", ar: "نبتون", sq: "Neptuni" }, { da: "Apollo", ar: "أبولو", sq: "Apoloni" }], correctAnswerIndex: 1 }
+            { difficulty: 'hard', question: { da: "Hvem var den romerske gud for krig?", ar: "من كان إله الحرب الروماني؟", sq: "Kush ishte perëndia romake e luftës?" }, options: [{ da: "Jupiter", ar: "جوبيتر", sq: "Jupiteri" }, { da: "Mars", ar: "مارس", sq: "Marsi" }, { da: "Neptun", ar: "نبتون", sq: "Neptuni" }, { da: "Apollo", ar: "أبولو", sq: "Apoloni" }], correctAnswerIndex: 1 },
             { difficulty: 'hard', question: { da: "Hvilket år faldt Berlinmuren?", ar: "في أي عام سقط جدار برلين؟", sq: "Në cilin vit ra Muri i Berlinit?" }, options: [{ da: "1987", ar: "١٩٨٧", sq: "1987" }, { da: "1989", ar: "١٩٨٩", sq: "1989" }, { da: "1991", ar: "١٩٩١", sq: "1991" }, { da: "1993", ar: "١٩٩٣", sq: "1993" }], correctAnswerIndex: 1 },
             { difficulty: 'hard', question: { da: "Hvem skrev 'Kapitalen' (Das Kapital)?", ar: "من كتب 'رأس المال' (Das Kapital)؟", sq: "Kush e shkroi 'Das Kapital'?" }, options: [{ da: "Adam Smith", ar: "آدم سميث", sq: "Adam Smith" }, { da: "John Maynard Keynes", ar: "جون ماينارد كينز", sq: "John Maynard Keynes" }, { da: "Karl Marx", ar: "كارل ماركس", sq: "Karl Marx" }, { da: "Friedrich Engels", ar: "فريدريك إنجلز", sq: "Friedrich Engels" }], correctAnswerIndex: 2 },
             { difficulty: 'hard', question: { da: "Hvad måler man lydstyrke i?", ar: "بماذا تقاس شدة الصوت؟", sq: "Me çfarë matet intensiteti i zërit?" }, options: [{ da: "Watt", ar: "واط", sq: "Watt" }, { da: "Decibel", ar: "ديسيبل", sq: "Decibel" }, { da: "Hertz", ar: "هرتز", sq: "Hertz" }, { da: "Lumen", ar: "لومن", sq: "Lumen" }], correctAnswerIndex: 1 },
@@ -403,9 +416,10 @@
         window.selectDifficulty = (difficulty, button) => { selectedDifficulty = difficulty; document.querySelectorAll('#difficulty-selector button').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
         window.updateLanguageSelection = () => { selectedLanguages = Array.from(document.querySelectorAll('#language-selector input:checked')).map(cb => cb.value); langErrorEl.classList.toggle('hidden', selectedLanguages.length > 0);};
         
+        // FIX 4: Updated selectNumberOfTeams to use the specific #team-count-selector ID
         window.selectNumberOfTeams = (count, button) => {
             selectedTeamCount = count;
-            document.querySelectorAll('#setup-content .flex.justify-center button.setup-option-btn').forEach(btn => btn.classList.remove('selected'));
+            document.querySelectorAll('#team-count-selector button').forEach(btn => btn.classList.remove('selected'));
             button.classList.add('selected');
             renderTeamNameInputs();
         }
@@ -423,8 +437,15 @@
             }
         }
         
+        // FIX 5: Replaced alert() with inline error message (setupErrorEl)
         window.initGame = () => {
-            updateLanguageSelection(); if (selectedLanguages.length === 0) return;
+            setupErrorEl.classList.add('hidden'); // Clear previous errors
+            updateLanguageSelection(); 
+            
+            if (selectedLanguages.length === 0) { 
+                langErrorEl.classList.remove('hidden');
+                return;
+            }
             
             gameMasterName = document.getElementById('gamemaster-name-input').value.trim() || "Host";
             gameMasterNameEl.textContent = gameMasterName;
@@ -442,7 +463,8 @@
             gameQuestions = availableQuestions.sort(() => 0.5 - Math.random()).slice(0, maxQuestions);
 
             if (gameQuestions.length === 0) {
-                 alert(`No questions found for '${selectedDifficulty}' difficulty. Please choose another difficulty.`);
+                setupErrorEl.textContent = `No questions found for the difficulty: '${selectedDifficulty}'. Please adjust your settings.`;
+                setupErrorEl.classList.remove('hidden');
                 return;
             }
             
@@ -459,9 +481,9 @@
                     <div class="text-center">
                         <h2 class="text-lg md:text-xl font-bold ${teamColors[i]}">${name}</h2>
                         <div class="flex items-center justify-center gap-2">
-                           <button onclick="adjustScore(${i}, -1)" class="control-btn text-lg">-</button>
-                           <p id="team-score-${i}" class="text-3xl md:text-4xl font-bold w-16">${teamScores[i]}</p>
-                           <button onclick="adjustScore(${i}, 1)" class="control-btn text-lg">+</button>
+                            <button onclick="adjustScore(${i}, -1)" class="control-btn text-lg">-</button>
+                            <p id="team-score-${i}" class="text-3xl md:text-4xl font-bold w-16">${teamScores[i]}</p>
+                            <button onclick="adjustScore(${i}, 1)" class="control-btn text-lg">+</button>
                         </div>
                     </div>
                 `;
@@ -560,7 +582,12 @@
             } else if (winners.length === 1) {
                 winnerMessageEl.textContent = `${winners[0]} Wins! 🎉`;
                 const winnerIndex = teamNames.indexOf(winners[0]);
-                winnerMessageEl.classList.add(teamColors[winnerIndex]);
+                // This logic needs to be safe if the color array is smaller than teams
+                if (winnerIndex >= 0 && winnerIndex < teamColors.length) {
+                    winnerMessageEl.classList.add(teamColors[winnerIndex]);
+                } else {
+                     winnerMessageEl.classList.add('accent-text');
+                }
             } else {
                  winnerMessageEl.textContent = "Game Over!";
             }
@@ -570,7 +597,8 @@
         // --- INITIAL LOAD ---
         window.onload = () => {
             selectTheme(selectedTheme, document.getElementById(selectedTheme));
-            selectNumberOfTeams(2, document.querySelector('#setup-content .flex.justify-center button.setup-option-btn'));
+            // Ensure the initial selection correctly targets the new ID
+            selectNumberOfTeams(2, document.querySelector('#team-count-selector button'));
             goToHome();
         };
     </script>
