@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
     <!-- Load the question library -->
-    <script src="questions.js" defer></script>
+    <!-- <script src="questions.js" defer></script> --> <!-- This line is removed -->
     <style>
         :root {
             --bg-primary: #0f172a; --bg-secondary: #1e293b; --bg-tertiary: #334155;
@@ -168,7 +168,8 @@
                     </div>
                 </div>
                 <div class="mt-8 border-t-2 border-main pt-6"><label class="block text-lg font-semibold text-main-secondary mb-3">Languages</label><div id="language-selector" class="flex justify-center gap-4 flex-wrap"><input type="checkbox" id="lang-da" value="da" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-da" class="lang-checkbox-label">🇩🇰 Danish</label><input type="checkbox" id="lang-ar" value="ar" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-ar" class="lang-checkbox-label">🇸🇦 Arabic</label><input type="checkbox" id="lang-sq" value="sq" class="lang-checkbox" checked onchange="updateLanguageSelection()"><label for="lang-sq" class="lang-checkbox-label">🇦🇱 Albanian</label></div><p id="lang-error" class="text-red-400 text-sm mt-2 hidden">Please select at least one language.</p></div>
-                <button onclick="initGame()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105 mt-8">Start Game</button>
+                <!-- Added an ID to the button for easier selection -->
+                <button id="start-game-btn" onclick="initGame()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105 mt-8">Start Game</button>
             </div>
         </div>
 
@@ -239,6 +240,9 @@
         let selectedLanguages = ['da', 'ar', 'sq'], timerInterval, timeLeft = 60;
         let isPaused = false, answerRevealed = false, selectedAnswerIndex = null;
         
+        // This will be populated by fetching questions.json
+        let fullQuestionLibrary = [];
+        
         // --- REMOVED: const fullQuestionLibrary = [...]
         // The entire large question array was here. It is now in questions.js
 
@@ -275,38 +279,76 @@
             }
         }
         
-        window.initGame = () => {
-            updateLanguageSelection(); if (selectedLanguages.length === 0) return;
-            
-            // Ensure question library is loaded
-            if (typeof fullQuestionLibrary === 'undefined' || !fullQuestionLibrary) {
-                alert("Error: Question library not loaded. Please wait a moment and try again.");
-                return;
-            }
-            
-            gameMasterName = document.getElementById('gamemaster-name-input').value.trim() || "Host";
-            gameMasterNameEl.textContent = gameMasterName;
-            
-            teamNames = [];
-            teamScores = [];
-            for(let i = 0; i < selectedTeamCount; i++) {
-                const name = document.getElementById(`team${i+1}-name-input`).value.trim() || `Team ${i+1}`;
-                teamNames.push(name);
-                teamScores.push(0);
-            }
+        // --- MODIFIED: initGame is now an async function to fetch questions ---
+        window.initGame = async () => {
+            const startButton = document.getElementById('start-game-btn');
+            const originalButtonText = startButton.innerHTML;
+            startButton.disabled = true;
+            startButton.innerHTML = 'Loading Questions...';
 
-            let availableQuestions = (selectedDifficulty === 'mixed') ? fullQuestionLibrary : fullQuestionLibrary.filter(q => q.difficulty === selectedDifficulty);
-            const maxQuestions = Math.min(selectedQuantity, availableQuestions.length);
-            gameQuestions = availableQuestions.sort(() => 0.5 - Math.random()).slice(0, maxQuestions);
+            try {
+                // Ensure question library is loaded by fetching it if needed
+                if (fullQuestionLibrary.length === 0) {
+                    console.log("Fetching questions...");
+                    const response = await fetch('questions.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    fullQuestionLibrary = await response.json();
+                    console.log("Questions loaded.");
+                }
 
-            if (gameQuestions.length === 0) {
-                 alert(`No questions found for '${selectedDifficulty}' difficulty. Please choose another difficulty.`);
-                return;
-            }
+                updateLanguageSelection(); 
+                if (selectedLanguages.length === 0) {
+                    // Manually re-enable button if validation fails
+                    startButton.disabled = false;
+                    startButton.innerHTML = originalButtonText;
+                    return; // Stop execution
+                }
             
-            renderScoreboard();
-            showScreen('quiz-container');
-            startGame();
+                // Ensure question library is loaded (check again, just in case)
+                if (typeof fullQuestionLibrary === 'undefined' || !fullQuestionLibrary || fullQuestionLibrary.length === 0) {
+                    alert("Error: Question library not loaded. Please wait a moment and try again.");
+                    startButton.disabled = false;
+                    startButton.innerHTML = originalButtonText;
+                    return; // Stop execution
+                }
+                
+                gameMasterName = document.getElementById('gamemaster-name-input').value.trim() || "Host";
+                gameMasterNameEl.textContent = gameMasterName;
+                
+                teamNames = [];
+                teamScores = [];
+                for(let i = 0; i < selectedTeamCount; i++) {
+                    const name = document.getElementById(`team${i+1}-name-input`).value.trim() || `Team ${i+1}`;
+                    teamNames.push(name);
+                    teamScores.push(0);
+                }
+
+                let availableQuestions = (selectedDifficulty === 'mixed') ? fullQuestionLibrary : fullQuestionLibrary.filter(q => q.difficulty === selectedDifficulty);
+                const maxQuestions = Math.min(selectedQuantity, availableQuestions.length);
+                gameQuestions = availableQuestions.sort(() => 0.5 - Math.random()).slice(0, maxQuestions);
+
+                if (gameQuestions.length === 0) {
+                    alert(`No questions found for '${selectedDifficulty}' difficulty. Please choose another difficulty.`);
+                    startButton.disabled = false;
+                    startButton.innerHTML = originalButtonText;
+                    return; // Stop execution
+                }
+                
+                renderScoreboard();
+                showScreen('quiz-container');
+                startGame();
+            
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                // Note: Using alert() as it's used elsewhere in the file, though a modal would be better.
+                alert('Could not load questions. Please check that questions.json file exists and try again.');
+            } finally {
+                // Restore button state
+                startButton.disabled = false;
+                startButton.innerHTML = originalButtonText;
+            }
         };
 
         function renderScoreboard() {
