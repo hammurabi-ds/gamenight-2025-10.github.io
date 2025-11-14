@@ -94,7 +94,6 @@
     </style>
 </head>
 <body class="theme-crimson-light">
-    <!-- Top Bar -->
     <header class="p-3 bg-main-secondary/50 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div class="w-full max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -108,14 +107,13 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/></svg>
                 </button>
                 <button onclick="openSettings()" class="header-icon-btn" title="Settings">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311a1.464 1.464 0 0 1-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311a1.464 1.464 0 0 1-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c-1.4-.413-1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858"/></svg>
                 </button>
             </div>
         </div>
     </header>
 
     <main class="p-4">
-        <!-- NEW: Login Screen -->
         <div id="login-screen" class="hidden w-full max-w-md mx-auto text-center fade-in md:py-20">
             <div class="bg-main-secondary p-8 rounded-2xl shadow-2xl">
                 <h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text header-gradient mb-8">Quiz Night Access</h1>
@@ -132,36 +130,35 @@
             </div>
         </div>
 
-        <!-- Home Screen -->
-        <div id="home-screen" class="hidden w-full max-w-3xl mx-auto text-center fade-in md:py-12">
+        <div id="home-screen" class="hidden w-full max-w-5xl mx-auto text-center fade-in md:py-12">
             <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">Welcome!</h1>
-            <div class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
-                <div id="quote-section" class="mb-8 p-4 border-2 border-main rounded-xl italic">
-                    <p id="quote-text" class="text-lg text-main-secondary"></p>
-                    <p id="quote-author" class="text-right mt-2 font-semibold text-main-primary"></p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
+                    <div id="quote-section" class="mb-8 p-4 border-2 border-main rounded-xl italic">
+                        <p id="quote-text" class="text-lg text-main-secondary"></p>
+                        <p id="quote-author" class="text-right mt-2 font-semibold text-main-primary"></p>
+                    </div>
+                    <button onclick="showScreen('setup-screen')" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105">
+                        Create New Game
+                    </button>
                 </div>
-                <button onclick="showScreen('setup-screen')" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105">
-                    Create New Game
-                </button>
-            </div>
-             <div class="bg-main-secondary p-4 md:p-6 rounded-2xl shadow-2xl mt-8 text-left">
-                <h3 class="text-2xl font-bold accent-text mb-4 text-center">💡 Team Creation Ideas</h3>
-                <ul class="space-y-3 text-main-secondary list-disc list-inside">
-                    <li><strong class="text-main-primary">Generations Clash:</strong> Team "Boomers" vs. Team "Zoomers".</li>
-                    <li><strong class="text-main-primary">Battle of the Sexes:</strong> Boys vs. Girls. A true classic!</li>
-                    <li><strong class="text-main-primary">Kids vs. Adults:</strong> Let the kids team up against the grown-ups.</li>
-                    <li><strong class="text-main-primary">Random Draw:</strong> Write names on pieces of paper and draw teams randomly for a fun mix.</li>
-                    <li><strong class="text-main-primary">In-Laws vs. Out-Laws:</strong> A fun way to pit family branches against each other.</li>
-                </ul>
+                <div class="bg-main-secondary p-4 md:p-6 rounded-2xl shadow-2xl text-left"> <h3 class="text-2xl font-bold accent-text mb-4 text-center">💡 Team Creation Ideas</h3>
+                    <ul class="space-y-3 text-main-secondary list-disc list-inside">
+                        <li><strong class="text-main-primary">Generations Clash:</strong> Team "Boomers" vs. Team "Zoomers".</li>
+                        <li><strong class="text-main-primary">Battle of the Sexes:</strong> Boys vs. Girls. A true classic!</li>
+                        <li><strong class="text-main-primary">Kids vs. Adults:</strong> Let the kids team up against the grown-ups.</li>
+                        <li><strong class="text-main-primary">Random Draw:</strong> Write names on pieces of paper and draw teams randomly for a fun mix.</li>
+                        <li><strong class="text-main-primary">In-Laws vs. Out-Laws:</strong> A fun way to pit family branches against each other.</li>
+                    </ul>
+                </div>
             </div>
         </div>
         
-        <!-- Setup Screen -->
         <div id="setup-screen" class="hidden w-full max-w-4xl mx-auto text-center fade-in md:py-12">
             <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">Game Setup</h1>
             <div id="setup-content" class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Left Column: Game Settings -->
                     <div class="space-y-6">
                         <div id="team-count-group"> 
                             <label class="block text-lg font-semibold text-main-secondary mb-3">Number of Teams</label>
@@ -175,7 +172,6 @@
                         <div><label class="block text-lg font-semibold text-main-secondary mb-3">Number of Questions</label><div id="quantity-selector" class="flex justify-center gap-2 md:gap-3"><button onclick="selectQuantity(15, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">15</button><button onclick="selectQuantity(30, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg selected">30</button><button onclick="selectQuantity(50, this)" class="setup-option-btn font-bold py-2 px-4 rounded-lg">50</button></div></div>
                         <div><label for="time-limit-slider" class="block text-lg font-semibold text-main-secondary mb-3">Time per Question</label><div class="flex items-center justify-center gap-4 px-2"><input type="range" id="time-limit-slider" min="10" max="300" value="60" step="5" class="w-full h-2 bg-main-tertiary rounded-lg appearance-none cursor-pointer accent-bg" oninput="updateTimerSelection(this.value)"><span id="time-limit-display" class="font-bold text-lg accent-text w-20 text-center">1:00</span></div></div>
                     </div>
-                    <!-- Right Column: Player/Team Names -->
                     <div class="space-y-4">
                         <div><label for="gamemaster-name-input" class="block text-lg font-semibold accent-text mb-2">Game Master</label><input type="text" id="gamemaster-name-input" class="setup-input w-full" placeholder="Enter host's name"></div>
                         <div id="team-names-container" class="space-y-4"></div>
@@ -196,22 +192,23 @@
             </div>
         </div>
 
-        <!-- Quiz Container -->
         <div id="quiz-container" class="hidden w-full max-w-6xl mx-auto">
             <header class="relative text-center mb-4 flex justify-between items-center"><div class="w-1/3"></div><div class="w-1/3"><h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text header-gradient py-2">Family Quiz Night</h1></div><div class="w-1/3 flex justify-end items-center gap-4"><div class="flex items-center gap-2"><span id="game-master-name" class="font-semibold text-main-secondary"></span><div class="w-8 h-8 rounded-full bg-main-tertiary flex items-center justify-center"><svg class="w-5 h-5 text-main-secondary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg></div></div></div></header>
             <div id="scoreboard-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 bg-main-secondary/50 p-3 rounded-xl shadow-lg"></div>
             <div id="game-over" class="hidden text-center p-6 bg-main-secondary rounded-xl shadow-2xl"><h2 id="winner-message" class="text-3xl font-bold mb-4">Game Over!</h2><p class="text-lg mb-4">Final Scores:</p><div id="final-scores-container" class="flex justify-center gap-6 text-xl flex-wrap"></div><button onclick="goToHome()" class="mt-6 accent-bg hover:brightness-110 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-transform transform hover:scale-105">Play Again</button></div>
-            <div id="quiz-area" class="bg-main-secondary p-4 md:p-6 rounded-xl shadow-2xl"><div class="flex justify-between items-center mb-4"><div class="flex items-center gap-3"><p id="question-counter" class="text-base font-semibold text-main-secondary">Q 1 / 30</p><button id="pause-resume-btn" onclick="togglePauseResume()" class="control-btn"></button><button onclick="resetCurrentQuestionState()" class="control-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg></button></div><div class="relative w-20 h-20"><svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100"><circle class="text-main-tertiary" stroke-width="8" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /><circle id="timer-progress-circle" class="timer-progress accent-text" stroke-width="8" stroke-linecap="round" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /></svg><div id="timer" class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-xl font-bold">1:00</div></div></div><div id="question-text" class="text-xl font-semibold mb-6 space-y-4 text-center"></div><div id="answer-options" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div><div id="post-answer-controls" class="hidden mt-4 text-center"><div id="correct-answer-text" class="text-base font-semibold mb-3 text-green-400 space-y-1"></div><p class="mb-3 text-main-secondary text-sm">Award point to the correct team:</p><div id="award-points-container" class="flex justify-center gap-3 mb-3 flex-wrap"></div><button id="next-question-btn" onclick="nextQuestion()" class="w-full md:w-auto bg-main-tertiary hover:brightness-110 text-main-primary font-bold py-2 px-5 rounded-lg">Next Question</button></div><button id="reveal-answer-btn" onclick="revealAnswer()" class="hidden w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-2 px-5 rounded-lg">Reveal Answer</button></div>
+            <div id="quiz-area" class="bg-main-secondary p-4 md:p-6 rounded-xl shadow-2xl"><div class="flex justify-between items-center mb-4"><div class="flex items-center gap-3"><p id="question-counter" class="text-base font-semibold text-main-secondary">Q 1 / 30</p><button id="pause-resume-btn" onclick="togglePauseResume()" class="control-btn"></button><button onclick="resetCurrentQuestionState()" class="control-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg></button></div><div class="relative w-20 h-20"><svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100"><circle class="text-main-tertiary" stroke-width="8" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /><circle id="timer-progress-circle" class="timer-progress accent-text" stroke-width="8" stroke-linecap="round" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /></svg><div id="timer" class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-xl font-bold">1:00</div></div></div><div id="question-text" class="text-xl font-semibold mb-6 space-y-4 text-center"></div><div id="answer-options" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+                <div id="post-answer-controls" class="hidden mt-4 text-center"><div id="correct-answer-text" class="text-base font-semibold mb-3 text-green-400 space-y-1"></div><p class="mb-3 text-main-secondary text-sm">Award point to the correct team:</p><div id="award-points-container" class="flex justify-center gap-3 mb-3 flex-wrap"></div><button id="next-question-btn" onclick="nextQuestion()" class="w-full md:w-auto bg-main-tertiary hover:brightness-110 text-main-primary font-bold py-2 px-5 rounded-lg">Next Question</button></div>
+                
+                <button id="reveal-answer-btn" onclick="revealAnswer()" class="hidden w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-2 px-5 rounded-lg">Reveal Answer</button>
+            </div>
         </div>
     </main>
     
-    <!-- Settings Modal -->
     <div id="settings-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-main-secondary p-6 rounded-2xl shadow-2xl w-full max-w-3xl relative fade-in max-h-[90vh] flex flex-col">
             <button onclick="closeSettings()" class="absolute top-3 right-3 control-btn z-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
             <h2 class="text-3xl font-bold text-center mb-6 accent-text">Settings</h2>
             <div class="space-y-6 overflow-y-auto flex-grow pr-2">
-                <!-- Theme Selector -->
                 <div class="pb-6"><label class="block text-lg font-semibold text-main-secondary mb-3 text-center">Party Theme</label><div id="theme-selector" class="flex justify-center gap-4 flex-wrap">
                     <button id="theme-retro-wave" onclick="selectTheme('theme-retro-wave', this)" class="theme-btn"></button>
                     <button id="theme-jungle-vibe" onclick="selectTheme('theme-jungle-vibe', this)" class="theme-btn"></button>
@@ -227,9 +224,22 @@
         </div>
     </div>
 
+    <div id="answer-reveal-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-main-tertiary p-6 rounded-2xl shadow-2xl w-full max-w-2xl relative fade-in flex flex-col space-y-4">
+            <h2 class="text-2xl font-bold text-center text-green-400">Correct Answer</h2>
+            <div id="modal-correct-answer-text" class="text-base font-semibold mb-3 space-y-1 bg-main-secondary p-3 rounded-lg">
+                </div>
+            <p class="mb-3 text-main-secondary text-sm text-center">Award point to the correct team:</p>
+            <div id="modal-award-points-container" class="flex justify-center gap-3 mb-3 flex-wrap">
+                </div>
+            <p id="point-awarded-feedback" class="text-center text-lg font-semibold accent-text h-6"></p> <button id="modal-next-question-btn" onclick="nextQuestion()" class="w-full md:w-auto mx-auto accent-bg hover:brightness-110 text-white font-bold py-2 px-5 rounded-lg">
+                Next Question
+            </button>
+        </div>
+    </div>
+
     <script>
         // --- GLOBAL VARIABLES & DOM ELEMENTS ---
-        // MODIFIED: Added login-screen to allScreens
         const allScreens = document.querySelectorAll('#login-screen, #home-screen, #setup-screen, #quiz-container');
         const settingsModalEl = document.getElementById('settings-modal');
         const questionCounterEl = document.getElementById('question-counter');
@@ -237,19 +247,18 @@
         const answerOptionsEl = document.getElementById('answer-options');
         const scoreboardContainer = document.getElementById('scoreboard-container');
         const finalScoresContainer = document.getElementById('final-scores-container');
-        const awardPointsContainer = document.getElementById('award-points-container');
+        // DEPRECATED: const awardPointsContainer = document.getElementById('award-points-container');
         const teamNamesContainer = document.getElementById('team-names-container');
         const gameMasterNameEl = document.getElementById('game-master-name');
         const timerEl = document.getElementById('timer');
         const timerProgressCircle = document.getElementById('timer-progress-circle');
-        const postAnswerControlsEl = document.getElementById('post-answer-controls');
+        // DEPRECATED: const postAnswerControlsEl = document.getElementById('post-answer-controls');
+        // DEPRECATED: const correctAnswerTextEl = document.getElementById('correct-answer-text');
         const revealAnswerBtn = document.getElementById('reveal-answer-btn');
-        const correctAnswerTextEl = document.getElementById('correct-answer-text');
         const pauseResumeBtn = document.getElementById('pause-resume-btn');
         const gameOverEl = document.getElementById('game-over');
         const langErrorEl = document.getElementById('lang-error');
         const setupErrorEl = document.getElementById('setup-error');
-        // NEW: Added login error element
         const loginErrorEl = document.getElementById('login-error');
 
         const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/></svg>`;
@@ -422,7 +431,6 @@
 
 
         // --- CORE FUNCTIONS ---
-        // NEW: Login handler
         window.handleLogin = () => {
             const password = document.getElementById('password-input').value;
             if (password === '123456') {
@@ -506,7 +514,6 @@
             startGame();
         };
 
-        // MODIFIED: Updated buttons to be larger and more visible
         function renderScoreboard() {
             scoreboardContainer.innerHTML = '';
             const teamColors = ['text-blue-400', 'text-pink-400', 'text-green-400', 'text-yellow-400'];
@@ -538,7 +545,6 @@
             loadQuestion(); 
         };
         
-        // MODIFIED: Added A, B, C, D labels
         window.loadQuestion = () => {
             resetStateForNewQuestion(); if (currentQuestionIndex >= gameQuestions.length) { endGame(); return; }
             const question = gameQuestions[currentQuestionIndex];
@@ -552,7 +558,6 @@
                 const button = document.createElement('button'); let optionsHTML = '';
                 selectedLanguages.forEach(lang => { if (option[lang]) optionsHTML += createLangLine(option[lang], langMap[lang], lang === 'ar'); });
                 
-                // New innerHTML structure with A, B, C, D labels
                 button.innerHTML = `
                     <div class="flex items-start gap-3 p-2">
                         <span class="text-xl font-bold accent-text">${labels[index]}.</span>
@@ -569,33 +574,74 @@
 
         window.selectAnswer = (index, button) => { if (answerRevealed || isPaused) return; const allButtons = answerOptionsEl.querySelectorAll('.answer-btn'); allButtons.forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); selectedAnswerIndex = index; revealAnswerBtn.classList.remove('hidden'); };
         
+        // MODIFIED: This function now populates and shows the new modal
         window.revealAnswer = () => {
             clearInterval(timerInterval); answerRevealed = true; isPaused = true; pauseResumeBtn.innerHTML = playIcon; revealAnswerBtn.classList.add('hidden');
             const question = gameQuestions[currentQuestionIndex]; const allButtons = answerOptionsEl.querySelectorAll('.answer-btn');
             allButtons.forEach((btn, index) => { btn.disabled = true; btn.classList.remove('hover:brightness-110'); if (index === question.correctAnswerIndex) btn.classList.add('correct'); else if (index === selectedAnswerIndex) btn.classList.add('wrong'); });
+            
+            // --- NEW MODAL LOGIC ---
+            const modalCorrectAnswerEl = document.getElementById('modal-correct-answer-text');
+            const modalAwardPointsEl = document.getElementById('modal-award-points-container');
+            const feedbackEl = document.getElementById('point-awarded-feedback');
+
             const correctOption = question.options[question.correctAnswerIndex]; let correctHTML = ''; const langMap = { da: '🇩🇰', ar: '🇸🇦', sq: '🇦🇱' };
             selectedLanguages.forEach(lang => { if (correctOption[lang]) correctHTML += createLangLine(correctOption[lang], langMap[lang], lang === 'ar'); });
-            correctAnswerTextEl.innerHTML = `<p>Correct Answer:</p><div class="inline-block text-left text-sm space-y-1 bg-green-900/20 p-2 rounded-lg">${correctHTML}</div>`;
             
-            renderAwardButtons();
-            postAnswerControlsEl.classList.remove('hidden'); postAnswerControlsEl.classList.add('fade-in');
+            // Populate modal with correct answer
+            modalCorrectAnswerEl.innerHTML = `<div class="inline-block text-left text-sm space-y-1">${correctHTML}</div>`;
+            
+            // Populate modal with award buttons
+            modalAwardPointsEl.innerHTML = ''; // Clear previous buttons
+            const teamColors = ['bg-blue-600 hover:bg-blue-700', 'bg-pink-600 hover:bg-pink-700', 'bg-green-600 hover:bg-green-700', 'bg-yellow-600 hover:bg-yellow-700'];
+            teamNames.forEach((name, i) => {
+                modalAwardPointsEl.innerHTML += `<button onclick="awardPointInModal(${i}, this)" class="${teamColors[i]} text-white font-bold py-2 px-4 rounded-lg text-sm transition-all">${name}</button>`;
+            });
+
+            // Clear feedback and show the modal
+            feedbackEl.textContent = '';
+            document.getElementById('answer-reveal-modal').classList.remove('hidden');
+            
+            // Hide the old controls (which are no longer used)
+            const postAnswerControlsEl = document.getElementById('post-answer-controls');
+            if(postAnswerControlsEl) postAnswerControlsEl.classList.add('hidden'); 
         };
 
-        function renderAwardButtons() {
-            awardPointsContainer.innerHTML = '';
-             const teamColors = ['bg-blue-600 hover:bg-blue-700', 'bg-pink-600 hover:bg-pink-700', 'bg-green-600 hover:bg-green-700', 'bg-yellow-600 hover:bg-yellow-700'];
-            teamNames.forEach((name, i) => {
-                awardPointsContainer.innerHTML += `<button onclick="awardPoint(${i})" class="${teamColors[i]} text-white font-bold py-2 px-4 rounded-lg text-sm">${name}</button>`;
+        // NEW: Function to handle point award from within the modal
+        window.awardPointInModal = (teamIndex, buttonEl) => { 
+            adjustScore(teamIndex, 1); // This updates the main scoreboard
+            
+            // Disable all buttons in the modal
+            document.getElementById('modal-award-points-container').querySelectorAll('button').forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
             });
-        }
-
-        window.awardPoint = (teamIndex) => { 
-            adjustScore(teamIndex, 1);
-            awardPointsContainer.querySelectorAll('button').forEach(btn => btn.disabled = true);
+            
+            // Highlight the clicked button
+            buttonEl.style.opacity = '1';
+            buttonEl.textContent = `${teamNames[teamIndex]} +1 Point!`;
+            
+            // Show feedback
+            const feedbackEl = document.getElementById('point-awarded-feedback');
+            feedbackEl.textContent = `Point awarded to ${teamNames[teamIndex]}!`;
         };
         
-        window.nextQuestion = () => { currentQuestionIndex++; loadQuestion(); };
-        window.resetStateForNewQuestion = () => { clearInterval(timerInterval); answerRevealed = false; isPaused = false; selectedAnswerIndex = null; postAnswerControlsEl.classList.add('hidden'); revealAnswerBtn.classList.add('hidden'); pauseResumeBtn.innerHTML = pauseIcon; };
+        // MODIFIED: Now hides the modal before loading next question
+        window.nextQuestion = () => { 
+            document.getElementById('answer-reveal-modal').classList.add('hidden'); // Hide the modal
+            currentQuestionIndex++; 
+            loadQuestion(); 
+        };
+        
+        window.resetStateForNewQuestion = () => { 
+            clearInterval(timerInterval); 
+            answerRevealed = false; 
+            isPaused = false; 
+            selectedAnswerIndex = null; 
+            // MODIFIED: No longer need to hide postAnswerControlsEl as it's deprecated
+            revealAnswerBtn.classList.add('hidden'); 
+            pauseResumeBtn.innerHTML = pauseIcon; 
+        };
         window.resetCurrentQuestionState = () => { if (answerRevealed) return; selectedAnswerIndex = null; revealAnswerBtn.classList.add('hidden'); answerOptionsEl.querySelectorAll('.answer-btn').forEach(btn => btn.classList.remove('selected')); startTimer(); };
         window.startTimer = () => { clearInterval(timerInterval); timeLeft = selectedTimeLimit; isPaused = false; pauseResumeBtn.innerHTML = pauseIcon; updateTimerDisplay(); startTimerInterval(); };
         window.startTimerInterval = () => { clearInterval(timerInterval); timerInterval = setInterval(() => { if (timeLeft <= 0) { revealAnswer(); return; } timeLeft--; updateTimerDisplay(); }, 1000); };
@@ -627,7 +673,6 @@
             } else if (winners.length === 1) {
                 winnerMessageEl.textContent = `${winners[0]} Wins! 🎉`;
                 const winnerIndex = teamNames.indexOf(winners[0]);
-                // This logic needs to be safe if the color array is smaller than teams
                 if (winnerIndex >= 0 && winnerIndex < teamColors.length) {
                     winnerMessageEl.classList.add(teamColors[winnerIndex]);
                 } else {
@@ -637,7 +682,7 @@
                  winnerMessageEl.textContent = "Game Over!";
             }
         };
-        // MODIFIED: goToHome now clears the login error
+
         window.goToHome = () => { 
             clearInterval(timerInterval); 
             setRandomQuote(); 
@@ -646,7 +691,6 @@
         };
 
         // --- INITIAL LOAD ---
-        // MODIFIED: Show login screen on load
         window.onload = () => {
             selectTheme(selectedTheme, document.getElementById(selectedTheme));
             selectNumberOfTeams(2, document.querySelector('#team-count-selector button'));
