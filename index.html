@@ -115,8 +115,25 @@
     </header>
 
     <main class="p-4">
+        <!-- NEW: Login Screen -->
+        <div id="login-screen" class="hidden w-full max-w-md mx-auto text-center fade-in md:py-20">
+            <div class="bg-main-secondary p-8 rounded-2xl shadow-2xl">
+                <h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text header-gradient mb-8">Quiz Night Access</h1>
+                <div class="space-y-4">
+                    <div>
+                        <label for="password-input" class="block text-lg font-semibold text-main-secondary mb-2">Password</label>
+                        <input type="password" id="password-input" class="setup-input text-center text-xl" placeholder="••••••" onkeyup="if(event.key==='Enter') handleLogin()">
+                    </div>
+                    <p id="login-error" class="text-red-400 text-sm h-5"></p>
+                    <button onclick="handleLogin()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105">
+                        Enter
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Home Screen -->
-        <div id="home-screen" class="w-full max-w-3xl mx-auto text-center fade-in md:py-12">
+        <div id="home-screen" class="hidden w-full max-w-3xl mx-auto text-center fade-in md:py-12">
             <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text header-gradient mb-6">Welcome!</h1>
             <div class="bg-main-secondary p-4 md:p-8 rounded-2xl shadow-2xl">
                 <div id="quote-section" class="mb-8 p-4 border-2 border-main rounded-xl italic">
@@ -146,7 +163,6 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Left Column: Game Settings -->
                     <div class="space-y-6">
-                        <!-- FIX 1: Added specific ID for team count selector -->
                         <div id="team-count-group"> 
                             <label class="block text-lg font-semibold text-main-secondary mb-3">Number of Teams</label>
                             <div id="team-count-selector" class="flex justify-center gap-2 md:gap-3">
@@ -174,7 +190,6 @@
                     </div>
                     <p id="lang-error" class="text-red-400 text-sm mt-2 hidden">Please select at least one language.</p>
                 </div>
-                <!-- FIX 2: Added setup error message element (replacing alert) -->
                 <p id="setup-error" class="text-red-400 font-semibold mt-4 hidden">There was an issue starting the game. Please adjust your settings.</p>
                 
                 <button onclick="initGame()" class="w-full accent-bg hover:brightness-110 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-xl transition-all transform hover:scale-105 mt-8">Start Game</button>
@@ -214,7 +229,8 @@
 
     <script>
         // --- GLOBAL VARIABLES & DOM ELEMENTS ---
-        const allScreens = document.querySelectorAll('#home-screen, #setup-screen, #quiz-container');
+        // MODIFIED: Added login-screen to allScreens
+        const allScreens = document.querySelectorAll('#login-screen, #home-screen, #setup-screen, #quiz-container');
         const settingsModalEl = document.getElementById('settings-modal');
         const questionCounterEl = document.getElementById('question-counter');
         const questionTextEl = document.getElementById('question-text');
@@ -232,8 +248,9 @@
         const pauseResumeBtn = document.getElementById('pause-resume-btn');
         const gameOverEl = document.getElementById('game-over');
         const langErrorEl = document.getElementById('lang-error');
-        // FIX 3: Added setup error element to global vars
         const setupErrorEl = document.getElementById('setup-error');
+        // NEW: Added login error element
+        const loginErrorEl = document.getElementById('login-error');
 
         const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/></svg>`;
         const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>`;
@@ -405,6 +422,24 @@
 
 
         // --- CORE FUNCTIONS ---
+        // NEW: Login handler
+        window.handleLogin = () => {
+            const password = document.getElementById('password-input').value;
+            if (password === '123456') {
+                loginErrorEl.textContent = '';
+                document.getElementById('password-input').value = ''; // Clear password
+                goToHome();
+            } else {
+                loginErrorEl.textContent = 'Incorrect password. Please try again.';
+                // Add a shake animation for effect
+                document.getElementById('login-screen').querySelector('.bg-main-secondary').animate([
+                    { transform: 'translateX(0)' }, { transform: 'translateX(-10px)' },
+                    { transform: 'translateX(10px)' }, { transform: 'translateX(-10px)' },
+                    { transform: 'translateX(10px)' }, { transform: 'translateX(0)' }
+                ], { duration: 500, easing: 'ease-in-out' });
+            }
+        };
+
         window.createLangLine = (text, flag, isRtl = false) => `<div class="lang-line ${isRtl ? 'rtl' : ''}"><span class="text-xl">${flag}</span><span class="flex-1 ${isRtl ? 'arabic-text' : ''}">${text}</span></div>`;
         window.showScreen = (screenId) => { allScreens.forEach(s => s.classList.add('hidden')); document.getElementById(screenId).classList.remove('hidden'); document.getElementById(screenId).classList.add('fade-in'); window.scrollTo(0, 0); };
         window.setRandomQuote = () => { const quote = quotes[Math.floor(Math.random() * quotes.length)]; document.getElementById('quote-text').textContent = `"${quote.text}"`; document.getElementById('quote-author').textContent = `– ${quote.author}`;};
@@ -416,7 +451,6 @@
         window.selectDifficulty = (difficulty, button) => { selectedDifficulty = difficulty; document.querySelectorAll('#difficulty-selector button').forEach(btn => btn.classList.remove('selected')); button.classList.add('selected'); };
         window.updateLanguageSelection = () => { selectedLanguages = Array.from(document.querySelectorAll('#language-selector input:checked')).map(cb => cb.value); langErrorEl.classList.toggle('hidden', selectedLanguages.length > 0);};
         
-        // FIX 4: Updated selectNumberOfTeams to use the specific #team-count-selector ID
         window.selectNumberOfTeams = (count, button) => {
             selectedTeamCount = count;
             document.querySelectorAll('#team-count-selector button').forEach(btn => btn.classList.remove('selected'));
@@ -437,9 +471,8 @@
             }
         }
         
-        // FIX 5: Replaced alert() with inline error message (setupErrorEl)
         window.initGame = () => {
-            setupErrorEl.classList.add('hidden'); // Clear previous errors
+            setupErrorEl.classList.add('hidden'); 
             updateLanguageSelection(); 
             
             if (selectedLanguages.length === 0) { 
@@ -473,6 +506,7 @@
             startGame();
         };
 
+        // MODIFIED: Updated buttons to be larger and more visible
         function renderScoreboard() {
             scoreboardContainer.innerHTML = '';
             const teamColors = ['text-blue-400', 'text-pink-400', 'text-green-400', 'text-yellow-400'];
@@ -481,9 +515,9 @@
                     <div class="text-center">
                         <h2 class="text-lg md:text-xl font-bold ${teamColors[i]}">${name}</h2>
                         <div class="flex items-center justify-center gap-2">
-                            <button onclick="adjustScore(${i}, -1)" class="control-btn text-lg">-</button>
+                            <button onclick="adjustScore(${i}, -1)" class="bg-main-tertiary hover:brightness-110 text-main-primary font-bold w-12 h-12 rounded-full text-2xl flex items-center justify-center transition-transform transform hover:scale-110">-</button>
                             <p id="team-score-${i}" class="text-3xl md:text-4xl font-bold w-16">${teamScores[i]}</p>
-                            <button onclick="adjustScore(${i}, 1)" class="control-btn text-lg">+</button>
+                            <button onclick="adjustScore(${i}, 1)" class="bg-main-tertiary hover:brightness-110 text-main-primary font-bold w-12 h-12 rounded-full text-2xl flex items-center justify-center transition-transform transform hover:scale-110">+</button>
                         </div>
                     </div>
                 `;
@@ -504,9 +538,11 @@
             loadQuestion(); 
         };
         
+        // MODIFIED: Added A, B, C, D labels
         window.loadQuestion = () => {
             resetStateForNewQuestion(); if (currentQuestionIndex >= gameQuestions.length) { endGame(); return; }
             const question = gameQuestions[currentQuestionIndex];
+            const labels = ['A', 'B', 'C', 'D']; // Labels for options
             questionCounterEl.textContent = `Q ${currentQuestionIndex + 1} / ${gameQuestions.length}`;
             let questionHTML = ''; const langMap = { da: '🇩🇰', ar: '🇸🇦', sq: '🇦🇱' };
             selectedLanguages.forEach(lang => { if (question.question[lang]) questionHTML += createLangLine(question.question[lang], langMap[lang], lang === 'ar'); });
@@ -515,8 +551,17 @@
             question.options.forEach((option, index) => {
                 const button = document.createElement('button'); let optionsHTML = '';
                 selectedLanguages.forEach(lang => { if (option[lang]) optionsHTML += createLangLine(option[lang], langMap[lang], lang === 'ar'); });
-                button.innerHTML = `<div class="flex flex-col items-start space-y-1 text-left text-sm">${optionsHTML}</div>`;
-                button.classList.add('answer-btn', 'w-full', 'p-3', 'rounded-lg', 'border-2', 'border-transparent', 'font-semibold', 'fade-in');
+                
+                // New innerHTML structure with A, B, C, D labels
+                button.innerHTML = `
+                    <div class="flex items-start gap-3 p-2">
+                        <span class="text-xl font-bold accent-text">${labels[index]}.</span>
+                        <div class="flex-1 flex flex-col items-start space-y-1 text-left text-sm">
+                            ${optionsHTML}
+                        </div>
+                    </div>`;
+                
+                button.classList.add('answer-btn', 'w-full', 'rounded-lg', 'border-2', 'border-transparent', 'font-semibold', 'fade-in');
                 button.onclick = () => selectAnswer(index, button); answerOptionsEl.appendChild(button);
             });
             startTimer();
@@ -592,14 +637,20 @@
                  winnerMessageEl.textContent = "Game Over!";
             }
         };
-        window.goToHome = () => { clearInterval(timerInterval); setRandomQuote(); showScreen('home-screen'); };
+        // MODIFIED: goToHome now clears the login error
+        window.goToHome = () => { 
+            clearInterval(timerInterval); 
+            setRandomQuote(); 
+            showScreen('home-screen');
+            if(loginErrorEl) loginErrorEl.textContent = ''; // Clear login error on home navigation
+        };
 
         // --- INITIAL LOAD ---
+        // MODIFIED: Show login screen on load
         window.onload = () => {
             selectTheme(selectedTheme, document.getElementById(selectedTheme));
-            // Ensure the initial selection correctly targets the new ID
             selectNumberOfTeams(2, document.querySelector('#team-count-selector button'));
-            goToHome();
+            showScreen('login-screen'); // Start on the login screen
         };
     </script>
 </body>
